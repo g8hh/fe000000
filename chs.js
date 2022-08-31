@@ -1730,7 +1730,7 @@ var cnRegReplace = new Map([
     [/^([\d\.]+)\/([\d\.,]+) total EC completions$/, '$1\/$2 总 EC 完成'],
     [/^([\d\.]+)e([\d\.,]+)\/([\d\.]+)e([\d\.,]+) boosts$/, '$1e$2\/$3e$4 提升'],
     [/^([\d\.]+)e([\d\.,]+) total eternity points$/, '$1e$2 总永恒点数'],
-    [/^\((.+)×(.+)\)\^\(.+)\) total eternity points$/, '\($1×$2\)\^\($3\) 总永恒点数'],
+    [/^\((.+)×(.+)\)\^(.+)\) total eternity points$/, '\($1×$2\)\^\($3\) 总永恒点数'],
     [/^([\d\.,]+) completions$/, '$1 完成'],
     [/^([\d\.,]+) elves$/, '$1 精灵'],
     [/^\*(.+) to electricity gain$/, '\*$1 到电力增益'],
