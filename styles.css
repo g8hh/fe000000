@@ -1,0 +1,738 @@
+@font-face {
+  font-family: Typewriter;
+  src: url('MonospaceTypewriter.ttf');
+}
+
+:root {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --progress-bar-background-color: #aaaaaa;
+  --progress-bar-foreground-color: #33ff33;
+  --button-color: #aaaaaa;
+  --button-disabled-color: #555555;
+  --button-text-color: #000000;
+  --link-color: #3366ff;
+  --checkbox-scale: 1;
+  --outline-offset: 0px;
+  --outline-size: 0px;
+  --outline-color: black;
+}
+
+#progress {
+  width: 512px;
+  height: 32px;
+  margin: auto;
+  background-color: var(--progress-bar-background-color);
+}
+
+#bar {
+  width: 0px;
+  height: 32px;
+  background-color: var(--progress-bar-foreground-color);
+}
+
+body {
+  touch-action: manipulation;
+  text-align: center;
+  font-family: Typewriter, serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  -moz-transform-origin: 0 0;
+}
+
+a {
+  color: var(--link-color);
+}
+
+button {
+	border: 0;
+  font-family: Typewriter, serif;
+  font-size: 1rem;
+  margin: 2px;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+}
+
+button:focus {
+  outline-offset: 0;
+  outline-style: solid;
+  outline-offset: var(--outline-offset);
+  outline-width: var(--outline-size);
+  outline-color: var(--outline-color);
+}
+
+input[type=checkbox] {
+  width: calc(12px * var(--checkbox-scale));
+  height: calc(12px * var(--checkbox-scale));
+  top: calc(-6px * (var(--checkbox-scale) - 1));
+}
+
+input[type=text] {
+  width: 128px;
+}
+
+.unobtrusive:link {
+  color: var(--background-color);
+}
+
+.unobtrusive:visited {
+  color: var(--background-color);
+}
+
+.unobtrusive:hover {
+  color: var(--background-color);
+}
+
+.unobtrusive:active {
+  color: var(--background-color);
+}
+
+.achievementtd {
+  vertical-align: top;
+  text-align: center;
+  font-size: 0.875rem;
+  width: 128px;
+  height: 128px;
+  padding: 4px;
+  border: solid;
+  border-width: 1px 1px;
+  position: relative;
+}
+
+.tooltiptext {
+  width: 288px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -144px;
+  padding: 2px;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 2;
+  visibility: hidden;
+}
+
+.achievementtd:hover .tooltiptext {
+  visibility: visible;
+}
+
+.helpspan {
+  position: relative;
+}
+
+.helpspan:hover .tooltiptext {
+  visibility: visible;
+}
+
+.box {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin-left: -350px;
+  width: 600px;
+  padding: 50px;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  text-align: center;
+  z-index: 1;
+}
+
+#notificationarea {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+}
+
+.notification {
+  position: relative;
+  top: 0px;
+  right: 0px;
+  margin: 6px;
+  padding: 2px;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  text-align: center;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.options-button {
+  width: 352px;
+  height: 112px;
+}
+
+.mini-options-button {
+  width: 288px;
+  height: 20px;
+  font-size: 0.875rem;
+}
+
+.mid-options-button {
+  width: 288px;
+  height: 40px;
+  font-size: 0.875rem;
+}
+
+.semi-options-button {
+  width: 300px;
+  height: 60px;
+  font-size: 0.875rem;
+}
+
+.minier-options-button {
+  width: 288px;
+  height: 18px;
+  font-size: 0.75rem;
+}
+
+.wide-mini-options-button {
+  width: 300px;
+  height: 20px;
+  font-size: 0.875rem;
+}
+
+.options-div {
+  width: 352px;
+  height: 112px;
+  display: table;
+  text-align: center;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.disabled {
+  background-color: var(--button-disabled-color);
+}
+
+.autobuyerdiv {
+  display: table;
+  text-align: center;
+  width: 352px;
+  height: 128px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.tallautobuyerdiv {
+  display: table;
+  text-align: center;
+  width: 352px;
+  height: 160px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.autobuyerunlockbutton {
+  text-align: center;
+  width: 352px;
+  height: 72px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.challengediv {
+  display: table;
+  text-align: center;
+  width: 512px;
+  height: 256px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.infinitychallengediv {
+  display: table;
+  text-align: center;
+  width: 512px;
+  height: 320px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.eternitychallengediv {
+  display: table;
+  text-align: center;
+  width: 512px;
+  height: 320px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.complexitychallengediv {
+  display: table;
+  text-align: center;
+  width: 576px;
+  height: 288px;
+  font-size: 0.875rem;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.complexitychallengediv button {
+  font-size: 0.875rem;
+}
+
+.eternitymilestonediv {
+  display: table;
+  text-align: center;
+  width: 256px;
+  height: 224px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.chromadiv {
+  display: table;
+  text-align: center;
+  width: 404px;
+  height: 128px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.complexityachievementdiv {
+  display: table;
+  text-align: center;
+  width: 272px;
+  height: 272px;
+  font-size: 0.875rem;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.smallpowertd  {
+  text-align: center;
+  font-size: 0.875rem;
+  width: 320px;
+  height: 80px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.smallpowertd button {
+  font-size: 0.875rem;
+}
+
+.mediumpowertd  {
+  text-align: center;
+  font-size: 0.875rem;
+  width: 320px;
+  height: 96px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.mediumpowertd button {
+  font-size: 0.875rem;
+}
+
+.largepowertd {
+  text-align: center;
+  font-size: 0.875rem;
+  width: 320px;
+  height: 112px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.largepowertd button {
+  font-size: 0.875rem;
+}
+
+.oraclediv {
+  margin: auto;
+  text-align: center;
+  width: 1024px;
+  height: 128px;
+  padding: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.finalitymilestonediv {
+  display: table;
+  text-align: center;
+  width: 256px;
+  height: 256px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.goaldiv {
+  display: table;
+  text-align: center;
+  width: 256px;
+  height: 128px;
+  padding: 4px;
+  margin: 4px;
+  border: solid;
+  border-width: 1px 1px;
+}
+
+.softlyhighlighted {
+  background: var(--study-chroma-color);
+}
+
+.studynormalunbuyable {
+  display: table;
+  text-align: center;
+  background: var(--button-disabled-color);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studynormalbuyable {
+  display: table;
+  text-align: center;
+  background: radial-gradient(var(--study-normal-color), var(--button-color));
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studynormalbought {
+  display: table;
+  text-align: center;
+  background: var(--study-normal-color);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studyinfinityunbuyable {
+  display: table;
+  text-align: center;
+  background: var(--button-disabled-color);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studyinfinitybuyable {
+  display: table;
+  text-align: center;
+  background: radial-gradient(var(--study-infinity-color), var(--button-color));
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studyinfinitybought {
+  display: table;
+  text-align: center;
+  background: var(--study-infinity-color);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studyeternityunbuyable {
+  display: table;
+  text-align: center;
+  background: var(--button-disabled-color);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studyeternitybuyable {
+  display: table;
+  text-align: center;
+  background: radial-gradient(var(--study-eternity-color), var(--button-color));
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studyeternitybought {
+  display: table;
+  text-align: center;
+  background: var(--study-eternity-color);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studychromaunbuyable {
+  display: table;
+  text-align: center;
+  background: var(--button-disabled-color);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studychromabuyable {
+  display: table;
+  text-align: center;
+  background: radial-gradient(var(--study-chroma-color), var(--button-color));
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.studychromabought {
+  display: table;
+  text-align: center;
+  background: var(--study-chroma-color);
+  font-size: 0.875rem;
+  width: 256px;
+  height: 160px;
+}
+
+.yellowspan, .yellowdiv > span {
+  color: var(--yellow-text-color);
+}
+
+.greyspan, .greydiv > span {
+  color: var(--grey-text-color);
+}
+
+.purplespan, .purplediv > span {
+  color: var(--purple-text-color);
+}
+
+.orangespan, .orangediv > span {
+  color: var(--orange-text-color);
+}
+
+.cyanspan, .cyandiv > span {
+  color: var(--cyan-text-color);
+}
+
+.greenspan, .greendiv > span {
+  color: var(--green-text-color);
+}
+
+.redspan, .reddiv > span {
+  color: var(--red-text-color);
+}
+
+.magentaspan, .magentadiv > span {
+  color: var(--magenta-text-color);
+}
+
+.brownspan, .browndiv > span {
+  color: var(--brown-text-color);
+}
+
+.goldspan, .golddiv > span {
+  color: var(--gold-text-color);
+}
+
+.yellowalteredspan, .yellowaltereddiv > span {
+  color: var(--yellow-altered-text-color);
+}
+
+.greyalteredspan, .greyaltereddiv > span {
+  color: var(--grey-altered-text-color);
+}
+
+.purplealteredspan, .purplealtereddiv > span {
+  color: var(--purple-altered-text-color);
+}
+
+.orangealteredspan, .orangealtereddiv > span {
+  color: var(--orange-altered-text-color);
+}
+
+.cyanalteredspan, .cyanaltereddiv > span {
+  color: var(--cyan-altered-text-color);
+}
+
+.greenalteredspan, .greenaltereddiv > span {
+  color: var(--green-altered-text-color);
+}
+
+.magentaalteredspan, .magentaaltereddiv > span {
+  color: var(--magenta-altered-text-color);
+}
+
+.brownalteredspan, .brownaltereddiv > span {
+  color: var(--brown-altered-text-color);
+}
+
+.chromacurrentgreydiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, #aaaaaa);
+}
+
+.chromanextgreydiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, var(--next-grey-color));
+}
+
+.chromacurrentpurplediv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, #aa99ff);
+}
+
+.chromanextpurplediv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, var(--next-purple-color));
+}
+
+.chromacurrentorangediv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, #ff9933);
+}
+
+.chromanextorangediv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, var(--next-orange-color));
+}
+
+.chromacurrentcyandiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, #00ffff);
+}
+
+.chromanextcyandiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, var(--next-cyan-color));
+}
+
+.chromacurrentgreendiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, #33ff33);
+}
+
+.chromanextgreendiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, var(--next-green-color));
+}
+
+.chromacurrentreddiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, #ff0000);
+}
+
+.chromanextreddiv {
+  background: radial-gradient(var(--background-color), var(--background-color) 75%, var(--next-red-color));
+}
+
+.greytogreyaltered {
+   background-image: linear-gradient(to right, var(--grey-altered-text-color), var(--grey-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greytopurplealtered {
+   background-image: linear-gradient(to right, var(--grey-altered-text-color), var(--purple-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greytoorangealtered {
+   background-image: linear-gradient(to right, var(--grey-altered-text-color), var(--orange-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greytogreenaltered {
+   background-image: linear-gradient(to right, var(--grey-altered-text-color), var(--green-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.purpletogreyaltered {
+   background-image: linear-gradient(to right, var(--purple-altered-text-color), var(--grey-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.purpletopurplealtered {
+   background-image: linear-gradient(to right, var(--purple-altered-text-color), var(--purple-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.purpletoorangealtered {
+   background-image: linear-gradient(to right, var(--purple-altered-text-color), var(--orange-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.purpletogreenaltered {
+   background-image: linear-gradient(to right, var(--purple-altered-text-color), var(--green-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.orangetogreyaltered {
+   background-image: linear-gradient(to right, var(--orange-altered-text-color), var(--grey-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.orangetopurplealtered {
+   background-image: linear-gradient(to right, var(--orange-altered-text-color), var(--purple-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.orangetoorangealtered {
+   background-image: linear-gradient(to right, var(--orange-altered-text-color), var(--orange-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.orangetogreenaltered {
+   background-image: linear-gradient(to right, var(--orange-altered-text-color), var(--green-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greentogreyaltered {
+   background-image: linear-gradient(to right, var(--green-altered-text-color), var(--grey-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greentopurplealtered {
+   background-image: linear-gradient(to right, var(--green-altered-text-color), var(--purple-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greentoorangealtered {
+   background-image: linear-gradient(to right, var(--green-altered-text-color), var(--orange-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
+
+.greentogreenaltered {
+   background-image: linear-gradient(to right, var(--green-altered-text-color), var(--green-altered-text-color));
+   color: transparent;
+   -webkit-background-clip: text;
+   background-clip: text;
+}
