@@ -1,5 +1,74 @@
 let fs = require('fs');
 
+let preprocessorVars = {
+  colors: ['brown', 'cyan', 'gold', 'green', 'grey', 'magenta', 'orange', 'purple', 'red', 'yellow'],
+  titleColors: ['Brown', 'Cyan', 'Gold', 'Green', 'Grey', 'Magenta', 'Orange', 'Purple', 'Red', 'Yellow'],
+  numbers: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
+  'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty']
+};
+
+let access = (x, l) => (l.length > 0) ? access(x[l[0]], l.slice(1)) : x;
+
+function preprocess(x) {
+  let parts = x.split('loop');
+  let res = [null, null, null, parts[0].replace(/\n *<\/?$/, '')];
+  let key = [];
+  for (let i = 1; i < parts.length; i++) {
+    let a = access(res, key);
+    if (parts[i - 1].endsWith('"js/')) {
+      a[a.length - 1] += 'loop' + parts[i].replace(/\n *<\/?$/, '');
+    } else if (parts[i - 1].endsWith('<')) {
+      if (parts[i][0] !== ' ') {
+        throw new Error('Bad input');
+      }
+      let ind = parts[i].indexOf('>');
+      if (parts[i][ind + 1] !== '\n') {
+        throw new Error('Bad input');
+      }
+      let m = parts[i].slice(1, ind).split(' ');
+      if (m.length !== 3) {
+        throw new Error('Bad input');
+      }
+      let n = [m[0], +m[1], +m[2], parts[i].slice(ind + 1).replace(/\n *<\/?$/, '')];
+      key.push(a.length);
+      a.push(n);
+    } else if (parts[i - 1].endsWith('</')) {
+      key.pop();
+      if (parts[i][0] !== '>') {
+        throw new Error('Bad input');
+      }
+      access(res, key).push(parts[i].slice(1).replace(/\n *<\/?$/, ''));
+    }
+  }
+  if (key.length > 0) {
+    throw new Error('Bad input');
+  }
+  return res;
+}
+
+function preprocessString(s) {
+  return s.replace(/% [^%]+ %/g, x => eval(x.slice(2, -2).replace(/@/g, 'preprocessorVars.')));
+}
+
+function preprocessFinal(x) {
+  if (typeof x === 'string') {
+    return preprocessString(x);
+  } else if (x[0] === null) {
+    return x.slice(3).map(preprocessFinal).join('');
+  } else {
+    if (x[0] in preprocessorVars) {
+      throw new Error('Already-used variable ' + x[0]);
+    }
+    let r = [];
+    for (let i = x[1]; i <= x[2]; i++) {
+      preprocessorVars[x[0]] = i;
+      r.push(x.slice(3).map(preprocessFinal).join(''));
+    }
+    delete preprocessorVars[x[0]];
+    return r.join('');
+  }
+}
+
 function extractCode(x) {
   if (x[1] === 'f') {
     return 'format(' + x.slice(3, -2) + ')';
@@ -118,13 +187,13 @@ if (!(files[0].endsWith('.html') && files[1].endsWith('.html') && files[2].endsW
   throw new Error('Wrong file types. Files should be (1) input html file you\'re editing directly, (2) output html file, (3) output JS file.');
 }
 
-fs.readFile(files[0], 'utf8', function(err, contents) {
-  let contentsWithTime = contents.replace(/%time%/g, time);
-  let newContents = contentsWithTime.replace(
+fs.readFile(files[0], 'utf8', function(err, rawContents) {
+  let trueContents = preprocessFinal(preprocess(rawContents.replace(/%time%/g, time)));
+  let newContents = trueContents.replace(
     /<[-a-z]+( [-a-z]+="[^"]+"| ~[-!.a-z]+=[^~]+~)*\/?>/g, dealWithElement).replace(
     /~([fioqrsy]|t[iqs]?) [^~]+ ~/g, (x) => '<span id="e' + el1Number++ + '"></span>');
-  let el1CodeList = (contents.match(/~([fioqrsy]|t[iqs]?) [^~]+ ~/g) || []).map(updateDisplayOneElement);
-  let el2CodeList = (contents.match(/<[-a-z]+( [-a-z]+="[^"]+"| ~[-!.a-z]+=[^~]+~)*\/?>/g) || []).filter(x => x.includes('~')).map(updateDisplayOneStyle);
+  let el1CodeList = (trueContents.match(/~([fioqrsy]|t[iqs]?) [^~]+ ~/g) || []).map(updateDisplayOneElement);
+  let el2CodeList = (trueContents.match(/<[-a-z]+( [-a-z]+="[^"]+"| ~[-!.a-z]+=[^~]+~)*\/?>/g) || []).filter(x => x.includes('~')).map(updateDisplayOneStyle);
   let setupList = flatten(el2CodeList.map(x => x.filter(y => y[0] === '!').map(y => y.slice(1))));
   el2CodeList = el2CodeList.map(x => x.filter(y => y[0] !== '!'));
   let inTabs = (newContents.match(/<tab .*?<\/tab>/gs) || []).map(

@@ -12,6 +12,7 @@ let Options = {
   },
   toggleNotationOnTimes() {
     player.options.notationOnTimes = !player.options.notationOnTimes;
+    NotationOptions.notationChange();
   },
   offlineProgress() {
     return player.options.offlineProgress;
@@ -23,10 +24,10 @@ let Options = {
     return player.options.offlineTicks;
   },
   offlineTicks() {
-    return Math.min(Math.max(1, Math.floor(player.options.offlineTicks)), this.maxTicks());
+    return player.options.offlineTicks;
   },
   setOfflineTicks(x) {
-    player.options.offlineTicks = x || 1;
+    player.options.offlineTicks = Math.min(Math.max(1, Math.floor(x || 1)), this.maxTicks());
   },
   maxTicks() {
     return Math.pow(2, 20);
