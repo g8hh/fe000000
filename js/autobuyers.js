@@ -53,7 +53,10 @@ let Autobuyer = function (i) {
       ][i - 12];
     },
     isActive() {
-      return this.hasAutobuyer() && (this.hasGeneration() ? this.isOnDespiteSuspended() : this.isOn());
+      // change to
+      // return this.hasAutobuyer() && (this.hasGeneration() ? this.isOnDespiteSuspended() : this.isOn());
+      // if people want change back
+      return this.hasAutobuyer() && this.isOn() && (this.hasGeneration() ? this.isOnDespiteSuspended() : true);
     },
     isOnDespiteSuspended() {
       return 12 <= i && i <= 15 && player.options.autobuyers.isOnDespiteSuspended[i - 12];
@@ -76,7 +79,7 @@ let Autobuyer = function (i) {
     setMode(x) {
       player.autobuyers[i - 1].mode = x;
       if ([10, 11, 12, 13, 14, 15].includes(i)) {
-        NotationOptions.notationChange([i]);
+        NotationOptions.notationChangeAutobuyers([i]);
       }
     },
     setPriority(x) {
@@ -257,7 +260,7 @@ let Autobuyers = {
     } else if (mode === 'X times last') {
       shouldInfinity = InfinityPrestigeLayer.infinityPointGain().gte(player.stats.lastTenInfinities[0][1].times(priority));
     } else if (mode === 'X times best of last ten') {
-      shouldInfinity = InfinityPrestigeLayer.infinityPointGain().gte(player.stats.lastTenInfinities.map(x => x[1]).reduce(Decimal.max).times(priority));
+      shouldInfinity = InfinityPrestigeLayer.infinityPointGain().gte(player.stats.lastTenInfinities.slice(0, Stats.lastRunsToShow()).map(x => x[1]).reduce(Decimal.max, new Decimal(0)).times(priority));
     } else if (mode === 'Time past peak/sec') {
       InfinityPrestigeLayer.updatePeakIPPerSec();
       shouldInfinity = player.stats.timeSinceLastPeakIPPerSec >= priority.toNumber();
@@ -294,7 +297,7 @@ let Autobuyers = {
     } else if (mode === 'X times last') {
       shouldEternity = EternityPrestigeLayer.eternityPointGain().gte(player.stats.lastTenEternities[0][1].times(priority));
     }  else if (mode === 'X times best of last ten') {
-      shouldEternity = EternityPrestigeLayer.eternityPointGain().gte(player.stats.lastTenEternities.map(x => x[1]).reduce(Decimal.max).times(priority));
+      shouldEternity = EternityPrestigeLayer.eternityPointGain().gte(player.stats.lastTenEternities.slice(0, Stats.lastRunsToShow()).map(x => x[1]).reduce(Decimal.max, new Decimal(0)).times(priority));
     } else if (mode === 'Time past peak/sec') {
       EternityPrestigeLayer.updatePeakEPPerSec();
       shouldEternity = player.stats.timeSinceLastPeakEPPerSec >= priority.toNumber();
@@ -356,7 +359,7 @@ let Autobuyers = {
     } else if (mode === 'X times last') {
       shouldComplexity = ComplexityPrestigeLayer.complexityPointGain().gte(player.stats.lastTenComplexities[0][1].times(priority));
     } else if (mode === 'X times best of last ten') {
-      shouldComplexity = ComplexityPrestigeLayer.complexityPointGain().gte(player.stats.lastTenComplexities.map(x => x[1]).reduce(Decimal.max).times(priority));
+      shouldComplexity = ComplexityPrestigeLayer.complexityPointGain().gte(player.stats.lastTenComplexities.slice(0, Stats.lastRunsToShow()).map(x => x[1]).reduce(Decimal.max, new Decimal(0)).times(priority));
     } else if (mode === 'Time past peak/sec') {
       ComplexityPrestigeLayer.updatePeakCPPerSec();
       shouldComplexity = ComplexityPrestigeLayer.complexityPointGain().gte(ComplexityPrestigeLayer.complexityPoints()) && player.stats.timeSinceLastPeakCPPerSec >= priority.toNumber();
@@ -436,23 +439,3 @@ let Autobuyers = {
 }
 
 defined.autobuyers = true;
-
-let AutobuyerExplanations = {
-  isVisible(x) {
-    return {
-      'any': [10, 11, 12].some(x => Autobuyer(x).hasAutobuyer()) || PrestigeLayerProgress.hasReached('eternity'),
-      'basic': [10, 11, 12].some(x => Autobuyer(x).hasAutobuyer()) || PrestigeLayerProgress.hasReached('eternity'),
-      'per-sec': Autobuyer(12).hasAutobuyer() || PrestigeLayerProgress.hasReached('eternity')
-    }[x];
-  },
-  isShown(x) {
-    return player.options.autobuyers.explanation === x;
-  },
-  showOrHide(x) {
-    if (player.options.autobuyers.explanation === x) {
-      player.options.autobuyers.explanation = '';
-    } else {
-      player.options.autobuyers.explanation = x;
-    }
-  }
-}

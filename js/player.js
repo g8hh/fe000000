@@ -102,7 +102,6 @@ let initialPlayer = {
   highestEternityGenerator: 0,
   eternityUpgrades: [0, 0, 0],
   eternityMilestonesEnabled: [true, true],
-  isEternityMilestoneExplanationMovedDown: false,
   infinityAutobuyers: [
     true, true, true, true, true, true, true, true, true, true,
   ],
@@ -163,8 +162,6 @@ let initialPlayer = {
   complexityChallengeSafeguards: [false, false, false, false, false],
   complexityChallengeLastCompletion: [[-1, -1], [-1, -1], [-1, -1], [-1, -1], [-1, -1], [-1, -1]],
   complexityChallengeTimeSpent: [0, 0, 0, 0, 0, 0],
-  isComplexityChallengeExplanationMovedDown: false,
-  isPowersExplanationMovedDown: false,
   complexityAchievements: [
     [false, false, false, false],
     [false, false, false, false],
@@ -180,6 +177,7 @@ let initialPlayer = {
   powers: {
     seed: initialSeed,
     initialSeed: initialSeed,
+    id: 1,
     unlocked: false,
     upgrades: [0, 0, 0],
     equipped: [],
@@ -228,7 +226,6 @@ let initialPlayer = {
     powerGainInPredictions: 'Same',
     powerDisplay: true,
     powerFutureExtraMultipliers: true,
-    showWaitsFromPastTime: true,
     equippedPowers: [],
     powers: [],
     extraMultipliers: {
@@ -340,7 +337,8 @@ let initialPlayer = {
       alphabet: 'abcdefghijklmnopqrstuvwxyz',
       formatOrdinals: false,
       parseAutobuyersInCurrentBase: false,
-      autobuyerPrecision: 3
+      parseInputsInCurrentBase: false,
+      inputPrecision: 3
     },
     timeDisplay: 'Seconds',
     notationOnTimes: false,
@@ -433,8 +431,14 @@ let initialPlayer = {
       },
       showGeneratorAndBoostAutobuyers: true,
       isOnDespiteSuspended: [false, false, false, false],
-      explanation: ''
     },
+    explanations: {
+      'autobuyers': '',
+      'eternity-milestones': 'main',
+      'complexity-challenges': 'main',
+      'powers': 'main',
+      'options': ''
+    }
   },
   confirmations: {
     sacrifice: true,
@@ -546,7 +550,7 @@ let initialPlayer = {
   },
   usingTabGroups: false,
   currentTab: 'main',
-  version: 2.1640625
+  version: 2.18359375
 }
 
 let player;
