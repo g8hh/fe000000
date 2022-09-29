@@ -279,6 +279,13 @@ let initialPlayer = {
     showCompletedRows: true
   },
   displayAllGoals: false,
+  showGoalTimes: false,
+  goalTimes: [
+    [null, null], [null, null], [null, null], [null, null],
+    [null, null], [null, null], [null, null], [null, null],
+    [null, null], [null, null], [null, null], [null, null],
+    [null, null], [null, null], [null, null], [null, null],
+  ],
   hasSeenTextBox: {
     'boost-power': false
   },
@@ -421,6 +428,7 @@ let initialPlayer = {
       smallerHeader: false,
     },
     complexityChallengeRunningColors: false,
+    exitComplexityChallengesOnComplexity: false,
     news: false,
     optionTypeShown: 'saving',
     autobuyers: {
@@ -452,6 +460,7 @@ let initialPlayer = {
     singleStudyRefund: true,
     studiesRespec: true,
     eternityChallengeRespec: true,
+    complexityChallengeEntering: true,
     powerDeletionMode: 'Confirmation',
     powerUnequipMode: 'Confirmation',
     powersUnequip: true,
@@ -550,7 +559,7 @@ let initialPlayer = {
   },
   usingTabGroups: false,
   currentTab: 'main',
-  version: 2.18359375
+  version: 2.19921875
 }
 
 let player;

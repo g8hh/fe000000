@@ -152,26 +152,41 @@
       <div style="height: 56px;" ~style.display=ResetButtons.isResetButtonVisible('finality') ? '' : 'none'~>
         <span ~style.display=FinalityPrestigeLayer.isRequirementVisible() ? '' : 'none'~>You need ~f FinalityPrestigeLayer.complexityPointRequirementForFinality() ~ total complexity points to finality.</span>
         <br ~style.display=FinalityPrestigeLayer.isAmountSpanVisible() ? '' : 'none'~/>
-        <span ~style.display=FinalityPrestigeLayer.isAmountSpanVisible() ? '' : 'none'~>You have ~i FinalityPrestigeLayer.finalityPoints() ~ finality point~s FinalityPrestigeLayer.finalityPoints() ~ (~i FinalityPrestigeLayer.totalFinalityPoints() ~ total, ~t player.stats.timeSinceFinality ~ in this finality)</span>
+        <span ~style.display=FinalityPrestigeLayer.isAmountSpanVisible() ? '' : 'none'~>You have ~i FinalityPrestigeLayer.finalityPoints() ~ finality point~s FinalityPrestigeLayer.finalityPoints() ~ (~i FinalityPrestigeLayer.totalFinalityPoints() ~ total) and ~i FinalityPrestigeLayer.finalityShards() ~ finality shard~s FinalityPrestigeLayer.finalityShards() ~ (~i FinalityPrestigeLayer.totalFinalityShards() ~ total); ~t player.stats.timeSinceFinality ~ in this finality</span>
         <button ~style.display=FinalityPrestigeLayer.canFinality() ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.resetColors(), 'finality')~ style="height: 48px;" onclick="FinalityPrestigeLayer.finality(true)">Finality: Gain ~i FinalityPrestigeLayer.finalityPointGain() ~ finality point~s FinalityPrestigeLayer.finalityPointGain() ~ (~r FinalityPrestigeLayer.finalityPointGainRatioText() ~~i FinalityPrestigeLayer.finalityPoints() ~ → ~i FinalityPrestigeLayer.newFinalityPoints() ~)<br/>~t player.stats.timeSinceFinality ~, +~i FinalityPrestigeLayer.finalityShardGain() ~ finality shard~s FinalityPrestigeLayer.finalityShardGain() ~ (~r FinalityPrestigeLayer.finalityShardGainRatioText() ~~i FinalityPrestigeLayer.finalityShards() ~ → ~i FinalityPrestigeLayer.newFinalityShards() ~)</button>
       </div>
     </div>
     <div ~style.display=Options.smallerHeader() ? '' : 'none'~>
-      <button ~style.display=ResetButtons.isResetButtonVisible('infinity') ? '' : 'none'~ ~style.background=InfinityPrestigeLayer.canInfinity() ? Colors.getButtonColorAltered(Options.resetColors(), 'infinity') : '#555555'~ onclick="InfinityPrestigeLayer.infinity(true, null)">
-        <span ~style.display=InfinityPrestigeLayer.isRequirementVisible() ? '' : 'none'~>Infinity: requires ~f InfinityPrestigeLayer.starRequirementForInfinity() ~ stars</span>
-        <span ~style.display=InfinityPrestigeLayer.canInfinity() ? '' : 'none'~>Infinity: +~i InfinityPrestigeLayer.infinityPointGain() ~ IP</span>
+      <button class="hoverbutton" ~style.display=ResetButtons.isResetButtonVisible('infinity') ? '' : 'none'~ ~style.background=InfinityPrestigeLayer.canInfinity() ? Colors.getButtonColorAltered(Options.resetColors(), 'infinity') : '#555555'~ onclick="InfinityPrestigeLayer.infinity(true, null)">
+        <span ~style.display=InfinityPrestigeLayer.isRequirementVisible() ? '' : 'none'~>Infinity: requires ~f InfinityPrestigeLayer.starRequirementForInfinity() ~ stars
+          <span class="headertooltiptext" ~style.display=InfinityPrestigeLayer.isAmountSpanVisible() ? '' : 'none'~>You have ~i InfinityPrestigeLayer.infinityPoints() ~ infinity point~s InfinityPrestigeLayer.infinityPoints() ~ (~i InfinityPrestigeLayer.totalInfinityPoints() ~ total this eternity, ~t player.stats.timeSinceInfinity ~ in this infinity)</span>
+        </span>
+        <span ~style.display=InfinityPrestigeLayer.canInfinity() ? '' : 'none'~>Infinity: +~i InfinityPrestigeLayer.infinityPointGain() ~ IP
+          <span class="headertooltiptext">~t player.stats.timeSinceInfinity ~; ~r InfinityPrestigeLayer.infinityPointGainRatioText() ~~i InfinityPrestigeLayer.infinityPoints() ~ → ~i InfinityPrestigeLayer.newInfinityPoints() ~~r InfinityPrestigeLayer.infinityPointNextText() ~; <span ~style.display=InfinityPrestigeLayer.showLog('reset-buttons') ? 'none' : ''~>~f InfinityPrestigeLayer.currentIPPerSec() ~ IP/sec, ~f InfinityPrestigeLayer.peakIPPerSec() ~ peak IP/sec</span><span ~style.display=InfinityPrestigeLayer.showLog('reset-buttons') ? '' : 'none'~>~f InfinityPrestigeLayer.currentLogIPPerSecDisplay() ~ log IP/sec, ~f InfinityPrestigeLayer.peakLogIPPerSecDisplay() ~ peak log IP/sec</span></span>
+        </span>
       </button>
-      <button ~style.display=ResetButtons.isResetButtonVisible('eternity') ? '' : 'none'~ ~style.background=EternityPrestigeLayer.canEternity() ? Colors.getButtonColorAltered(Options.resetColors(), 'eternity') : '#555555'~ onclick="EternityPrestigeLayer.eternity(true)">
-        <span ~style.display=EternityPrestigeLayer.isRequirementVisible() ? '' : 'none'~>Eternity: requires ~f EternityPrestigeLayer.infinityPointRequirementForEternity() ~ IP</span>
-        <span ~style.display=EternityPrestigeLayer.canEternity() ? '' : 'none'~>Eternity: +~i EternityPrestigeLayer.eternityPointGain() ~ EP</span>
+      <button class="hoverbutton" ~style.display=ResetButtons.isResetButtonVisible('eternity') ? '' : 'none'~ ~style.background=EternityPrestigeLayer.canEternity() ? Colors.getButtonColorAltered(Options.resetColors(), 'eternity') : '#555555'~ onclick="EternityPrestigeLayer.eternity(true)">
+        <span ~style.display=EternityPrestigeLayer.isRequirementVisible() ? '' : 'none'~>Eternity: requires ~f EternityPrestigeLayer.infinityPointRequirementForEternity() ~ IP
+          <span class="headertooltiptext" ~style.display=EternityPrestigeLayer.isAmountSpanVisible() ? '' : 'none'~>You have ~i EternityPrestigeLayer.eternityPoints() ~ eternity point~s EternityPrestigeLayer.eternityPoints() ~ (~i EternityPrestigeLayer.totalEternityPoints() ~ total this complexity, ~t player.stats.timeSinceEternity ~ in this eternity)</span>
+        </span>
+        <span ~style.display=EternityPrestigeLayer.canEternity() ? '' : 'none'~>Eternity: +~i EternityPrestigeLayer.eternityPointGain() ~ EP
+          <span class="headertooltiptext">~t player.stats.timeSinceEternity ~; ~r EternityPrestigeLayer.eternityPointGainRatioText() ~~i EternityPrestigeLayer.eternityPoints() ~ → ~i EternityPrestigeLayer.newEternityPoints() ~~r EternityPrestigeLayer.eternityPointNextText() ~; <span ~style.display=EternityPrestigeLayer.showLog('reset-buttons') ? 'none' : ''~>~f EternityPrestigeLayer.currentEPPerSec() ~ EP/sec, ~f EternityPrestigeLayer.peakEPPerSec() ~ peak EP/sec</span><span ~style.display=EternityPrestigeLayer.showLog('reset-buttons') ? '' : 'none'~>~f EternityPrestigeLayer.currentLogEPPerSecDisplay() ~ log EP/sec, ~f EternityPrestigeLayer.peakLogEPPerSecDisplay() ~ peak log EP/sec</span><span ~style.display=EternityChallenge.displayTiersCompletedOnEternity() ? '' : 'none'~>, +~i EternityChallenge.tiersCompletedOnEternity() ~ EC tier~s EternityChallenge.tiersCompletedOnEternity() ~ (~i EternityChallenge.getEternityChallengeCompletions() ~ → ~i EternityChallenge.getNextEternityChallengeCompletions() ~~r EternityChallenge.eternityChallengeCompletionsNextText() ~)</span></span>
       </button>
-      <button ~style.display=ResetButtons.isResetButtonVisible('complexity') ? '' : 'none'~ ~style.background=ComplexityPrestigeLayer.canComplexity() ? Colors.getButtonColorAltered(Options.resetColors(), 'complexity') : '#555555'~ onclick="ComplexityPrestigeLayer.complexity(true)">
-        <span ~style.display=ComplexityPrestigeLayer.isRequirementVisible() ? '' : 'none'~>Complexity: requires ~f ComplexityPrestigeLayer.eternityPointRequirementForComplexity() ~ EP</span>
-        <span ~style.display=ComplexityPrestigeLayer.canComplexity() ? '' : 'none'~>Complexity: +~i ComplexityPrestigeLayer.complexityPointGain() ~ ℂP</span>
+      <button class="hoverbutton" ~style.display=ResetButtons.isResetButtonVisible('complexity') ? '' : 'none'~ ~style.background=ComplexityPrestigeLayer.canComplexity() ? Colors.getButtonColorAltered(Options.resetColors(), 'complexity') : '#555555'~ onclick="ComplexityPrestigeLayer.complexity(true)">
+        <span ~style.display=ComplexityPrestigeLayer.isRequirementVisible() ? '' : 'none'~>Complexity: requires ~f ComplexityPrestigeLayer.eternityPointRequirementForComplexity() ~ EP
+          <span class="headertooltiptext" ~style.display=ComplexityPrestigeLayer.isAmountSpanVisible() ? '' : 'none'~>You have ~i ComplexityPrestigeLayer.complexityPoints() ~ complexity point~s ComplexityPrestigeLayer.complexityPoints() ~ (~i ComplexityPrestigeLayer.totalComplexityPoints() ~ total this finality, ~t player.stats.timeSinceComplexity ~ in this complexity)</span>
+        </span>
+        <span ~style.display=ComplexityPrestigeLayer.canComplexity() ? '' : 'none'~>Complexity: +~i ComplexityPrestigeLayer.complexityPointGain() ~ ℂP
+          <span class="headertooltiptext">~t player.stats.timeSinceComplexity ~; ~r ComplexityPrestigeLayer.complexityPointGainRatioText() ~~i ComplexityPrestigeLayer.complexityPoints() ~ → ~i ComplexityPrestigeLayer.newComplexityPoints() ~~r ComplexityPrestigeLayer.complexityPointNextText() ~; <span ~style.display=ComplexityPrestigeLayer.showLog('reset-buttons') ? 'none' : ''~>~f ComplexityPrestigeLayer.currentCPPerSec() ~ ℂP/sec, ~f ComplexityPrestigeLayer.peakCPPerSec() ~ peak ℂP/sec</span><span ~style.display=ComplexityPrestigeLayer.showLog('reset-buttons') ? '' : 'none'~>~f ComplexityPrestigeLayer.currentLogCPPerSecDisplay() ~ log ℂP/sec, ~f ComplexityPrestigeLayer.peakLogCPPerSecDisplay() ~ peak log ℂP/sec</span></span>
+        </span>
       </button>
-      <button ~style.display=ResetButtons.isResetButtonVisible('finality') ? '' : 'none'~ ~style.background=FinalityPrestigeLayer.canFinality() ? Colors.getButtonColorAltered(Options.resetColors(), 'finality') : '#555555'~ onclick="FinalityPrestigeLayer.finality(true)">
-        <span ~style.display=FinalityPrestigeLayer.isRequirementVisible() ? '' : 'none'~>Finality: requires ~f FinalityPrestigeLayer.complexityPointRequirementForFinality() ~ ℂP</span>
-        <span ~style.display=FinalityPrestigeLayer.canFinality() ? '' : 'none'~>Finality: +~i FinalityPrestigeLayer.finalityPointGain() ~ FP, +~i FinalityPrestigeLayer.finalityShardGain() ~ FS</span>
+      <button class="hoverbutton" ~style.display=ResetButtons.isResetButtonVisible('finality') ? '' : 'none'~ ~style.background=FinalityPrestigeLayer.canFinality() ? Colors.getButtonColorAltered(Options.resetColors(), 'finality') : '#555555'~ onclick="FinalityPrestigeLayer.finality(true)">
+        <span ~style.display=FinalityPrestigeLayer.isRequirementVisible() ? '' : 'none'~>Finality: requires ~f FinalityPrestigeLayer.complexityPointRequirementForFinality() ~ ℂP
+          <span class="headertooltiptext" ~style.display=FinalityPrestigeLayer.isAmountSpanVisible() ? '' : 'none'~>You have ~i FinalityPrestigeLayer.finalityPoints() ~ finality point~s FinalityPrestigeLayer.finalityPoints() ~ (~i FinalityPrestigeLayer.totalFinalityPoints() ~ total) and ~i FinalityPrestigeLayer.finalityShards() ~ finality shard~s FinalityPrestigeLayer.finalityShards() ~ (~i FinalityPrestigeLayer.totalFinalityShards() ~ total); ~t player.stats.timeSinceFinality ~ in this finality</span>
+        </span>
+        <span ~style.display=FinalityPrestigeLayer.canFinality() ? '' : 'none'~>Finality: +~i FinalityPrestigeLayer.finalityPointGain() ~ FP, +~i FinalityPrestigeLayer.finalityShardGain() ~ FS
+          <span class="headertooltiptext">~t player.stats.timeSinceFinality ~; ~r FinalityPrestigeLayer.finalityPointGainRatioText() ~~i FinalityPrestigeLayer.finalityPoints() ~ → ~i FinalityPrestigeLayer.newFinalityPoints() ~ FP; ~r FinalityPrestigeLayer.finalityShardGainRatioText() ~~i FinalityPrestigeLayer.finalityShards() ~ → ~i FinalityPrestigeLayer.newFinalityShards() ~ FS</span>
+        </span>
       </button>
     </div>
     <div style="height: 32px;" ~style.display=Goals.areAllGoalsCompleted() ? '' : 'none'~>You have won the game! Congratulations!</div>
@@ -310,7 +325,7 @@
         <span ~style.display=SpecialDivs.isDivVisible('softcap') ? '' : 'none'~>~r Generators.term(true, true) ~ multipliers are reduced above ~f Generators.nerfValue() ~x (the multiplier softcap).</span>
         <br ~style.display=Generators.areAnyMultipliersNerfed() ? '' : 'none'~/>
         <div ~style.display=Generators.areAnyMultipliersNerfed() ? '' : 'none'~>
-          Given a multiplier x, let y be log(x, ~f Generators.nerfValue() ~). x is reduced to ~f Generators.nerfValue() ~^(y^(y^~r formatPrecisely(Generators.nerfExponent) ~)).
+          Given a multiplier x, let y be log(x, ~f Generators.nerfValue() ~). <span class="helpspan">(?)<span class="tooltiptext">This is the log of x with base ~f Generators.nerfValue() ~, so if x is exactly ~f Generators.nerfValue() ~ then y is ~i 1 ~, and as x increases beyond that, y increases also.</span></span> x is reduced to ~f Generators.nerfValue() ~^(y^(y^~r formatPrecisely(Generators.nerfExponent) ~)). <span class="helpspan">(?)<span class="tooltiptext">Since y starts close to 1, y^(y^~r formatPrecisely(Generators.nerfExponent) ~) is initially close to y and the multiplier reduction is initially small, but as y increases the reduction gets larger.</span></span>
         </div>
         <br ~style.display=SpecialDivs.isDivVisible('hardcap') ? '' : 'none'~/>
         <span ~style.display=SpecialDivs.isDivVisible('hardcap') ? '' : 'none'~>It is impossible to get more than ~f MultiverseCollapse.stars() ~ stars.</span>
@@ -2356,13 +2371,15 @@
     <tab ~style.display=Tabs.currentTab() === 'complexity-challenges' ? '' : 'none'~>
       <span>You have completed ~i ComplexityChallenge.getTotalComplexityChallengeCompletions() ~ complexity challenge tier~s ComplexityChallenge.getTotalComplexityChallengeCompletions() ~.</span>
       <br/>
-      <span><button onclick="ComplexityChallenge.complexityReset(true)" ~class=ComplexityPrestigeLayer.canComplexity() ? "disabled" : ""~>Restart complexity and re-enter all complexity challenges<span ~style.display=ComplexityPrestigeLayer.canComplexity() ? '' : 'none'~> (disabled because you can complexity)</span></button></span>
+      <span><button onclick="ComplexityChallenge.complexityReset(true, true)" ~class=ComplexityPrestigeLayer.canComplexity() ? "disabled" : ""~>Restart complexity and re-enter all complexity challenges<span ~style.display=ComplexityPrestigeLayer.canComplexity() ? '' : 'none'~> (disabled because you can complexity)</span></button></span>
       <br/>
       <span>You have ~i Complexities.amount() ~ complexit~y Complexities.amount() ~ (allowing you to enter ~i ComplexityChallenge.numberUnlocked() ~ complexity challenge~s ComplexityChallenge.numberUnlocked() ~).</span>
       <br/>
       <span>Complexity challenge rewards are currently ~f ComplexityStars.complexityChallengeRewardMultiplier() ~x stronger (from ~f ComplexityStars.amount() ~ complexity stars).</span>
       <br ~style.display=FinalityMilestones.isFinalityMilestoneActive(9) ? '' : 'none'~/>
       <span ~style.display=FinalityMilestones.isFinalityMilestoneActive(9) ? '' : 'none'~>The Complexity Challenge ~o 6 ~ reward is instead currently ~f ComplexityStars.complexityChallengeRewardMultiplier(6) ~x stronger (from ~f ComplexityStars.extraAmount() ~ hypercomplexity stars).</span>
+      <br/>
+      <span>Re-enable complexity challenges you're currently in on ~r PrestigeLayerNames.layersAboveDisplay('complexity') ~ <span class="helpspan">(?)<span class="tooltiptext" style="font-size: 0.75rem;">This means that if you're currently in a complexity challenge due to the ability to violate its condition being disabled, and you ~r PrestigeLayerProgress.hasReached('finality') ? 'complexity or finality' : 'complexity' ~, then the ability to violate that condition will be automatically enabled again, letting you exit the complexity challenge. This is often good since you don't want to do a complexity challenge for two complexities in a row, but it has <span ~style.display=(Powers.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? 'none' : ''~>a downside later in the game.</span><span ~style.display=(Powers.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'~>the downside that <span class="redspan">you will exit a complexity challenge if you, for example, unequip powers in it.</span></span></span></span>: <input type="checkbox" ~!checked=Options.exitComplexityChallengesOnComplexity()~ ~!onchange=function() {Options.setExitComplexityChallengesOnComplexity(this.checked)}~></input></span>
       <br/>
       <br/>
       <span>You do not need to complexity to complete complexity challenges. <button ~style.display=Explanations.isVisible('complexity-challenges', 'main') ? '' : 'none'~ onclick="Explanations.showOrHide('complexity-challenges', 'main')">Complexity challenges explanation: ~r Explanations.isShown('complexity-challenges', 'main') ? 'Shown' : 'Hidden' ~</button></span>
@@ -2414,9 +2431,9 @@
               <br/>
               <span ~style.display=ComplexityChallenge.showComplexityChallengeLastCompletionDescription(2) ? '' : 'none'~>~r ComplexityChallenge.complexityChallengeLastCompletionDescription(2) ~</span>
               <br ~style.display=ComplexityChallenge.showComplexityChallengeLastCompletionDescription(2) ? '' : 'none'~/>
-              <span><button onclick="ComplexityChallenge.toggleSafeguard(2)">Buying boosts: ~r ComplexityChallenge.safeguardStatusText(2) ~</button></span>
+              <span><button onclick="ComplexityChallenge.toggleSafeguard(2)">Buying boosts: ~r ComplexityChallenge.safeguardStatusText(2) ~<span class="hyperredspan">~r ComplexityChallenge.safeguardRedText(2) ~</button></button></span>
               <br/>
-              <span ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(2) ? 'none' : ''~>(Disabling this doesn't put you in this challenge yet, since this challenge is locked.)</span>
+              <span ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(2) ? 'none' : ''~ class="hyperredspan">(Disabling this doesn't put you in this challenge yet, since this challenge is locked.)</span>
               <br ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(2) ? 'none' : ''~/>
               <span>Reward: Boosts are cheaper.</span>
               <br/>
@@ -2437,9 +2454,9 @@
               <br/>
               <span ~style.display=ComplexityChallenge.showComplexityChallengeLastCompletionDescription(3) ? '' : 'none'~>~r ComplexityChallenge.complexityChallengeLastCompletionDescription(3) ~</span>
               <br ~style.display=ComplexityChallenge.showComplexityChallengeLastCompletionDescription(3) ? '' : 'none'~/>
-              <span><button onclick="ComplexityChallenge.toggleSafeguard(3)">Unlocking the Eternity Producer: ~r ComplexityChallenge.safeguardStatusText(3) ~</button></span>
+              <span><button onclick="ComplexityChallenge.toggleSafeguard(3)">Unlocking the Eternity Producer: ~r ComplexityChallenge.safeguardStatusText(3) ~<span class="hyperredspan">~r ComplexityChallenge.safeguardRedText(3) ~</button></button></span>
               <br/>
-              <span ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(3) ? 'none' : ''~>(Disabling this doesn't put you in this challenge yet, since this challenge is locked.)</span>
+              <span ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(3) ? 'none' : ''~ class="hyperredspan">(Disabling this doesn't put you in this challenge yet, since this challenge is locked.)</span>
               <br ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(3) ? 'none' : ''~/>
               <span>Reward: Multiplier to eternity gain.</span>
               <br/>
@@ -2458,9 +2475,9 @@
               <br/>
               <span ~style.display=ComplexityChallenge.showComplexityChallengeLastCompletionDescription(4) ? '' : 'none'~>~r ComplexityChallenge.complexityChallengeLastCompletionDescription(4) ~</span>
               <br ~style.display=ComplexityChallenge.showComplexityChallengeLastCompletionDescription(4) ? '' : 'none'~/>
-              <span><button onclick="ComplexityChallenge.toggleSafeguard(4)">Unlocking chroma and colors: ~r ComplexityChallenge.safeguardStatusText(4) ~</button></span>
+              <span><button onclick="ComplexityChallenge.toggleSafeguard(4)">Unlocking chroma and colors: ~r ComplexityChallenge.safeguardStatusText(4) ~<span class="hyperredspan">~r ComplexityChallenge.safeguardRedText(4) ~</button></span>
               <br/>
-              <span ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(4) ? 'none' : ''~>(Disabling this doesn't put you in this challenge yet, since this challenge is locked.)</span>
+              <span ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(4) ? 'none' : ''~ class="hyperredspan">(Disabling this doesn't put you in this challenge yet, since this challenge is locked.)</span>
               <br ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(4) ? 'none' : ''~/>
               <span>Reward: Multiplier to chroma cap.</span>
               <br/>
@@ -2481,9 +2498,9 @@
               <br/>
               <span ~style.display=ComplexityChallenge.showComplexityChallengeLastCompletionDescription(5) ? '' : 'none'~>~r ComplexityChallenge.complexityChallengeLastCompletionDescription(5) ~</span>
               <br ~style.display=ComplexityChallenge.showComplexityChallengeLastCompletionDescription(5) ? '' : 'none'~/>
-              <span><button onclick="ComplexityChallenge.toggleSafeguard(5)">Buying Eternity Generator ~o 8 ~: ~r ComplexityChallenge.safeguardStatusText(5) ~</button></span>
+              <span><button onclick="ComplexityChallenge.toggleSafeguard(5)">Buying Eternity Generator ~o 8 ~: ~r ComplexityChallenge.safeguardStatusText(5) ~<span class="hyperredspan">~r ComplexityChallenge.safeguardRedText(5) ~</span></button></span>
               <br/>
-              <span ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(5) ? 'none' : ''~>(Disabling this doesn't put you in this challenge yet, since this challenge is locked.)</span>
+              <span ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(5) ? 'none' : ''~ class="hyperredspan">(Disabling this doesn't put you in this challenge yet, since this challenge is locked.)</span>
               <br ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(5) ? 'none' : ''~/>
               <span>Reward: Multiplier to per-purchase Eternity Generator ~o 8 ~ multiplier.</span>
               <br/>
@@ -2502,9 +2519,9 @@
               <br/>
               <span ~style.display=ComplexityChallenge.showComplexityChallengeLastCompletionDescription(6) ? '' : 'none'~>~r ComplexityChallenge.complexityChallengeLastCompletionDescription(6) ~</span>
               <br ~style.display=ComplexityChallenge.showComplexityChallengeLastCompletionDescription(6) ? '' : 'none'~/>
-              <span><button onclick="ComplexityChallenge.toggleSafeguard(6)">Buying studies: ~r ComplexityChallenge.safeguardStatusText(6) ~</button></span>
+              <span><button onclick="ComplexityChallenge.toggleSafeguard(6)">Buying studies: ~r ComplexityChallenge.safeguardStatusText(6) ~<span class="hyperredspan">~r ComplexityChallenge.safeguardRedText(6) ~</button></span>
               <br/>
-              <span ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(6) ? 'none' : ''~>(Disabling this doesn't put you in this challenge yet, since this challenge is locked.)</span>
+              <span ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(6) ? 'none' : ''~ class="hyperredspan">(Disabling this doesn't put you in this challenge yet, since this challenge is locked.)</span>
               <br ~style.display=ComplexityChallenge.isComplexityChallengeUnlocked(6) ? 'none' : ''~/>
               <span ~style.display=(ComplexityAchievements.hasComplexityAchievement(4, 4) && ComplexityChallenge.isComplexityChallengeUnlocked(6)) ? '' : 'none'~>(Due to "On the other side", you also need to respec studies to enter this challenge. Disabling buying studies will respec studies on complexity.)</span>
               <br ~style.display=(ComplexityAchievements.hasComplexityAchievement(4, 4) && ComplexityChallenge.isComplexityChallengeUnlocked(6)) ? '' : 'none'~/>
@@ -3570,127 +3587,27 @@
       <span>By default, only goals up to the next goal after the last completed goal are displayed. <button onclick="Goals.toggleDisplayAllGoals()">Display all goals: ~r Goals.displayAllGoals() ? "On" : "Off" ~</button></span>
       <br/>
       <span>There is no in-game reward for completing goals, but you win the game (and have finished it) when you complete them all.</span>
+      <br/>
+      <span>(Note: Saves from before these times were recorded may have some unknown times.) <button onclick="Goals.toggleTimes()">Show time taken to reach each goal: ~r Goals.showTimes() ? 'On' : 'Off' ~</button></span>
       <table style="margin-left: auto; margin-right: auto; border-spacing: 24px 0px; border-collapse: separate;">
-        <tr>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(1)~>
-              ~r Goals.getGoalText(1) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(1) ~
-            </div>
-          </td>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(2)~>
-              ~r Goals.getGoalText(2) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(2) ~
-            </div>
-          </td>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(3)~>
-              ~r Goals.getGoalText(3) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(3) ~
-            </div>
-          </td>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(4)~>
-              ~r Goals.getGoalText(4) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(4) ~
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(5)~>
-              ~r Goals.getGoalText(5) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(5) ~
-            </div>
-          </td>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(6)~>
-              ~r Goals.getGoalText(6) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(6) ~
-            </div>
-          </td>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(7)~>
-              ~r Goals.getGoalText(7) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(7) ~
-            </div>
-          </td>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(8)~>
-              ~r Goals.getGoalText(8) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(8) ~
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(9)~>
-              ~r Goals.getGoalText(9) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(9) ~
-            </div>
-          </td>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(10)~>
-              ~r Goals.getGoalText(10) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(10) ~
-            </div>
-          </td>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(11)~>
-              ~r Goals.getGoalText(11) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(11) ~
-            </div>
-          </td>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(12)~>
-              ~r Goals.getGoalText(12) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(12) ~
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(13)~>
-              ~r Goals.getGoalText(13) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(13) ~
-            </div>
-          </td>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(14)~>
-              ~r Goals.getGoalText(14) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(14) ~
-            </div>
-          </td>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(15)~>
-              ~r Goals.getGoalText(15) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(15) ~
-            </div>
-          </td>
-          <td>
-            <div class="goaldiv" ~style.background=Goals.color(16)~>
-              ~r Goals.getGoalText(16) ~
-              <br/>
-              ~r Goals.getGoalStatusDescription(16) ~
-            </div>
-          </td>
-        </tr>
+        <loop i 0 3>
+          <tr>
+            <loop j 1 4>
+              <td>
+                <div class="goaldiv" ~style.background=Goals.color(% 4 * @i + @j %)~>
+                  ~r Goals.getGoalText(% 4 * @i + @j %) ~
+                  <br/>
+                  ~r Goals.getGoalStatusDescription(% 4 * @i + @j %) ~
+                  <div ~style.display=(Goals.showTimes() && Goals.hasGoal(% 4 * @i + @j %)) ? '' : 'none'~>
+                    ~r Goals.showTotalTime(% 4 * @i + @j %) ~
+                    <br/>
+                    (~r Goals.showOnlineTime(% 4 * @i + @j %) ~ online)
+                  </div>
+                </div>
+              </td>
+            </loop>
+          </tr>
+        </loop>
       </table>
     </tab>
     <tab ~style.display=Tabs.currentTab() === 'achievements' ? '' : 'none'~>
@@ -4646,7 +4563,7 @@
               <option value="On">On</option>
             </select></span>
           </div></td>
-          <td><div ~style.display=Options.optionDisplay(PrestigeLayerProgress.hasReached('infinity')) ? '' : 'none'~ class="options-div">Max all mode <span class="helpspan">(?)<span class="tooltiptext">This setting controls what the M hotkey buys, and also what the Main tab "Max all" button buys.</span></span>: <select ~!value=Options.maxAllMode()~ ~!onchange=function() {Options.setMaxAllMode(this.value)}~>
+          <td><div ~style.display=Options.optionDisplay(PrestigeLayerProgress.hasReached('infinity')) ? '' : 'none'~ class="options-div">Max all mode <span class="helpspan">(?)<span class="tooltiptext">This setting controls what the M hotkey buys, and also what the Main tab "Max all" button buys. It also controls what the G hotkey buys (that is, whatever generators the M hotkey would buy).</span></span>: <select ~!value=Options.maxAllMode()~ ~!onchange=function() {Options.setMaxAllMode(this.value)}~>
             <option value="Normal generators and boosts">Normal generators and boosts</option>
             <option value="Generators and upgrades in current tab">Generators and upgrades in current tab</option>
             <option value="Both">Both</option>
@@ -4688,6 +4605,7 @@
         <span ~style.display=Options.optionDisplay(PrestigeLayerProgress.hasReached('eternity')) ? '' : 'none'~>Single study refund: <input type="checkbox" ~!checked=Options.confirmation('singleStudyRefund')~ ~!onchange=function() {Options.setConfirmation('singleStudyRefund', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
         <span ~style.display=Options.optionDisplay(PrestigeLayerProgress.hasReached('eternity')) ? '' : 'none'~>Studies respec: <input type="checkbox" ~!checked=Options.confirmation('studiesRespec')~ ~!onchange=function() {Options.setConfirmation('studiesRespec', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
         <span ~style.display=Options.optionDisplay(EternityChallenge.areEternityChallengesVisible()) ? '' : 'none'~>Eternity challenge respec: <input type="checkbox" ~!checked=Options.confirmation('eternityChallengeRespec')~ ~!onchange=function() {Options.setConfirmation('eternityChallengeRespec', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
+        <span ~style.display=Options.optionDisplay(PrestigeLayerProgress.hasReached('complexity')) ? '' : 'none'~>Complexity challenge entering <span class="helpspan">(?)<span class="tooltiptext">This option is only used when the complexity challenge you're entering isn't yet unlocked.</span></span>: <input type="checkbox" ~!checked=Options.confirmation('complexityChallengeEntering')~ ~!onchange=function() {Options.setConfirmation('complexityChallengeEntering', this.checked)}~></input></span>
       </div>
       <div ~style.display=Options.optionDisplay(Powers.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'~>
         <span ~style.display=Options.optionDisplay(Powers.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'~>Power deletion: <select ~!value=Powers.powerDeletionMode()~ ~!onchange=function() {Powers.setPowerDeletionMode(this.value)}~>
@@ -4722,7 +4640,7 @@
         <br/>
         <span>Thanks to the testers (Boo, Dravitar, Earth, Omsi, Pichu, Sere, SpectralFlame, others, and Jazz) for testing before release and suggesting features.</span>
         <br/>
-        <span>Thanks to jdawson7 (clarifying strategy, improving guide), eQueline (suggesting many great QoL features), Kyleptune (suggesting the ability to change colors), and FIQ (noticing many UI confusions and inconsistencies).</span>
+        <span>Thanks to jdawson7 (clarifying strategy, improving guide), eQueline (suggesting many great QoL features), Kyleptune (suggesting the ability to change colors), and FIQ (noticing many UI confusions and inconsistencies, , and suggesting a massive speed-up to autobuyers and max all).</span>
       </div>
       <br/>
       <br/>

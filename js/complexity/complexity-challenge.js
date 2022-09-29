@@ -36,6 +36,10 @@ let ComplexityChallenge = {
     // Finality Milestone 2 also removes complexity requirements for unlocking complexity challenges.
     return player.complexities >= this.getComplexityChallengeRequirement(x) || FinalityMilestones.isFinalityMilestoneActive(2);
   },
+  willComplexityChallengeBeUnlockedNext(x) {
+    // Similar to above except for a +1 because maybe you want to enter it next.
+    return player.complexities + 1 >= this.getComplexityChallengeRequirement(x) || FinalityMilestones.isFinalityMilestoneActive(2);
+  },
   numberUnlocked() {
     return [1, 2, 3, 4, 5, 6].filter(i => this.isComplexityChallengeUnlocked(i)).length;
   },
@@ -128,18 +132,38 @@ let ComplexityChallenge = {
     }
     player.complexityChallengeCompletions[x - 1] = Math.max(player.complexityChallengeCompletions[x - 1], completions);
   },
-  complexityReset(manual) {
+  complexityReset(manual, entering) {
     // It's easy to imagine wanting something else here (for example, because certain things
     // disqualify you from complexity challenges), which is why this is its own method.
-    ComplexityPrestigeLayer.complexityReset(manual);
+    ComplexityPrestigeLayer.complexityReset(manual, true, entering);
   },
   isSafeguardOn(x) {
     return player.complexityChallengeSafeguards[x - 2];
   },
+  getEnteringMessage(x) {
+    if (this.isComplexityChallengeUnlocked(x)) {
+      return null;
+    }
+    let remaining = this.getComplexityChallengeRequirement(x) - player.complexities;
+    // Note that "unlocking chroma and colors of chroma" is slightly more detailed than the
+    // "unlocking chroma and colors" in the game.
+    let thing = ['buying boosts', 'unlocking the Eternity Producer', 'unlocking chroma and colors of chroma',
+    'buying Eternity Generator ' + formatOrdinalInt(8), 'buying studies'][x - 2];
+    return 'Are you sure you want to disable ' + thing + '? Complexity Challenge ' + formatOrdinalInt(x) +
+    ' will not be unlocked ' + (remaining === 1 ? 'until next complexity.' : 'for ' + formatInt(remaining) + ' more complexities.');
+  },
   toggleSafeguard(x) {
+    let message = this.getEnteringMessage(x);
+    if (message !== null && !this.isSafeguardOn(x) &&
+    Options.confirmation('complexityChallengeEntering') && !confirm(message)) {
+      return;
+    }
     player.complexityChallengeSafeguards[x - 2] = !player.complexityChallengeSafeguards[x - 2];
     if (x === 6 && !player.complexityChallengeSafeguards[x - 2] &&
       ComplexityAchievements.isComplexityAchievementActive(4, 4) && Studies.rebuyAfterComplexityChallenge6()) {
+      // Note that finality resets all four things used here (studies and purchase order, both from before last respec
+      // and current) before complexity reset is called, so this does nothing in the case of
+      // it happening as part of a finality reset.
       player.studies = [...player.studySettings.studiesBeforeLastRespec];
       player.studySettings.firstTwelveStudyPurchaseOrder = [...player.studySettings.firstTwelveStudyPurchaseOrderBeforeLastRespec];
       if (!Studies.areStudiesInitialStudies()) {
@@ -147,12 +171,23 @@ let ComplexityChallenge = {
       }
     }
   },
+  turnAllActiveSafeguardsOff() {
+    for (let i = 2; i <= 6; i++) {
+      if (this.isComplexityChallengeRunning(i) && this.isSafeguardOn(i)) {
+        this.toggleSafeguard(i);
+      }
+    }
+  },
   safeguardStatusText(x) {
     let running = ComplexityChallenge.isComplexityChallengeRunning(x)
     let safeguard = (x === 1) ? running : ComplexityChallenge.isSafeguardOn(x);
-    let mainText = safeguard ? 'Disabled' : 'Enabled';
+    return safeguard ? 'Disabled' : 'Enabled';
+  },
+  safeguardRedText(x) {
+    let running = ComplexityChallenge.isComplexityChallengeRunning(x)
+    let safeguard = (x === 1) ? running : ComplexityChallenge.isSafeguardOn(x);
     let extraText = (safeguard !== running) ? [' (not in challenge)', ' (in challenge)'][+running] : '';
-    return mainText + extraText;
+    return extraText;
   },
   addToTimeStats(diff) {
     for (let i = 1; i <= 6; i++) {

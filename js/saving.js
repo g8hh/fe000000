@@ -1484,7 +1484,7 @@ let Saving = {
       player.version = 2.171875;
     }
     if (player.version < 2.17578125) {
-      // Note: this is slightly inaccurate, but close enough.
+      // Note: This is slightly inaccurate, but close enough.
       for (let p of [].concat(player.powers.equipped, player.powers.stored, player.oracle.equippedPowers, player.oracle.powers)) {
         p.id = [player.finalities, 0];
       }
@@ -1508,6 +1508,33 @@ let Saving = {
       player.options.notation.parseInputsInCurrentBase = player.options.notation.parseAutobuyersInCurrentBase;
       // Keep player.options.notation.parseAutobuyersInCurrentBase, it still controls autobuyers
       player.version = 2.18359375;
+    }
+    if (player.version < 2.1875) {
+      player.options.exitComplexityChallengesOnComplexity = true;
+      player.version = 2.1875;
+    }
+    if (player.version < 2.19140625) {
+      player.confirmations.complexityChallengeEntering = true;
+      player.version = 2.19140625;
+    }
+    if (player.version < 2.1953125) {
+      // For pre-complexity saves, set this option to its new value default value;.
+      // (Such players definitely won't have seen/set it yet unless they are
+      // using replay mode, which is very rare.)
+      if (player.complexities === 0 && player.finalities === 0) {
+        player.options.exitComplexityChallengesOnComplexity = false;
+      }
+      player.version = 2.1953125;
+    }
+    if (player.version < 2.19921875) {
+      player.showGoalTimes = false;
+      player.goalTimes = [
+        [null, null], [null, null], [null, null], [null, null],
+        [null, null], [null, null], [null, null], [null, null],
+        [null, null], [null, null], [null, null], [null, null],
+        [null, null], [null, null], [null, null], [null, null],
+      ];
+      player.version = 2.19921875;
     }
   },
   convertSaveToDecimal() {
