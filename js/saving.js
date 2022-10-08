@@ -1536,6 +1536,14 @@ let Saving = {
       ];
       player.version = 2.19921875;
     }
+    if (player.version < 2.203125) {
+      player.options.loadFromTextInput = false;
+      player.version = 2.203125;
+    }
+    if (player.version < 2.20703125) {
+      player.studySettings.canBuyStudies = true;
+      player.version = 2.20703125;
+    }
   },
   convertSaveToDecimal() {
     player.stars = new Decimal(player.stars);
@@ -1634,9 +1642,23 @@ let Saving = {
     }
   },
   loadGamePrompt() {
+    this.loadGameFunc(() => prompt('Enter your save:'), () => null);
+  },
+  loadGameTextInput() {
+    this.loadGameFunc(() => document.getElementsByClassName('load-input')[0].value, () => (document.getElementsByClassName('load-input')[0].value = ''));
+  },
+  loadGameFunc(f, cleanup) {
     try {
-      let save = prompt('Enter your save:');
-      if (save && !(/^\s+$/.test(save))) {
+      let save = f();
+      cleanup();
+      // We need to not do this replacement for null (from canceling the prompt to input a save).
+      // This is because in that case, we want no message (because the player hit "cancel"
+      // so expects no message, see below near the empty save message)
+      // and not an "error in importing, no .replace" message.
+      if (save) {
+        save = save.replace(/^\s+|\s+$/, '');
+      }
+      if (save) {
         if (this.h(save) === 715689180736) {
           Options.toggleShowAllTabs();
           return;
@@ -1661,6 +1683,8 @@ let Saving = {
           });
         }
       } else if (save !== null) {
+        // Note: null only shows up if the player canceled the save input prompt,
+        // in which case we don't show any message.
         alert('The save you entered appears to be empty.');
       }
     } catch(ex) {

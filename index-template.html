@@ -887,7 +887,7 @@
                 <option value="Time since gain was total">Time since gain was total</option>
               </select></span>
               <br/>
-              <span>~r Autobuyer(12).mode() ~:</span>
+              <span>~r Autobuyer(12).displayMode() ~:</span>
               <br/>
               <span><input type="text" class="autobuyer-priority-12" ~!value=autobuyerSettingToString(Autobuyer(12).priority(), 12)~ ~!onchange=function() {Autobuyer(12).setPriority(stringToAutobuyerSetting(this.value, 12))}~></input></span>
               <div ~style.display=Autobuyer(12).hasGeneration() ? '' : 'none'~ style="font-size: 0.75rem;">
@@ -920,7 +920,7 @@
                 <option value="Chroma as fraction of cap" ~style.display=(Chroma.isUnlocked() || PrestigeLayerProgress.hasReached('complexity')) ? '' : 'none'~>Chroma as fraction of cap</option>
               </select></span>
               <br/>
-              <span>~r Autobuyer(13).mode() ~:</span>
+              <span>~r Autobuyer(13).displayMode() ~:</span>
               <br/>
               <span><input type="text" class="autobuyer-priority-13" ~!value=autobuyerSettingToString(Autobuyer(13).priority(), 13)~ ~!onchange=function() {Autobuyer(13).setPriority(stringToAutobuyerSetting(this.value, 13))}~></input></span>
               <div ~style.display=Autobuyer(13).hasGeneration() ? '' : 'none'~ style="font-size: 0.75rem;">
@@ -942,7 +942,7 @@
                 <option value="X times last">X times last</option>
               </select></span>
               <br/>
-              <span>~r Autobuyer(14).mode() ~:</span>
+              <span>~r Autobuyer(14).displayMode() ~:</span>
               <br/>
               <span><input type="text" class="autobuyer-priority-14" ~!value=autobuyerSettingToString(Autobuyer(14).priority(), 14)~ ~!onchange=function() {Autobuyer(14).setPriority(stringToAutobuyerSetting(this.value, 14))}~></input></span>
               <div ~style.display=Autobuyer(14).hasGeneration() ? '' : 'none'~ style="font-size: 0.75rem;">
@@ -973,7 +973,7 @@
                 <option value="Galaxy effect (0 means cap)" ~style.display=(Galaxy.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'~>Galaxy effect (0 means cap)</option>
               </select></span>
               <br/>
-              <span>~r Autobuyer(15).mode() ~:</span>
+              <span>~r Autobuyer(15).displayMode() ~:</span>
               <br/>
               <span><input type="text" class="autobuyer-priority-15" ~!value=autobuyerSettingToString(Autobuyer(15).priority(), 15)~ ~!onchange=function() {Autobuyer(15).setPriority(stringToAutobuyerSetting(this.value, 15))}~></input></span>
               <div ~style.display=Autobuyer(15).hasGeneration() ? '' : 'none'~ style="font-size: 0.75rem;">
@@ -1220,7 +1220,8 @@
         <button ~style.display=(EternityMilestones.hasEternityMilestone(6) || PrestigeLayerProgress.hasReached('complexity')) ? '' : 'none'~ onclick="EternityMilestones.toggleMilestone(6)">Eternity Milestone ~i 6 ~: ~r (EternityMilestones.isEternityMilestoneDisabled(6) ? "Disabled" : "Enabled") + (EternityMilestones.hasEternityMilestone(6) ? '' : ' (once unlocked)') ~</button>
         <button ~style.display=(EternityMilestones.hasEternityMilestone(8) || PrestigeLayerProgress.hasReached('complexity')) ? '' : 'none'~ onclick="EternityMilestones.toggleMilestone(8)">Eternity Milestone ~i 8 ~: ~r (EternityMilestones.isEternityMilestoneDisabled(8) ? "Disabled" : "Enabled") + (EternityMilestones.hasEternityMilestone(8) ? '' : ' (once unlocked)') ~</button>
       </span>
-      <button ~style.display=Explanations.isVisible('eternity-milestones', 'main') ? '' : 'none'~ onclick="Explanations.showOrHide('eternity-milestones', 'main')">Complexity reset effect explanation: ~r Explanations.isShown('eternity-milestones', 'main') ? 'Shown' : 'Hidden' ~:</button>
+      <br ~style.display=Explanations.isVisible('eternity-milestones', 'main') ? '' : 'none'~ onclick="Explanations.showOrHide('eternity-milestones', 'main')"/>
+      <button ~style.display=Explanations.isVisible('eternity-milestones', 'main') ? '' : 'none'~ onclick="Explanations.showOrHide('eternity-milestones', 'main')">Complexity reset effect explanation: ~r Explanations.isShown('eternity-milestones', 'main') ? 'Shown' : 'Hidden' ~</button>
       <div style="width: 1024px; margin-left: auto; margin-right: auto;" ~style.display=Explanations.isShown('eternity-milestones', 'main') ? '' : 'none'~>
         <span>Complexity and resets beyond complexity will reset eternity milestones, and will lock those milestones (including the ones saying "Start each ... complexity"), removing their effects until you unlock the milestones again. Once you start with enough eternities after complexity to start with eternity milestones unlocked, however, those milestones will have an effect even at the start of a complexity. This situation will also arise later in the game with other similar mechanics.<span>
       </div>
@@ -1881,9 +1882,14 @@
           </table>
         </div>
         <span ~style.display=Permanence.canGainPermanence() ? '' : 'none'~><button style="height: 48px;" onclick="Permanence.gainPermanence(true)">Lose all but ~i Permanence.getLeftoverEternities() ~ eternities,<br/>but gain ~f Permanence.permanenceGain() ~ permanence.</button></span>
-        <span ~style.display=Permanence.canGainPermanence() ? 'none' : ''~>You need ~f Permanence.getRequiredEternities() ~ eternities to gain permanence.<span ~style.display=Permanence.hasGainedPermanence() ? 'none' : ''~> Permanence can be spent on a variety of upgrades.</span></span>
-        <br ~style.display=Permanence.hasGainedPermanence() ? 'none' : ''~/>
-        <span ~style.display=Permanence.hasGainedPermanence() ? 'none' : ''~>You get ~r Permanence.conversionText() ~.</span>
+        <span ~style.display=Permanence.canGainPermanence() ? 'none' : ''~>You need ~f Permanence.getRequiredEternities() ~ eternities to gain permanence.</span>
+        <div ~style.display=Permanence.hasGainedPermanence() ? 'none' : ''~/>
+          <span>Gaining permanence will cause you to lose all but ~i Permanence.getLeftoverEternities() ~ eternities, but you will not lose anything else.</span>
+          <br/>
+          <span>Permanence can be spent on a variety of upgrades.</span>
+          <br/>
+          <span>You get ~r Permanence.conversionText() ~.</span>
+        </div>
       </div>
     </tab>
     <tab ~style.display=Tabs.currentTab() === 'eternity-challenges' ? '' : 'none'~>
@@ -1894,7 +1900,7 @@
         <button ~style.display=EternityChallenge.showRequirementDisplayToggle() ? '' : 'none'~ onclick="EternityChallenge.toggleRequirementDisplay()">Show (now unneeded) eternity challenge requirements: ~r EternityChallenge.isRequirementDisplayOn() ? "On" : "Off" ~</button>
       </span>
       <div ~style.display=EternityChallenge.showAutoECCompletion() ? '' : 'none'~>
-        <span>You auto-complete an EC tier once every ~tq EternityChallenge.autoECCompletionTime() ~, <span ~style.display=EternityChallenge.areAllEternityChallengesCompleted() ? 'none' : ''~>next in ~t EternityChallenge.timeUntilAutoECCompletion() ~</span><span ~style.display=EternityChallenge.areAllEternityChallengesCompleted() ? '' : 'none'~>and they're now fully complete</span>. <span class="helpspan">(?)<span class="tooltiptext">Getting more complexities <span ~style.display=PrestigeLayerProgress.hasReached('finality') ? '' : 'none'~>and finalities </span>speeds up auto-EC completion. Auto-EC completion completes all tiers of EC~o 1 ~ first, then all tiers of EC ~o 2 ~, and so on. Some complexity achievements require no EC auto-completions this complexity; you may need to turn EC auto-completion off to get these.</span></span></span>
+        <span>You auto-complete an EC tier once every ~tq EternityChallenge.autoECCompletionTime() ~, <span ~style.display=EternityChallenge.areAllEternityChallengesCompleted() ? 'none' : ''~>next in ~t EternityChallenge.timeUntilAutoECCompletion() ~</span><span ~style.display=EternityChallenge.areAllEternityChallengesCompleted() ? '' : 'none'~>and they're now fully complete</span>. <span class="helpspan">(?)<span class="tooltiptext">Getting more complexities <span ~style.display=PrestigeLayerProgress.hasReached('finality') ? '' : 'none'~>and finalities </span>speeds up auto-EC completion. Auto-EC completion completes all tiers of EC~o 1 ~ first, then all tiers of EC~o 2 ~, and so on. Some complexity achievements require no EC auto-completions this complexity; you may need to turn EC auto-completion off to get these.</span></span></span>
         <br ~style.display=EternityChallenge.usedAutoECCompletionThisComplexity() ? 'none' : ''~/>
         <span ~style.display=EternityChallenge.usedAutoECCompletionThisComplexity() ? 'none' : ''~>You have not yet used any EC auto-completions this complexity.</span>
         <br/>
@@ -2544,6 +2550,7 @@
       <br/>
       <span>
         <button ~style.display=(ComplexityAchievements.hasComplexityAchievement(1, 3) || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'~ onclick="ComplexityAchievements.toggleAchievement(1, 3)">More colorful than a potato: ~r (ComplexityAchievements.isComplexityAchievementDisabled(1, 3) ? "Disabled" : "Enabled") + (ComplexityAchievements.hasComplexityAchievement(1, 3) ? '' : ' (once unlocked)') ~</button>
+        <button ~style.display=(ComplexityChallenge.isComplexityChallengeUnlocked(4) || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'~ onclick="Studies.toggleCanBuyGenerally()">Buying theorems <span class="helpspan">(?)<span class="tooltiptext">Disabling buying theorems can help to unlock "Thousand-theorem twilight".</span></span>: ~r (Studies.canBuyGenerally() ? "Enabled" : "Disabled") ~</button>
       </span>
       <br/>
       <span ~class=ComplexityAchievements.getAchievementsUnlockedRewardClass(1)~>
@@ -4287,7 +4294,17 @@
       <table ~style.display=Options.isOptionTypeShown('saving') ? '' : 'none'~ style="margin-left: auto; margin-right: auto; border-spacing: 24px 8px; border-collapse: separate;">
         <tr>
           <td><button class="options-button" onclick="Saving.saveGame(false, true)">Save</button></td>
-          <td><button class="options-button" onclick="Saving.loadGamePrompt()">Load</button></td>
+          <td>
+            <button class="options-button" onclick="Saving.loadGamePrompt()" ~style.display=Options.loadFromTextInput() ? 'none' : ''~>Load</button>
+            <div class="options-div" ~style.display=Options.loadFromTextInput() ? '' : 'none'~>
+              <span>Enter your save:</span>
+              <br/>
+              <input type="text" class="load-input"></input>
+              <br/>
+              <br/>
+              <button onclick="Saving.loadGameTextInput()">Load</button>
+            </div>
+          </td>
           <td><button ~class-name=Options.showExportNotification() ? 'options-button export-button redspan' : 'options-button export-button'~ onclick="Saving.exportGame(1)">Export</button></td>
         </tr>
         <tr>
@@ -4296,6 +4313,7 @@
             <button class="mini-options-button" onclick="Options.toggleExportCopy()">Copy export text: ~r player.options.exportCopy ? "On" : "Off" ~</button>
             <button class="mini-options-button" onclick="Options.toggleExportDownload()">Download export text: ~r player.options.exportDownload ? "On" : "Off" ~</button>
             <button class="mini-options-button" onclick="Options.toggleExportShow()">Show export text: ~r player.options.exportShow ? "On" : "Off" ~</button>
+            <button class="mini-options-button" onclick="Options.toggleLoadMode()">Save loading mode <span class="helpspan">(?)<span class="tooltiptext">This option lets you decide whether to load saves via an input box that appears when you click the Load button (Prompt) or via a text input that appears on this tab at all times (Text Input). Sometimes, Prompt can't handle saves on mobile due to their length but Text Input can.</span></span>: ~r Options.loadFromTextInput() ? "Text Input" : "Prompt" ~</button>
           </div></td>
           <td><div class="options-div">Show export reminder after X seconds (~i 0 ~ for never):<br/><input type="text" class="export-reminder" ~!value=NotationOptions.format('export-reminder')~ ~!onchange=function() {Options.setExportNotificationFrequency(NotationOptions.read('export-reminder', this.value))}~></input></div></td>
         </tr>
@@ -4483,7 +4501,7 @@
         <tr>
           <td>
             <div class="options-div">
-              <span>Notation <span class="helpspan">(?)<span class="tooltiptext" style="font-size: 0.75rem;">The game uses theses settings for almost all numbers it displays. Numbers in text inputs boxes use default notation settings by default, but there are options to change that.</span></span>: <select ~!value=NotationOptions.notation()~ ~!onchange=function() {NotationOptions.setNotation(this.value)}~>
+              <span style="font-size: 0.75rem;">Notation <span class="helpspan">(?)<span class="tooltiptext" style="font-size: 0.75rem;">The game uses theses settings for almost all numbers it displays. Numbers in text inputs boxes use default notation settings by default, but there are options to change that.</span></span>: <select ~!value=NotationOptions.notation()~ ~!onchange=function() {NotationOptions.setNotation(this.value)}~>
               <option value="Scientific">Scientific</option>
               <option value="Engineering">Engineering</option>
               <option value="Logarithm">Logarithm</option>
@@ -4587,6 +4605,8 @@
           <td/>
         <tr/>
       </table>
+      <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>
+      <br/>
       <br/>
       <div>
         Confirmations:
@@ -4642,9 +4662,6 @@
         <br/>
         <span>Thanks to jdawson7 (clarifying strategy, improving guide), eQueline (suggesting many great QoL features), Kyleptune (suggesting the ability to change colors), and FIQ (noticing many UI confusions and inconsistencies, , and suggesting a massive speed-up to autobuyers and max all).</span>
       </div>
-      <br/>
-      <br/>
-      <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>
     </tab>
   </div>
 </body>

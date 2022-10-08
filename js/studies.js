@@ -550,11 +550,14 @@ let Studies = {
     return Decimal.pow(2, Math.pow(256, 2 - x) * this.costPow(player.boughtTheorems[x], x)).floor();
   },
   canSeeTab() {
+    // This is only used to determine if the player can buy theorems,
+    // and for that purpose it works as intended in replay mode
+    // (you can't buy theorems before reaching eternity).
     return PrestigeLayerProgress.hasReached('eternity');
   },
   canBuy(x) {
     return player[['stars', 'infinityPoints', 'eternityPoints'][x]].gte(this.cost(x)) &&
-      this.canSeeTab() && (x !== 2 || EternityGenerator(1).bought() > 0);
+      this.canSeeTab() && this.canBuyGenerally() && (x !== 2 || EternityGenerator(1).bought() > 0);
   },
   getStat(x) {
     return player[['stars', 'infinityPoints', 'eternityPoints'][x]];
@@ -612,6 +615,12 @@ let Studies = {
   },
   areStudiesInitialStudies() {
     return player.studies.join(',') === initialStudies().join(',');
+  },
+  canBuyGenerally() {
+    return player.studySettings.canBuyStudies;
+  },
+  toggleCanBuyGenerally() {
+    player.studySettings.canBuyStudies = !player.studySettings.canBuyStudies;
   },
   boughtTheoremsThisComplexity() {
     return player.studySettings.boughtTheoremsThisComplexity;
