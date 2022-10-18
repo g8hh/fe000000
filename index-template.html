@@ -1724,6 +1724,10 @@
           </td>
         </tr>
       </table>
+      <span ~style.display=Studies.canBuyGenerally() ? "none" : ""~>
+        <span class="redspan">You have disabled buying theorems.</span> <button ~style.display=(ComplexityChallenge.isComplexityChallengeUnlocked(4) || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'~ onclick="Studies.toggleCanBuyGenerally()">Buying theorems <span class="helpspan">(?)<span class="tooltiptext">Disabling buying theorems can help to unlock "Thousand-theorem twilight".</span></span>: ~r (Studies.canBuyGenerally() ? "Enabled" : "Disabled") ~</button>
+      </span>
+      <br ~style.display=Studies.canBuyGenerally() ? "none" : ""~/>
       <span>
         Bought theorems: ~i Studies.boughtTheoremsList()[0] ~ (from stars) + ~i Studies.boughtTheoremsList()[1] ~ (from IP) + ~i Studies.boughtTheoremsList()[2] ~ (from EP) = ~i Studies.boughtTheorems() ~.
       </span>
@@ -2385,7 +2389,9 @@
       <br ~style.display=FinalityMilestones.isFinalityMilestoneActive(9) ? '' : 'none'~/>
       <span ~style.display=FinalityMilestones.isFinalityMilestoneActive(9) ? '' : 'none'~>The Complexity Challenge ~o 6 ~ reward is instead currently ~f ComplexityStars.complexityChallengeRewardMultiplier(6) ~x stronger (from ~f ComplexityStars.extraAmount() ~ hypercomplexity stars).</span>
       <br/>
-      <span>Re-enable complexity challenges you're currently in on ~r PrestigeLayerNames.layersAboveDisplay('complexity') ~ <span class="helpspan">(?)<span class="tooltiptext" style="font-size: 0.75rem;">This means that if you're currently in a complexity challenge due to the ability to violate its condition being disabled, and you ~r PrestigeLayerProgress.hasReached('finality') ? 'complexity or finality' : 'complexity' ~, then the ability to violate that condition will be automatically enabled again, letting you exit the complexity challenge. This is often good since you don't want to do a complexity challenge for two complexities in a row, but it has <span ~style.display=(Powers.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? 'none' : ''~>a downside later in the game.</span><span ~style.display=(Powers.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'~>the downside that <span class="redspan">you will exit a complexity challenge if you, for example, unequip powers in it.</span></span></span></span>: <input type="checkbox" ~!checked=Options.exitComplexityChallengesOnComplexity()~ ~!onchange=function() {Options.setExitComplexityChallengesOnComplexity(this.checked)}~></input></span>
+      <span>Re-enable complexity challenges you're currently in on ~r PrestigeLayerNames.layersAboveDisplay('complexity') ~ <span class="helpspan">(?)<span class="tooltiptext" style="font-size: 0.75rem;">This means that if you're currently in a complexity challenge due to the ability to violate its condition being disabled, and you ~r PrestigeLayerProgress.hasReached('finality') ? 'complexity or finality' : 'complexity' ~, then the ability to violate that condition will be automatically enabled again, letting you exit the complexity challenge. This is often good since you don't want to do a complexity challenge for two complexities in a row, but it has
+        <span ~style.display=(Powers.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? 'none' : ''~>a downside later in the game.</span><span ~style.display=(Powers.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'~>the downside that <span class="redspan">you will exit a complexity challenge if you, for example, unequip powers in it.</span></span>
+      </span></span>: <input type="checkbox" ~!checked=Options.exitComplexityChallengesOnComplexity()~ ~!onchange=function() {Options.setExitComplexityChallengesOnComplexity(this.checked)}~></input></span>
       <br/>
       <br/>
       <span>You do not need to complexity to complete complexity challenges. <button ~style.display=Explanations.isVisible('complexity-challenges', 'main') ? '' : 'none'~ onclick="Explanations.showOrHide('complexity-challenges', 'main')">Complexity challenges explanation: ~r Explanations.isShown('complexity-challenges', 'main') ? 'Shown' : 'Hidden' ~</button></span>
@@ -2682,7 +2688,7 @@
             <div class="complexityachievementdiv" ~style.background=ComplexityAchievements.color(3, 1)~>
               <span class="orangetogreyaltered">~r ComplexityAchievements.getComplexityAchievementName(3, 1) ~</span>
               <br/>
-              Get ~f 1024 ~ boosts in Eternity Challenge ~o 2 ~ in Complexity Challenge ~o 4 ~.
+              Get ~i 1024 ~ boosts in Eternity Challenge ~o 2 ~ in Complexity Challenge ~o 4 ~.
               <br/>
               ~r ComplexityAchievements.complexityAchievementStatusDescription(3, 1) ~
               <br/>
@@ -3602,7 +3608,7 @@
             <loop j 1 4>
               <td>
                 <div class="goaldiv" ~style.background=Goals.color(% 4 * @i + @j %)~>
-                  ~r Goals.getGoalText(% 4 * @i + @j %) ~
+                  <span>~r Goals.getGoalText(% 4 * @i + @j %) ~% (4 * @i + @j <= 3) ? ` <span class="helpspan" ~style.display=Goals.displayGoal(${4 * @i + @j}) ? '' : 'none'~>(?)<span class="tooltiptext">~r Goals.getGoalTooltip(${4 * @i + @j}) ~</span></span>` : '' %</span>
                   <br/>
                   ~r Goals.getGoalStatusDescription(% 4 * @i + @j %) ~
                   <div ~style.display=(Goals.showTimes() && Goals.hasGoal(% 4 * @i + @j %)) ? '' : 'none'~>
@@ -4660,7 +4666,7 @@
         <br/>
         <span>Thanks to the testers (Boo, Dravitar, Earth, Omsi, Pichu, Sere, SpectralFlame, others, and Jazz) for testing before release and suggesting features.</span>
         <br/>
-        <span>Thanks to jdawson7 (clarifying strategy, improving guide), eQueline (suggesting many great QoL features), Kyleptune (suggesting the ability to change colors), and FIQ (noticing many UI confusions and inconsistencies, , and suggesting a massive speed-up to autobuyers and max all).</span>
+        <span>Thanks to jdawson7 (clarifying strategy, improving guide), eQueline (suggesting many great QoL features), Kyleptune (suggesting the ability to change colors), and FIQ (noticing many UI confusions and inconsistencies, and suggesting a massive speed-up to autobuyers and max all).</span>
       </div>
     </tab>
   </div>
