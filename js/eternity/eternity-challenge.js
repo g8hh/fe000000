@@ -345,8 +345,14 @@ let EternityChallenge = {
     }
     this.setEternityChallenge(x);
   },
-  exitEternityChallenge() {
-    if (EternityPrestigeLayer.canEternity()) {
+  exitEternityChallenge(forced) {
+    let canEternity = EternityPrestigeLayer.canEternity();
+    if (forced && this.currentEternityChallenge() === 4) {
+      // This might be wrong in some very weird edge case where calling canEternity
+      // affects EC tier gain somehow, but that shouldn't generally happen.
+      TextBoxes.display('ec-4-exit', EternityChallenge.tiersCompletedOnEternity());
+    }
+    if (canEternity) {
       // Finish the eternity challenge.
       EternityPrestigeLayer.eternity(false);
     } else {
@@ -487,7 +493,7 @@ let EternityChallenge = {
   checkForExitingEternityChallenge4(newInfinities) {
     if (EternityChallenge.isEternityChallengeRunning(4) &&
       EternityChallenge.eternityChallenge4RemainingInfinities() < newInfinities) {
-      EternityChallenge.exitEternityChallenge();
+      EternityChallenge.exitEternityChallenge(true);
       return true;
     } else {
       return false;

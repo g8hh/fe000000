@@ -204,7 +204,7 @@
     <br ~style.display=Tabs.usingTabGroups() ? '' : 'none'~/>
     <span ~style.display=Tabs.displayTabRow(1) ? '' : 'none'~>
       <button ~style.display=Tabs.isTabVisible('main') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'normal')~ onclick="Tabs.setTab('main')">Main</button>
-      <button ~style.display=Tabs.isTabVisible('infinity') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'infinity')~ onclick="Tabs.setTab('infinity')">Infinity</button>
+      <button ~style.display=Tabs.isTabVisible('infinity') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'infinity')~ onclick="Tabs.setTab('infinity')">Infinity Generators</button>
       <button ~style.display=Tabs.isTabVisible('normal-challenges') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'infinity')~ onclick="Tabs.setTab('normal-challenges')">Normal Challenges</button>
       <button ~style.display=Tabs.isTabVisible('autobuyers') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'normal')~ onclick="Tabs.setTab('autobuyers')">Autobuyers</button>
       <button ~style.display=Tabs.isTabVisible('infinity-challenges') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'infinity')~ onclick="Tabs.setTab('infinity-challenges')">Infinity Challenges</button>
@@ -219,7 +219,7 @@
     </span>
     <br ~style.display=Tabs.displayTabBreak(2) ? '' : 'none'~/>
     <span ~style.display=Tabs.displayTabRow(3) ? '' : 'none'~>
-      <button ~style.display=Tabs.isTabVisible('eternity') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'eternity')~ onclick="Tabs.setTab('eternity')">Eternity</button>
+      <button ~style.display=Tabs.isTabVisible('eternity') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'eternity')~ onclick="Tabs.setTab('eternity')">Eternity Generators</button>
       <button ~style.display=Tabs.isTabVisible('eternity-milestones') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'eternity')~ onclick="Tabs.setTab('eternity-milestones')">Eternity Milestones</button>
       <button ~style.display=Tabs.isTabVisible('studies') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'studies')~ onclick="Tabs.setTab('studies')">Studies</button>
       <button ~style.display=Tabs.isTabVisible('eternity-producer') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'eternity-producer')~ onclick="Tabs.setTab('eternity-producer')">Eternity Producer</button>
@@ -228,7 +228,7 @@
     </span>
     <br ~style.display=Tabs.displayTabBreak(3) ? '' : 'none'~/>
     <span ~style.display=Tabs.displayTabRow(4) ? '' : 'none'~>
-      <button ~style.display=Tabs.isTabVisible('complexity') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'complexity')~ onclick="Tabs.setTab('complexity')">Complexity</button>
+      <button ~style.display=Tabs.isTabVisible('complexity') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'complexity')~ onclick="Tabs.setTab('complexity')">Complexity Generators</button>
       <button ~style.display=Tabs.isTabVisible('complexity-challenges') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'complexity')~ onclick="Tabs.setTab('complexity-challenges')">Complexity Challenges</button>
       <button ~style.display=Tabs.isTabVisible('complexity-achievements') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'complexity')~ onclick="Tabs.setTab('complexity-achievements')">Complexity Achievements</button>
       <button ~style.display=Tabs.isTabVisible('powers') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), Powers.tabColors())~ onclick="Tabs.setTab('powers')">Powers</button>
@@ -237,7 +237,7 @@
     </span>
     <br ~style.display=Tabs.displayTabBreak(4) ? '' : 'none'~/>
     <span ~style.display=Tabs.displayTabRow(5) ? '' : 'none'~>
-      <button ~style.display=Tabs.isTabVisible('finality') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'finality')~ onclick="Tabs.setTab('finality')">Finality</button>
+      <button ~style.display=Tabs.isTabVisible('finality') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'finality')~ onclick="Tabs.setTab('finality')">Finality Generators</button>
       <button ~style.display=Tabs.isTabVisible('finality-shards') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'finality')~ onclick="Tabs.setTab('finality-shards')">Finality Shards</button>
       <button ~style.display=Tabs.isTabVisible('finality-milestones') ? '' : 'none'~ ~style.background=Colors.getButtonColorAltered(Options.tabColors(), 'finality')~ onclick="Tabs.setTab('finality-milestones')">Finality Milestones</button>
     </span>
@@ -325,7 +325,7 @@
         <span ~style.display=SpecialDivs.isDivVisible('softcap') ? '' : 'none'~>~r Generators.term(true, true) ~ multipliers are reduced above ~f Generators.nerfValue() ~x (the multiplier softcap).</span>
         <br ~style.display=Generators.areAnyMultipliersNerfed() ? '' : 'none'~/>
         <div ~style.display=Generators.areAnyMultipliersNerfed() ? '' : 'none'~>
-          Given a multiplier x, let y be log(x, ~f Generators.nerfValue() ~). <span class="helpspan">(?)<span class="tooltiptext">This is the log of x with base ~f Generators.nerfValue() ~, so if x is exactly ~f Generators.nerfValue() ~ then y is ~i 1 ~, and as x increases beyond that, y increases also.</span></span> x is reduced to ~f Generators.nerfValue() ~^(y^(y^~r formatPrecisely(Generators.nerfExponent) ~)). <span class="helpspan">(?)<span class="tooltiptext">Since y starts close to 1, y^(y^~r formatPrecisely(Generators.nerfExponent) ~) is initially close to y and the multiplier reduction is initially small, but as y increases the reduction gets larger.</span></span>
+          Given a multiplier x, let y be log(x, ~f Generators.nerfValue() ~). <span class="helpspan">(?)<span class="tooltiptext">This is the log of x with base ~f Generators.nerfValue() ~ (or equivalently log(x) / log(~f Generators.nerfValue() ~)), so if x is exactly ~f Generators.nerfValue() ~ then y is ~i 1 ~, and as x increases beyond that, y increases also.</span></span> x is reduced to ~f Generators.nerfValue() ~^(y^(y^~r formatPrecisely(Generators.nerfExponent) ~)). <span class="helpspan">(?)<span class="tooltiptext">Since y starts close to 1, y^(y^~r formatPrecisely(Generators.nerfExponent) ~) is initially close to y and the multiplier reduction is initially small, but as y increases the reduction gets larger. Of course, if a multiplier x is below ~f Generators.nerfValue() ~, it will not get reduced at all.</span></span>
         </div>
         <br ~style.display=SpecialDivs.isDivVisible('hardcap') ? '' : 'none'~/>
         <span ~style.display=SpecialDivs.isDivVisible('hardcap') ? '' : 'none'~>It is impossible to get more than ~f MultiverseCollapse.stars() ~ stars.</span>
@@ -1890,7 +1890,7 @@
         <div ~style.display=Permanence.hasGainedPermanence() ? 'none' : ''~/>
           <span>Gaining permanence will cause you to lose all but ~i Permanence.getLeftoverEternities() ~ eternities, but you will not lose anything else.</span>
           <br/>
-          <span>Permanence can be spent on a variety of upgrades.</span>
+          <span>Permanence can be spent on a variety of upgrades that become visible when you gain permanence.</span>
           <br/>
           <span>You get ~r Permanence.conversionText() ~.</span>
         </div>
@@ -2943,7 +2943,7 @@
               <br/>
               <span class="cyanalteredspan">Extra multiplier from complexity stars and time in complexity</span>
               <br/>
-              <span class="cyanalteredspan">~f Powers.getExtraMultiplier('eternity') ~x<span ~style.display=Powers.isTypeAtCap('eternity') ? '' : 'none'~> (capped)</span></span>
+              <span class="cyanalteredspan">~f Powers.getExtraMultiplier('eternity') ~x <span ~style.display=Powers.isTypeAtCap('eternity') ? '' : 'none'~>(capped in ~t Powers.timeForTypeAtCap('eternity') ~)</span><span ~style.display=Powers.isTypeAtCap('eternity') ? 'none' : ''~>(caps at ~i 3 ~x in ~t Powers.timeForTypeAtCap('eternity') ~)</span></span>
             </td>
             <td class="largepowertd">
               <span class="brownalteredspan">Complexity</span>
@@ -3180,7 +3180,7 @@
                 <br/>
                 <span class="cyanalteredspan">Extra multiplier from complexity stars and time in complexity</span>
                 <br/>
-                <span class="cyanalteredspan">~f Powers.getExtraMultiplier('eternity', true) ~x<span ~style.display=Powers.isTypeAtCap('eternity', true) ? '' : 'none'~> (capped)</span></span>
+                <span class="cyanalteredspan">~f Powers.getExtraMultiplier('eternity', true) ~x <span ~style.display=Powers.isTypeAtCap('eternity', true) ? '' : 'none'~>(capped in ~t Powers.timeForTypeAtCap('eternity', true) ~)</span><span ~style.display=Powers.isTypeAtCap('eternity', true) ? 'none' : ''~>(caps at ~i 3 ~x in ~t Powers.timeForTypeAtCap('eternity', true) ~)</span></span>
               </td>
               <td class="largepowertd">
                 <span class="brownalteredspan">Complexity</span>
@@ -4431,7 +4431,7 @@
         <div>
           <span>
             <span ~style.display=Tabs.isTabOptionVisible('main') ? '' : 'none'~>Main: <input class="main-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('main')~ ~!onchange=function() {Tabs.setTabOption('main', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
-            <span ~style.display=Tabs.isTabOptionVisible('infinity') ? '' : 'none'~>Infinity: <input class="infinity-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('infinity')~ ~!onchange=function() {Tabs.setTabOption('infinity', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
+            <span ~style.display=Tabs.isTabOptionVisible('infinity') ? '' : 'none'~>Infinity Generators: <input class="infinity-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('infinity')~ ~!onchange=function() {Tabs.setTabOption('infinity', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
             <span ~style.display=Tabs.isTabOptionVisible('normal-challenges') ? '' : 'none'~>Normal Challenges: <input class="normal-challenges-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('normal-challenges')~ ~!onchange=function() {Tabs.setTabOption('normal-challenges', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
             <span ~style.display=Tabs.isTabOptionVisible('autobuyers') ? '' : 'none'~>Autobuyers: <input class="autobuyers-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('autobuyers')~ ~!onchange=function() {Tabs.setTabOption('autobuyers', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
             <span ~style.display=Tabs.isTabOptionVisible('infinity-challenges') ? '' : 'none'~>Infinity Challenges: <input class="infinity-challenges-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('infinity-challenges')~ ~!onchange=function() {Tabs.setTabOption('infinity-challenges', this.checked)}~></input></span>
@@ -4448,7 +4448,7 @@
         </div>
         <div ~style.display=Tabs.isTabOptionVisible('eternity') ? '' : 'none'~>
           <span>
-            <span ~style.display=Tabs.isTabOptionVisible('eternity') ? '' : 'none'~>Eternity: <input class="eternity-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('eternity')~ ~!onchange=function() {Tabs.setTabOption('eternity', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
+            <span ~style.display=Tabs.isTabOptionVisible('eternity') ? '' : 'none'~>Eternity Generators: <input class="eternity-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('eternity')~ ~!onchange=function() {Tabs.setTabOption('eternity', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
             <span ~style.display=Tabs.isTabOptionVisible('eternity-milestones') ? '' : 'none'~>Eternity Milestones: <input class="eternity-milestones-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('eternity-milestones')~ ~!onchange=function() {Tabs.setTabOption('eternity-milestones', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
             <span ~style.display=Tabs.isTabOptionVisible('studies') ? '' : 'none'~>Studies: <input class="studies-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('studies')~ ~!onchange=function() {Tabs.setTabOption('studies', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
             <span ~style.display=Tabs.isTabOptionVisible('eternity-producer') ? '' : 'none'~>Eternity Producer: <input class="eternity-producer-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('eternity-producer')~ ~!onchange=function() {Tabs.setTabOption('eternity-producer', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
@@ -4458,7 +4458,7 @@
         </div>
         <div ~style.display=Tabs.isTabOptionVisible('complexity') ? '' : 'none'~>
           <span>
-            <span ~style.display=Tabs.isTabOptionVisible('complexity') ? '' : 'none'~>Complexity: <input class="complexity-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('complexity')~ ~!onchange=function() {Tabs.setTabOption('complexity', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
+            <span ~style.display=Tabs.isTabOptionVisible('complexity') ? '' : 'none'~>Complexity Generators: <input class="complexity-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('complexity')~ ~!onchange=function() {Tabs.setTabOption('complexity', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
             <span ~style.display=Tabs.isTabOptionVisible('complexity-challenges') ? '' : 'none'~>Complexity Challenges: <input class="complexity-challenges-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('complexity-challenges')~ ~!onchange=function() {Tabs.setTabOption('complexity-challenges', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
             <span ~style.display=Tabs.isTabOptionVisible('complexity-achievements') ? '' : 'none'~>Complexity Achievements: <input class="complexity-achievements-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('complexity-achievements')~ ~!onchange=function() {Tabs.setTabOption('complexity-achievements', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
             <span ~style.display=Tabs.isTabOptionVisible('powers') ? '' : 'none'~>Powers: <input class="powers-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('powers')~ ~!onchange=function() {Tabs.setTabOption('powers', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
@@ -4468,7 +4468,7 @@
         </div>
         <div ~style.display=Tabs.isTabOptionVisible('finality') ? '' : 'none'~>
           <span>
-            <span ~style.display=Tabs.isTabOptionVisible('finality') ? '' : 'none'~>Finality: <input class="finality-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('finality')~ ~!onchange=function() {Tabs.setTabOption('finality', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
+            <span ~style.display=Tabs.isTabOptionVisible('finality') ? '' : 'none'~>Finality Generators: <input class="finality-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('finality')~ ~!onchange=function() {Tabs.setTabOption('finality', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
             <span ~style.display=Tabs.isTabOptionVisible('finality-shards') ? '' : 'none'~>Finality Shards: <input class="finality-shards-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('finality-shards')~ ~!onchange=function() {Tabs.setTabOption('finality-shards', this.checked)}~></input><span style="display: inline-block; width: 16px;"></span></span>
             <span ~style.display=Tabs.isTabOptionVisible('finality-milestones') ? '' : 'none'~>Finality Milestones: <input class="finality-milestones-tab-option" type="checkbox" ~!checked=Tabs.isTabOptionOn('finality-milestones')~ ~!onchange=function() {Tabs.setTabOption('finality-milestones', this.checked)}~></input></span>
           </span>
