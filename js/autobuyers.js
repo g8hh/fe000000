@@ -70,7 +70,7 @@ let Autobuyer = function (i) {
     displayMode() {
       let m = this.mode();
       if (m === 'X times best of last ten') {
-        return 'X times best of last ' + numbers[Stats.lastRunsToShow()];
+        return '最近' + numbers[Stats.lastRunsToShow()] + '周目最高的X倍';
       } else {
         return m;
       }

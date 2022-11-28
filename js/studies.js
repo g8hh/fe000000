@@ -136,12 +136,12 @@ let Study = function (i) {
       }
     },
     refundText() {
-      return 'Are you sure you want to refund ' + (this.row() === 4 ? 'one purchase of ' : '') +
-        'Study ' + i + ' and ' + EternityPrestigeLayer.resetText() + '?';
+      return '您想要洗点' + (this.row() === 4 ? '1次' : '') +
+        '课题' + i + '，并' + EternityPrestigeLayer.resetText() + '吗？';
     },
     refundImpossibleText() {
-      return 'Only fourth-row studies, not Study ' + i + ', can be refunded ' +
-        'if any fourth-row study is bought.';
+      return '购买任意第四行课题以后，只有第四行课题可以洗点，课题' + i + '无法' +
+        '洗点。';
     },
     refund() {
       if (!this.isBought()) return;
@@ -221,21 +221,21 @@ let Studies = {
       Chroma.isColorUnlocked(5) || PrestigeLayerProgress.hasReached('complexity'), PrestigeLayerProgress.hasReached('complexity')
     ];
     let sources = [
-      'boost power (see Main tab)', 'EC completions', 'green chroma', 'ℂC6'
+      '推力(详情可查看主要面板)', '永恒挑战完成的阶层数值', '绿色色度', '繁复挑战6'
     ];
     // If the player hasn't reached eternity yet but has boost power and has all tabs shown,
     // seeing Main tab won't help. So we say something else.
     if (!PrestigeLayerProgress.hasReached('eternity')) {
-      sources[0] = 'boost power (after eternity, you\'ll get theorems from boost power)';
+      sources[0] = '推力(进行永恒重置后，您可以通过推力获得定理)';
     }
     let conditionsCount = conditions.filter(x => x).length;
     if (conditionsCount === 0) {
-      return formatInt(extraTheorems) + ' (progress further to unlock ways to get extra theorems)';
+      return formatInt(extraTheorems) + '(游戏进度继续前进后将解锁获得额外定理的方法)';
     } else if (conditionsCount === 1) {
-      return formatInt(extraTheorems) + ' (from ' + sources[conditions.indexOf(true)] + ')';
+      return formatInt(extraTheorems) + '(来自' + sources[conditions.indexOf(true)] + ')';
     } else {
       return [0, 1, 2, 3].filter(i => conditions[i]).map(
-        i => formatInt(extraTheoremsList[i]) + ' (from ' + sources[i] + ')'
+        i => formatInt(extraTheoremsList[i]) + '(来自' + sources[i] + ')'
       ).join(' + ') + ' = ' + formatInt(extraTheorems);
     }
   },
@@ -308,8 +308,8 @@ let Studies = {
       return true;
     }
     if (Options.confirmation('studiesRespec') && !confirm(
-      'Are you sure you want to respec your studies and ' +
-      EternityPrestigeLayer.resetText() + '?')) return false;
+      '您确定要洗点课题，并' +
+      EternityPrestigeLayer.resetText() + '吗？')) return false;
     this.respec();
     if (EternityPrestigeLayer.canEternity()) {
       EternityPrestigeLayer.eternity(false);
@@ -328,8 +328,8 @@ let Studies = {
       return true;
     }
     if (Options.confirmation('studiesRespec') && !confirm(
-      'Are you sure you want to respec your fourth-row studies and ' +
-      EternityPrestigeLayer.resetText() + '?')) return false;
+      '您确定要洗点第四行课题，并' +
+      EternityPrestigeLayer.resetText() + '吗？')) return false;
     this.respecFourthRow();
     if (EternityPrestigeLayer.canEternity()) {
       EternityPrestigeLayer.eternity(false);
@@ -369,7 +369,7 @@ let Studies = {
       try {
         document.execCommand('copy');
       } catch(ex) {
-        alert('Copying to clipboard failed.');
+        alert('未能复制到剪贴板。');
       }
     }
     if (!player.options.exportShow) {
@@ -485,7 +485,7 @@ let Studies = {
     let eternityChallengePart = split[2];
     let unspent = this.getUnspent(eternityChallengePart);
     let eternityChallenge = this.getUnspentEternityChallenge(eternityChallengePart)
-    let eternityChallengeText = (eternityChallenge !== 0) ? ' for EC' + eternityChallenge : '';
+    let eternityChallengeText = (eternityChallenge !== 0) ? '为永恒挑战' + eternityChallenge : '';
     let atLeast = fourthRowPart !== null && fourthRowPart[0] === 's';
     let studies = initialStudies();
     for (let i of mainPart.split(',').map(x => this.toNumber(x)).filter(x => 1 <= x && x <= 16)) {
@@ -502,10 +502,10 @@ let Studies = {
       }
     }
     let cost = this.studiesCost(studies);
-    let atLeastText = atLeast ? 'at least ' : '';
+    let atLeastText = atLeast ? '至少' : '';
     if (unspent > 0) {
-      return atLeastText + formatInt(cost) + ' (studies) + ' + formatInt(unspent) +
-      ' (required unspent' + eternityChallengeText + ') = ' + formatInt(cost + unspent) + '.';
+      return atLeastText + formatInt(cost) + '(来自课题) + ' + formatInt(unspent) +
+      '(' + eternityChallengeText + '而保留) = ' + formatInt(cost + unspent) + '。';
     } else {
       return atLeastText + formatInt(cost);
     }
@@ -514,7 +514,7 @@ let Studies = {
     return this.studyListCostText(this.presetStudyList(x));
   },
   import() {
-    this.importString(prompt('Enter your studies (as previously exported):'));
+    this.importString(prompt('输入课题(即之前导出的课题)：'));
   },
   totalStudyCost() {
     return 168;
@@ -651,7 +651,7 @@ let Studies = {
     return player.presets.length >= x;
   },
   presetName(x) {
-    if (!this.hasPreset(x)) return 'Untitled';
+    if (!this.hasPreset(x)) return '未命名';
     return player.presets[x - 1].name;
   },
   presetStudyList(x) {
@@ -665,7 +665,7 @@ let Studies = {
     player.presets[x - 1].studies = studyList;
   },
   presetSetToCurrentStudies(x) {
-    if (Options.confirmation('presetChange') && !confirm('Are you sure you want to change this study preset?')) {
+    if (Options.confirmation('presetChange') && !confirm('您确定要改为目前的课题配置吗？')) {
       return;
     }
     this.setPresetStudyList(x, this.exportString());
@@ -718,7 +718,7 @@ let Studies = {
     this.redisplayPreset(y);
   },
   presetDelete(x) {
-    if (Options.confirmation('presetDeletion') && !confirm('Are you sure you want to delete this study preset?')) {
+    if (Options.confirmation('presetDeletion') && !confirm('您确定要删除该课题预设吗？')) {
       return;
     }
     player.presets = player.presets.slice(0, x - 1).concat(player.presets.slice(x));
@@ -729,7 +729,7 @@ let Studies = {
   },
   presetCreate() {
     if (!this.hasPreset(64)) {
-      player.presets.push({'name': 'Untitled', 'studies': this.exportString()});
+      player.presets.push({'name': '未命名', 'studies': this.exportString()});
       this.redisplayPreset(player.presets.length);
     }
   },

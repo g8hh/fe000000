@@ -98,11 +98,11 @@ let Goals = {
     // This is used on goals so we don't want it to update if the player is e.g. in an infinity challenge.
     // Thus we use raw numbers rather than methods.
     if (i === 1) {
-      return 'Sacrifice requires at least one of Generator ' + formatOrdinalInt(8) + ' (costing ' + format(Decimal.pow(2, 64)) + ' stars).';
+      return '进行献祭至少需要拥有1个发生器' + formatOrdinalInt(8) + '(花费' + format(Decimal.pow(2, 64)) + '星辰)。';
     } else if (i == 2) {
-      return 'Prestige requires ' + format(Decimal.pow(2, 128)) + ' stars.';
+      return '进行转生至少需要拥有' + format(Decimal.pow(2, 128)) + '星辰。';
     } else if (i === 3) {
-      return 'Infinity requires ' + format(Decimal.pow(2, 256)) + ' stars.';
+      return '进行无限重置至少需要拥有' + format(Decimal.pow(2, 256)) + '星辰。';
     }
   },
   getGoalStatusDescription(i) {

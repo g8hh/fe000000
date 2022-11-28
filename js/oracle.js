@@ -143,23 +143,23 @@ let Oracle = {
     let messages = [
       this.complexityPointMessage(), this.complexityPointGainMessage(), this.otherThingsGainMessage(), this.otherThingsLossMessage()
     ];
-    return 'After ' + formatTime(player.oracle.timeSimulated, {seconds: {f: formatTimeMaybeInt, s: true}, larger: {f: formatTimeMaybeInt, s: true}}) +
-      ' and ' + formatMaybeInt(player.oracle.ticksSimulated) + ' tick' +
-      pluralize(player.oracle.ticksSimulated, '', 's') + ', you ' + coordinate('*', '', messages) + '.';
+    return '在' + formatTime(player.oracle.timeSimulated, {seconds: {f: formatTimeMaybeInt, s: true}, larger: {f: formatTimeMaybeInt, s: true}}) +
+      '和' + formatMaybeInt(player.oracle.ticksSimulated) + '个游戏时刻' +
+      pluralize(player.oracle.ticksSimulated, '', '') + '之后，您' + coordinate('*', '', messages) + '。';
   },
   complexityPointMessage() {
-    return 'will have ' + formatInt(player.oracle.complexityPoints) + ' ℂP';
+    return '将拥有' + formatInt(player.oracle.complexityPoints) + '繁复点数';
   },
   complexityPointGainMessage() {
     return player.oracle.complexityPointGain.gt(0) ?
-      ('will be able to gain ' + formatInt(player.oracle.complexityPointGain) + ' ℂP') : 'will not yet be able to complexity';
+      ('将可以获得' + formatInt(player.oracle.complexityPointGain) + '繁复点数') : '将无法进行繁复重置';
   },
   complexityChallengeCompletionsChangeText(gain) {
     // Note that we can lose complexity challenge completions, if we finality.
     let gainedCompletions = [1, 2, 3, 4, 5, 6].map(
       i => player.oracle.complexityChallengeCompletions[i - 1] - player.oracle.originalComplexityChallengeCompletions[i - 1]);
     let completionText = gainedCompletions.map(x => x * (gain ? 1 : -1)).map(
-      (x, i) => x > 0 ? formatInt(x) + ' completion' + pluralize(x, '', 's') + ' of Complexity Challenge ' + (i + 1) : null);
+      (x, i) => x > 0 ? formatInt(x) + '次' + pluralize(x, '', '') + '繁复挑战' + (i + 1) : null);
     return coordinate('*', null, completionText);
   },
   powerShardChangeText(gain) {
@@ -167,31 +167,31 @@ let Oracle = {
     if (diff <= 0) {
       return null;
     }
-    return format(diff) + ' power shard' + pluralize(diff, '', 's');
+    return format(diff) + '能力碎片' + pluralize(diff, '', '');
   },
   galaxyChangeText(gain) {
     let diff = (player.oracle.galaxies - player.oracle.originalGalaxies) * (gain ? 1 : -1);
     if (diff <= 0) {
       return null;
     }
-    return formatInt(diff) + ' galax' + pluralize(diff, 'y', 'ies');
+    return formatInt(diff) + '个星系' + pluralize(diff, '', '');
   },
   finalityChangeText(gain) {
     let diff = (player.oracle.finalities - player.oracle.originalFinalities) * (gain ? 1 : -1);
     if (diff <= 0) {
       return null;
     }
-    return formatInt(diff) + ' finalit' + pluralize(diff, 'y', 'ies');
+    return formatInt(diff) + '次终焉' + pluralize(diff, '', '');
   },
   finalityShardChangeText(gain) {
     let diff = (player.oracle.finalityShards - player.oracle.originalFinalityShards) * (gain ? 1 : -1);
     if (diff <= 0) {
       return null;
     }
-    return formatInt(diff) + ' finality shard' + pluralize(diff, '', 's');
+    return formatInt(diff) + '个终焉碎片' + pluralize(diff, '', '');
   },
   otherThingsGainMessage() {
-    return coordinate('will have gained *', null, [
+    return coordinate('*', null, [
       this.complexityChallengeCompletionsChangeText(true), this.powerShardChangeText(true),
       this.galaxyChangeText(true), this.finalityChangeText(true), this.finalityShardChangeText(true),
     ]);
@@ -199,8 +199,8 @@ let Oracle = {
   otherThingsLossMessage() {
     let hasGainedFinalities = player.oracle.finalities > player.oracle.originalFinalities;
     // Nothing but power shard autobuyers should be able to decrease anything during a finality.
-    let cause = hasGainedFinalities ? 'finality' : 'power shard autobuyers';
-    return coordinate('will have lost * (due to ' + cause + ')', null, [
+    let cause = hasGainedFinalities ? '终焉重置' : '能力碎片自动购买器';
+    return coordinate('将失去*(由于' + cause + ')', null, [
       this.complexityChallengeCompletionsChangeText(false), this.powerShardChangeText(false),
       this.galaxyChangeText(false), this.finalityChangeText(false), this.finalityShardChangeText(false),
     ]);
@@ -208,7 +208,7 @@ let Oracle = {
   messagePrequel() {
     if (this.isUsed()) {
       let timeString = formatTime(player.stats.timeSinceOraclePrediction, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}});
-      return 'The Oracle most recently said (' + timeString + ' ago):';
+      return '神谕最近一次的预测结果(' + timeString + '之前)：';
     } else {
       return 'The Oracle has not said anything yet in this finality.';
     }

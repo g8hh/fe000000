@@ -357,23 +357,23 @@ let Hotkeys = {
   eachText: function () {
     let oneToEight = formatOrdinalInt(1) + '-' + formatOrdinalInt(8);
     return [
-      '1-8 to buy max of Generator ' + oneToEight + ' respectively, shift+1-8 to buy one of ' +
-      'Generator ' + oneToEight + ' respectively, G to max all ~g~, M to max all ~g~ and boosts, ' +
-      'A to turn all autobuyers on/off, shift+A to toggle all autobuyers',
-      'B to buy max boosts, shift+B to buy a boost', 'S to sacrifice', 'P to prestige',
-      'I to infinity, X to exit challenge, Y to restart challenge (exit and start again)',
-      'E to eternity', 'shift+S to respec studies and eternity',
-      'R to gain permanence', 'shift+E to respec eternity challenge and eternity', 'C to complexity',
-      'shift+P to unequip equipped powers and complexity', 'O to get a prediction from the Oracle',
-      'F to finality', 'shift+F to respec finality shard upgrades and finality'
+      '按下1-8键以最大化购买相应的发生器' + oneToEight + '，按住Shift键再按下1-8键以购买一个相应的发生器' +
+      '' + oneToEight + '，按下G键以购买所有的~g~，按下M键以购买所有的~g~和推进，' +
+      '按下A键以切换所有自动购买器的开关，按住Shift键再按下A键以使所有自动购买器的开关反转',
+      '按下B键以最大化购买推进，按住Shift键再按下B键以购买一个推进', '按下S键以进行献祭', '按下P键以进行转生',
+      '按下I键以进行无限重置，按下X键以退出挑战，按下Y键以重新开始挑战(退出并重新进入)',
+      '按下E键以进行永恒重置', '按住Shift键再按下S键以洗点课题并进行永恒重置',
+      '按下R键以获得持久', '按住Shift键再按下E键以洗点永恒挑战并进行永恒重置', '按下C键以进行繁复重置',
+      '按住Shift键再按下P键以解除装备能力并进行繁复重置', '按下O键以获得神谕的预测结果',
+      '按下F键以进行终焉重置', '按下Shift键再按下F键以洗点终焉碎片升级并进行终焉重置'
     ];
   },
   listText: function () {
     let criteria = this.criteria();
     // This join-then-split thing is very important if the first item of the list,
     // which has commas in it, is the only item (that is, before you can prestige).
-    let parts = this.eachText().filter((_, i) => criteria[i]).join(', ').split(', ');
-    parts[parts.length - 1] = 'and ' + parts[parts.length - 1];
-    return parts.join(', ').replace(/~g~/g, Generators.term());
+    let parts = this.eachText().filter((_, i) => criteria[i]).join('，').split('，');
+    parts[parts.length - 1] = '且' + parts[parts.length - 1];
+    return parts.join('，').replace(/~g~/g, Generators.term());
   }
 };

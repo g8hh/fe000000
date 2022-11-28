@@ -38,16 +38,16 @@ let Prestige = {
     if (this.isPrestigeDisabled()) {
       let challenges = [];
       if (Challenge.isChallengeEffectActive(10)) {
-        challenges.push('Challenge ' + formatOrdinalInt(10));
+        challenges.push('通常挑战' + formatOrdinalInt(10));
       } else if (EternityChallenge.isEternityChallengeRunning(3)) {
-        challenges.push('Eternity Challenge '  + formatOrdinalInt(3));
+        challenges.push('永恒挑战'  + formatOrdinalInt(3));
       }
-      return 'to not be in ' + challenges.join(' or ');
+      return '不在进行' + challenges.join('或');
     }
     if (!Stars.canBuyThings()) {
       return Stars.cannotBuyThingsReason();
     }
-    return format(Prestige.prestigeRequirement()) + ' stars';
+    return format(Prestige.prestigeRequirement()) + '星辰';
   },
   updatePrestigePossible() {
     if (!this.canPrestige()) {
@@ -70,8 +70,8 @@ let Prestige = {
     return this.newPrestigePower().div(this.prestigePower());
   },
   prestigeConfirmationMessage() {
-    return 'Are you sure you want to prestige to increase your prestige power from ' +
-      format(this.prestigePower()) + ' to ' + format(this.newPrestigePower()) + '?';
+    return '您想要进行转生，使转生之力从' +
+      format(this.prestigePower()) + '增长到' + format(this.newPrestigePower()) + '吗？';
   },
   prestige(manual) {
     if (!this.canPrestige()) return;

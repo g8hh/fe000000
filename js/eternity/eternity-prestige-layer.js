@@ -17,9 +17,9 @@ let EternityPrestigeLayer = {
   },
   resetText() {
     if (this.canEternity()) {
-      return 'eternity';
+      return '进行永恒重置';
     } else {
-      return 'do an eternity reset (no eternity point gain or eternity gain)';
+      return '进行永恒强制重置(不获得永恒点数和永恒次数)';
     }
   },
   eternityPointGain() {
@@ -46,7 +46,7 @@ let EternityPrestigeLayer = {
   },
   eternityPointGainRatioText() {
     if (this.totalEternityPoints().neq(0)) {
-      return format(this.eternityPointGainRatio()) + 'x total, ';
+      return '一共' + format(this.eternityPointGainRatio()) + '倍，';
     } else {
       return '';
     }
@@ -56,7 +56,7 @@ let EternityPrestigeLayer = {
   },
   eternityPointNextText() {
     if (this.eternityPointGain().lt(256)) {
-      return ', next at ' + format(this.eternityPointNext()) + ' IP';
+      return '，下次需要' + format(this.eternityPointNext()) + '无限点数';
     } else {
       return '';
     }
@@ -114,11 +114,11 @@ let EternityPrestigeLayer = {
   },
   eternityConfirmationMessage() {
     let gain = this.eternityPointGain();
-    return 'Are you sure you want to eternity for ' +
-    formatInt(gain) + ' eternity point' + pluralize(gain, '', 's') + '?';
+    return '您确定要进行永恒重置，并获得' +
+    formatInt(gain) + '永恒点数' + pluralize(gain, '', '') + '吗？';
   },
   eternityResetConfirmationMessage() {
-    return 'Are you sure you want to do an eternity reset? This will not give you any eternity points.';
+    return '您确定要进行永恒强制重置吗？您不会获得任何永恒点数。';
   },
   eternity(manual) {
     if (!this.canEternity()) return;

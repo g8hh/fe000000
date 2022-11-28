@@ -157,10 +157,10 @@ let Powers = {
     'complexity': 'Complexity generator multiplier power based on total strength and rarity of equipped powers',
   },
   shortDescriptionData: {
-    'normal': 'Normal generator multiplier power',
-    'infinity': 'Infinity generator multiplier power',
-    'eternity': 'Eternity generator multiplier power',
-    'complexity': 'Complexity generator multiplier power',
+    'normal': '通常发生器倍率的指数',
+    'infinity': '无限发生器倍率的指数',
+    'eternity': '永恒发生器倍率的指数',
+    'complexity': '繁复发生器倍率的指数',
   },
   upgradeList: [1, 2, 3, 4].map((x) => PowerUpgrade(x)),
   getUpgrade: function (x) {
@@ -199,7 +199,7 @@ let Powers = {
       // and thus not reach the limit. However, without any rarity
       // improvements, it's pretty close, so it's possible someone
       // will actually see this message.
-      this.checkForPowerGain(0, 'turning power gain on', Math.pow(2, 20));
+      this.checkForPowerGain(0, '开启获取能力', Math.pow(2, 20));
     }
   },
   isPowerGainActive() {
@@ -226,7 +226,7 @@ let Powers = {
       // and doing one super-long tick (which is close enough to usual
       // offline progress for me). In the case of turning power gain
       // back on after having it off, this parameter is not its default value.
-      cause = 'offline progress';
+      cause = '离线进度';
     }
     if (limit === undefined) {
       limit = 1024;
@@ -242,9 +242,9 @@ let Powers = {
       while (newPowers > 0 && maxedPowers.some(x => x < this.maximumEquippedLimit())) {
         if (newPowers <= overproductionEfficiencyLimit) {
           if (!(cause in player.stats.hasSeenPowerWarningMessage)) {
-            alert('To avoid ' + cause + ' taking too long to process, you can get at most ' +
-              formatInt(limit) + ' powers in a single tick. The rest will be converted to power shards. ' +
-              'This message will not show up again.');
+            alert('为了避免' + cause + '花费太长时间处理，您每个游戏时刻至多可以获得' +
+              formatInt(limit) + '个能力。剩余的能力将被换成能力碎片。' +
+              '该消息不会再次出现了。');
             player.stats.hasSeenPowerWarningMessage[cause] = true;
           }
           break;
@@ -348,9 +348,9 @@ let Powers = {
       return true;
     }
     if (manual && Options.confirmation('powersUnequip') && !confirm(
-      'Are you sure you want to swap your equipped powers with ' +
-      'better stored powers of the same type and ' +
-      ComplexityPrestigeLayer.resetText() + '?')) return false;
+      '您确定要使用存储的能力中相同类型更好的能力' +
+      '替换目前的能力，并' +
+      ComplexityPrestigeLayer.resetText() + '吗？')) return false;
     let counts = this.getTypeCounts();
     this.respec();
     // We check for Finality Milestone 11 above to handle the automated case.
@@ -445,31 +445,44 @@ let Powers = {
   descriptionFull(type, i) {
     // WE have this conditional so that we return undefined when desired.
     if (this.canAccessPower(type, i)) {
-      return [this.descriptionFullEffect(type, i), this.lower(this.descriptionStrengthRarity(type, i)), this.lower(this.descriptionMultiplier(type, i))].join(', ');
+      return [this.descriptionFullEffect(type, i), this.lower(this.descriptionStrengthRarity(type, i)), this.lower(this.descriptionMultiplier(type, i))].join('，');
     }
   },
   descriptionFullEffect(type, i) {
     if (this.canAccessPower(type, i)) {
       let power = this.accessPower(type, i);
-      return this.title(power.type) + ' ^' + formatPrecisely(this.getEffect(power));
+      let CNtitle = this.title(power.type)
+      if (CNtitle === 'Normal'){
+        CNtitle = '通常';
+      }
+      else if (CNtitle === 'Infinity'){
+        CNtitle = '无限';
+      }
+      else if (CNtitle === 'Eternity'){
+        CNtitle = '永恒';
+      }
+      else if (CNtitle === 'Complexity'){
+        CNtitle = '繁复';
+      }
+      return CNtitle + '-' + formatPrecisely(this.getEffect(power)) + '次方';
     }
   },
   descriptionEffect(type, i) {
     if (this.canAccessPower(type, i)) {
       let power = this.accessPower(type, i);
-      return '^' + formatPrecisely(this.getEffect(power));
+      return '' + formatPrecisely(this.getEffect(power)) + '次方';
     }
   },
   descriptionStrengthRarity(type, i) {
     if (this.canAccessPower(type, i)) {
       let power = this.accessPower(type, i);
-      return 'Strength ' + format(this.strength(power)) + ', rarity ' + format(this.rarity(power));
+      return '强度为' + format(this.strength(power)) + '，稀有度为' + format(this.rarity(power));
     }
   },
   descriptionMultiplier(type, i) {
     if (this.canAccessPower(type, i)) {
       let power = this.accessPower(type, i);
-      return 'Multiplier ' + format(this.preExtraMultiplier(power)) + 'x (total ' + format(this.getOverallMultiplier(power)) + ')';
+      return '倍率为' + format(this.preExtraMultiplier(power)) + '倍(总共为' + format(this.getOverallMultiplier(power)) + '倍)';
     }
   },
   descriptionWait(type, i) {
@@ -488,7 +501,7 @@ let Powers = {
       }
       let wait = (power.id[1] - player.powers.id + 1) * this.interval() - player.stats.timeSincePowerGain;
       if (wait > 0) {
-        return 'Produced after ' + formatTime(wait, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}});
+        return '在' + formatTime(wait, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}) + '之后产生';
       } else if (player.powers.id <= power.id[1]) {
         return 'Produced by turning on power gain';
       } else {
@@ -497,7 +510,7 @@ let Powers = {
     }
   },
   totalEffectDescription(type) {
-    return this.shortDescriptionData[type] + ': ^' + formatPrecisely(this.getTotalEffect(type));
+    return this.shortDescriptionData[type] + '：' + formatPrecisely(this.getTotalEffect(type)) + '次方';
   },
   displayIndexToRealIndex(i) {
     return this.getUnsortedPowerList(this.typeList[(i - 1) % 4], false, false)[Math.floor((i - 1) / 4)].index - 1;
@@ -518,7 +531,7 @@ let Powers = {
   },
   delete(i) {
     if (this.canDelete(i) && (this.powerDeletionMode() === 'No confirmation' ||
-      confirm('Are you sure you want to delete this power for ' + format(PowerShards.shardGainStored(i)) + ' power shards?'))) {
+      confirm('您确定要删除该能力，并获得' + format(PowerShards.shardGainStored(i)) + '能力碎片吗？'))) {
       PowerShards.gainShardsStored(i);
       let j = this.displayIndexToRealIndex(i);
       player.powers.stored = player.powers.stored.slice(0, j).concat(player.powers.stored.slice(j + 1));
@@ -530,8 +543,8 @@ let Powers = {
   },
   unequip(i) {
     if (this.canUnequip(i) && (this.powerUnequipMode() === 'No confirmation' ||
-        confirm('Are you sure you want to unequip this equipped power and ' +
-        ComplexityPrestigeLayer.resetText() + '?'))) {
+        confirm('您确定要解除装备该能力，并' +
+        ComplexityPrestigeLayer.resetText() + '吗？'))) {
       player.powers.stored.push(this.accessPower('equipped', i));
       player.powers.equipped = [...Array(this.equipped().length)].map((_, j) => j + 1).map(
         j => i === j ? null : this.accessPower('equipped', j)).filter(x => x !== null);
@@ -581,8 +594,8 @@ let Powers = {
       return true;
     }
     if (Options.confirmation('powersUnequip') && !confirm(
-      'Are you sure you want to unequip your equipped powers and ' +
-      ComplexityPrestigeLayer.resetText() + '?')) return false;
+      '您确定要解除装备目前的能力，并' +
+      ComplexityPrestigeLayer.resetText() + '吗？')) return false;
     this.respec();
     if (ComplexityPrestigeLayer.canComplexity()) {
       ComplexityPrestigeLayer.complexity(false);
@@ -766,7 +779,7 @@ let Powers = {
       try {
         document.execCommand('copy');
       } catch(ex) {
-        alert('Copying to clipboard failed.');
+        alert('未能复制到剪贴板。');
       }
     }
     if (!player.options.exportShow) {
@@ -810,13 +823,13 @@ let Powers = {
     this.onPowerChange(false, false);
   },
   import() {
-    this.importString(prompt('Enter your equipped powers (as previously exported):'));
+    this.importString(prompt('输入装备的能力(即之前导出的装备的能力)：'));
   },
   hasPreset(x) {
     return player.powers.presets.length >= x;
   },
   presetName(x) {
-    if (!this.hasPreset(x)) return 'Untitled';
+    if (!this.hasPreset(x)) return '未命名';
     return player.powers.presets[x - 1].name;
   },
   presetPowerList(x) {
@@ -830,7 +843,7 @@ let Powers = {
     player.powers.presets[x - 1].powers = equippedPowers;
   },
   presetSetToCurrentPowers(x) {
-    if (Options.confirmation('presetChange') && !confirm('Are you sure you want to change this power preset?')) {
+    if (Options.confirmation('presetChange') && !confirm('您确定要改为目前装备的能力吗？')) {
       return;
     }
     this.setPresetPowerList(x, this.exportString());
@@ -883,7 +896,7 @@ let Powers = {
     this.redisplayPreset(y);
   },
   presetDelete(x) {
-    if (Options.confirmation('presetDeletion') && !confirm('Are you sure you want to delete this power preset?')) {
+    if (Options.confirmation('presetDeletion') && !confirm('您确定要删除该能力预设吗？')) {
       return;
     }
     player.powers.presets = player.powers.presets.slice(0, x - 1).concat(player.powers.presets.slice(x));
@@ -894,7 +907,7 @@ let Powers = {
   },
   presetCreate() {
     if (!this.hasPreset(32)) {
-      player.powers.presets.push({'name': 'Untitled', 'powers': this.exportString()});
+      player.powers.presets.push({'name': '未命名', 'powers': this.exportString()});
       this.redisplayPreset(player.powers.presets.length);
     }
   },

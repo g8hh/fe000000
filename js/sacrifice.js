@@ -43,9 +43,9 @@ let Sacrifice = {
     if (!Stars.canBuyThings()) {
       return Stars.cannotBuyThingsReason();
     } else if (Generator(8).amount().gt(0)) {
-      return format(this.sacrificeRequirement()) + ' stars';
+      return format(this.sacrificeRequirement()) + '星辰';
     } else {
-      return 'at least one of Generator ' + formatOrdinalInt(8);
+      return '拥有至少一个发生器' + formatOrdinalInt(8);
     }
   },
   updateSacrificePossible() {
@@ -78,8 +78,8 @@ let Sacrifice = {
     return this.newSacrificeMultiplier().div(this.sacrificeMultiplier());
   },
   sacrificeConfirmationMessage() {
-    return 'Are you sure you want to sacrifice to increase your sacrifice multiplier from ' +
-      format(this.sacrificeMultiplier()) + ' to ' + format(this.newSacrificeMultiplier()) + '?';
+    return '您想要进行献祭，使献祭倍率从' +
+      format(this.sacrificeMultiplier()) + '增长到' + format(this.newSacrificeMultiplier()) + '吗？';
   },
   sacrifice(manual) {
     if (!this.canSacrifice()) return;

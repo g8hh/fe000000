@@ -50,13 +50,13 @@ let FinalityStartingBenefits = {
   complexityStartingBenefitsDisplay() {
     let benefits = [];
     if (this.complexityPoints().gt(0)) {
-      benefits.push(formatInt(this.complexityPoints()) + ' complexity point' + pluralize(this.complexityPoints(), '', 's'));
+      benefits.push(formatInt(this.complexityPoints()) + '繁复点数' + pluralize(this.complexityPoints(), '', ''));
     }
     if (this.complexities() > 0) {
-      benefits.push(formatInt(this.complexities()) + ' complexit' + pluralize(this.complexities(), 'y', 'ies'));
+      benefits.push(formatInt(this.complexities()) + '次繁复' + pluralize(this.complexities(), '', ''));
     }
     if (this.complexityAchievements() > 0) {
-      benefits.push(formatInt(this.complexityAchievements()) + ' complexity achievement' + pluralize(this.complexityAchievements(), '', 's'));
+      benefits.push(formatInt(this.complexityAchievements()) + '个繁复成就' + pluralize(this.complexityAchievements(), '', ''));
     }
     return coordinate('*', '', benefits);
   },

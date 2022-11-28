@@ -156,8 +156,8 @@ let Options = {
         i.value = this.colorSetting(color, dullOrVibrant, i.type === 'color');
       }
       if (!auto) {
-        alert('Colors must have # followed by ' + formatInt(6) + ' hexadecimal characters (each 0-9 or a-f). ' + 
-        'You can also leave an input empty to use the default color.');
+        alert('颜色必须以#开头，然后输入' + formatInt(6) + '个十六进制数码(0-9，a-f)。' + 
+        '您可以将输入框留空来使用默认颜色。');
       }
       return;
     }

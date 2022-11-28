@@ -381,13 +381,13 @@ let Achievements = {
   nonGeneratorEffectsText() {
     let result = []
     if (Chroma.isUnlocked() || PrestigeLayerProgress.hasReached('complexity')) {
-      result.push('chroma buildup speed');
+      result.push('色度增长速度');
     }
     if (Powers.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) {
-      result.push('power gain speed');
+      result.push('能力获取速度');
     }
     if (Galaxy.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) {
-      result.push('galaxy effect buildup speed');
+      result.push('星系效果增长速度');
     }
     return coordinate('*', '', result);
   },

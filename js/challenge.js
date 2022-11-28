@@ -136,29 +136,29 @@ let Challenge = {
     let cc = this.currentChallenge();
     let ic = InfinityChallenge.currentInfinityChallenge();
     if (cc === 2) {
-      return 'Normal Challenge ' + formatOrdinalInt(2) + ' multiplier: ' + formatMaybeInt(this.challenge2Mult());
+      return '通常挑战' + formatOrdinalInt(2) + '的倍率：' + formatMaybeInt(this.challenge2Mult());
     } else if (cc === 3) {
-      return 'Normal Challenge ' + formatOrdinalInt(3) + ' multiplier: ' + formatPrecisely(this.challenge3Mult());
+      return '通常挑战' + formatOrdinalInt(3) + '的倍率：' + formatPrecisely(this.challenge3Mult());
     } else if (cc === 7) {
-      return 'Normal Challenge ' + formatOrdinalInt(7) + ' purchases left: ' + formatInt(this.challenge7PurchasesLeft());
+      return '通常挑战' + formatOrdinalInt(7) + '剩余购买个数：' + formatInt(this.challenge7PurchasesLeft());
     } else if (ic === 1) {
-      return 'Normal Challenge ' + formatOrdinalInt(2) + ' multiplier: ' + formatMaybeInt(this.challenge2Mult()) + ', ' +
-      'Normal Challenge ' + formatOrdinalInt(3) + ' multiplier: ' + formatPrecisely(this.challenge3Mult()) + ', ' +
-      'Normal Challenge ' + formatOrdinalInt(7) + ' purchases left: ' + formatInt(this.challenge7PurchasesLeft());
+      return '通常挑战' + formatOrdinalInt(2) + '的倍率：' + formatMaybeInt(this.challenge2Mult()) + '，' +
+      '通常挑战' + formatOrdinalInt(3) + '的倍率：' + formatPrecisely(this.challenge3Mult()) + '，' +
+      '通常挑战' + formatOrdinalInt(7) + '剩余购买个数：' + formatInt(this.challenge7PurchasesLeft());
     } else if (ic === 3) {
-      return 'Infinity Challenge ' + formatOrdinalInt(3) + ' prestige power exponent: ' +
+      return '无限挑战' + formatOrdinalInt(3) + '转生之力效果的指数：' +
       formatMaybeInt(InfinityChallenge.infinityChallenge3PrestigePowerExponent());
     } else if (ic === 4) {
-      return 'Infinity Challenge ' + formatOrdinalInt(4) + ' multiplier exponent: ' +
+      return '无限挑战' + formatOrdinalInt(4) + '的指数：' +
       formatMaybeInt(InfinityChallenge.infinityChallenge4Pow());
     } else if (ic === 5) {
-      return 'Infinity Challenge ' + formatOrdinalInt(5) + ' multiplier exponent: ' +
+      return '无限挑战' + formatOrdinalInt(5) + '的指数：' +
       formatMaybeInt(InfinityChallenge.infinityChallenge5Pow());
     } else if (ic === 6) {
-      return 'Infinity Challenge ' + formatOrdinalInt(6) + ' prestige power exponent: ' +
+      return '无限挑战' + formatOrdinalInt(6) + '转生之力效果的指数：' +
       formatMaybeInt(InfinityChallenge.infinityChallenge6PrestigePowerExponent());
     } else if (ic === 8) {
-      return 'Infinity Challenge ' + formatOrdinalInt(8) + ' purchases left: ' +
+      return '无限挑战' + formatOrdinalInt(8) + '剩余购买个数：' +
       formatInt(InfinityChallenge.infinityChallenge8PurchasesLeft());
     } else {
       return 'This text should never appear.';

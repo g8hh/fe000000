@@ -22,9 +22,9 @@ let FinalityPrestigeLayer = {
   },
   resetText() {
     if (this.canFinality()) {
-      return 'finality';
+      return '进行终焉重置';
     } else {
-      return 'do a finality reset (no finality point gain or finality gain)';
+      return '进行终焉强制重置(不获得终焉点数和终焉次数)';
     }
   },
   finalityPointGain() {
@@ -44,7 +44,7 @@ let FinalityPrestigeLayer = {
   },
   finalityPointGainRatioText() {
     if (this.totalFinalityPoints().neq(0)) {
-      return format(this.finalityPointGainRatio()) + 'x total, ';
+      return '一共' + format(this.finalityPointGainRatio()) + '倍，';
     } else {
       return '';
     }
@@ -69,7 +69,7 @@ let FinalityPrestigeLayer = {
   },
   finalityShardGainRatioText() {
     if (this.totalFinalityShards() !== 0) {
-      return format(this.finalityShardGainRatio()) + 'x total, ';
+      return '一共' + format(this.finalityShardGainRatio()) + '倍，';
     } else {
       return '';
     }
@@ -77,12 +77,12 @@ let FinalityPrestigeLayer = {
   finalityConfirmationMessage() {
     let pointGain = this.finalityPointGain();
     let shardGain = this.finalityShardGain();
-    return 'Are you sure you want to finality for ' +
-    formatInt(pointGain) + ' finality point' + pluralize(pointGain, '', 's') + ' and ' +
-    formatInt(shardGain) + ' finality shard' + pluralize(shardGain, '', 's') + '?';
+    return '您确定要进行终焉重置，并获得' +
+    formatInt(pointGain) + '终焉点数' + pluralize(pointGain, '', '') + '和' +
+    formatInt(shardGain) + '终焉碎片' + pluralize(shardGain, '', '') + '吗？';
   },
   finalityResetConfirmationMessage() {
-    return 'Are you sure you want to do a finality reset? This will not give you any finality points or finality shards.';
+    return '您确定要进行终焉强制重置吗？您不会获得任何终焉点数和终焉碎片。';
   },
   finality(manual, justReset) {
     if (!this.canFinality()) return;

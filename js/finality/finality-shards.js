@@ -170,8 +170,8 @@ let FinalityShardPresets = {
       return true;
     }
     if (Options.confirmation('finalityShardUpgradesRespec') && !confirm(
-      'Are you sure you want to respec your bought finality shard upgrades and ' +
-      FinalityPrestigeLayer.resetText() + '?')) return false;
+      '您确定要洗点已购买的终焉碎片升级，并' +
+      FinalityPrestigeLayer.resetText() + '吗？')) return false;
     this.respec();
     if (FinalityPrestigeLayer.canFinality()) {
       FinalityPrestigeLayer.finality(false, true);
@@ -194,7 +194,7 @@ let FinalityShardPresets = {
       try {
         document.execCommand('copy');
       } catch(ex) {
-        alert('Copying to clipboard failed.');
+        alert('未能复制到剪贴板。');
       }
     }
     if (!player.options.exportShow) {
@@ -232,13 +232,13 @@ let FinalityShardPresets = {
     FinalityShards.handleNewUpgradeBonuses(old);
   },
   import() {
-    this.importString(prompt('Enter your finality shard upgrades (as previously exported):'));
+    this.importString(prompt('输入终焉碎片升级(即之前导出的终焉碎片升级)：'));
   },
   hasPreset(x) {
     return player.finalityShardUpgradePresets.length >= x;
   },
   presetName(x) {
-    if (!this.hasPreset(x)) return 'Untitled';
+    if (!this.hasPreset(x)) return '未命名';
     return player.finalityShardUpgradePresets[x - 1].name;
   },
   presetFinalityShardUpgradeList(x) {
@@ -252,7 +252,7 @@ let FinalityShardPresets = {
     player.finalityShardUpgradePresets[x - 1].upgrades = finalityShardUpgrades;
   },
   presetSetToCurrentFinalityShardUpgrades(x) {
-    if (Options.confirmation('presetChange') && !confirm('Are you sure you want to change this finality preset?')) {
+    if (Options.confirmation('presetChange') && !confirm('您确定要改为目前的终焉升级吗？')) {
       return;
     }
     this.setPresetFinalityShardUpgradeList(x, this.exportString());
@@ -305,7 +305,7 @@ let FinalityShardPresets = {
     this.redisplayPreset(y);
   },
   presetDelete(x) {
-    if (Options.confirmation('presetDeletion') && !confirm('Are you sure you want to delete this finality preset?')) {
+    if (Options.confirmation('presetDeletion') && !confirm('您确定要删除该终焉预设吗？')) {
       return;
     }
     player.finalityShardUpgradePresets = player.finalityShardUpgradePresets.slice(0, x - 1).concat(
@@ -317,7 +317,7 @@ let FinalityShardPresets = {
   },
   presetCreate() {
     if (!this.hasPreset(32)) {
-      player.finalityShardUpgradePresets.push({'name': 'Untitled', 'upgrades': this.exportString()});
+      player.finalityShardUpgradePresets.push({'name': '未命名', 'upgrades': this.exportString()});
       this.redisplayPreset(player.finalityShardUpgradePresets.length);
     }
   },

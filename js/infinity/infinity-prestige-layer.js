@@ -12,8 +12,8 @@ let InfinityPrestigeLayer = {
   },
   breakInfinityButtonText() {
     return player.breakInfinity ?
-      ('Fix infinity: force infinity at ' + format(Decimal.pow(2, 256)) + ' stars') :
-      ('Break infinity: allow stars to go beyond ' + format(Decimal.pow(2, 256)) + ', with greater IP gain');
+      ('修复无限：强制在' + format(Decimal.pow(2, 256)) + '星辰进行无限重置') :
+      ('打破无限：允许星辰超过' + format(Decimal.pow(2, 256)) + '，获得更多无限点数');
   },
   toggleBreakInfinity() {
     if (this.canInfinityBeBroken()) {
@@ -66,7 +66,7 @@ let InfinityPrestigeLayer = {
   },
   infinityPointGainRatioText() {
     if (this.totalInfinityPoints().neq(0)) {
-      return format(this.infinityPointGainRatio()) + 'x total, ';
+      return '一共' + format(this.infinityPointGainRatio()) + '倍，';
     } else {
       return '';
     }
@@ -76,7 +76,7 @@ let InfinityPrestigeLayer = {
   },
   infinityPointNextText() {
     if (this.infinityPointGain().lt(256)) {
-      return ', next at ' + format(this.infinityPointNext()) + ' stars';
+      return '，下次需要' + format(this.infinityPointNext()) + '星辰';
     } else {
       return '';
     }
@@ -134,11 +134,11 @@ let InfinityPrestigeLayer = {
   },
   infinityConfirmationMessage() {
     let gain = this.infinityPointGain();
-    return 'Are you sure you want to infinity for ' +
-    formatInt(gain) + ' infinity point' + pluralize(gain, '', 's') + '?';
+    return '您确定要进行无限重置，并获得' +
+    formatInt(gain) + '无限点数' + pluralize(gain, '', '') + '吗？';
   },
   infinityResetConfirmationMessage() {
-    return 'Are you sure you want to do an infinity reset? This will not give you any infinity points.';
+    return '您确定要进行无限强制重置吗？您不会获得任何无限点数。';
   },
   infinity(manual, newLimit) {
     if (!this.canInfinity()) return;

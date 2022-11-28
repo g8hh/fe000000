@@ -90,12 +90,12 @@ let ComplexityChallenge = {
   complexityChallengeStatusDescription(x) {
     if (!this.isComplexityChallengeUnlocked(x)) {
       let requirement = this.getComplexityChallengeRequirement(x);
-      return 'Locked (requires ' + formatInt(requirement) + ' complexit' + pluralize(requirement, 'y', 'ies') + ')';
+      return '未解锁(需要进行' + formatInt(requirement) + '次繁复重置' + pluralize(requirement, '', '') + ')';
     }
-    let description = formatInt(this.getComplexityChallengeCompletions(x)) + ' completion' +
-      pluralize(this.getComplexityChallengeCompletions(x), '', 's');
+    let description = '完成' + formatInt(this.getComplexityChallengeCompletions(x)) + '阶层' +
+      pluralize(this.getComplexityChallengeCompletions(x), '', '');
     if (this.isComplexityChallengeRunning(x)) {
-      description += ', running';
+      description += '，正在运行';
     }
     return description;
   },
@@ -109,9 +109,9 @@ let ComplexityChallenge = {
       let complexities = Complexities.amount() - player.complexityChallengeLastCompletion[x - 1][0];
       let times = player.complexityChallengeLastCompletion[x - 1][1];
       if (complexities === 0) {
-        return 'Completed ' + formatInt(times) + ' time' + pluralize(times, '', 's') + ' this complexity'
+        return '本次繁复完成了' + formatInt(times) + '阶层' + pluralize(times, '', '') + ''
       } else {
-        return 'Last completed ' + formatInt(complexities) + ' complexit' + pluralize(complexities, 'y', 'ies') + ' ago, ' + formatInt(times) + ' time' + pluralize(times, '', 's');
+        return '最近于' + formatInt(complexities) + '次繁复' + pluralize(complexities, '', '') + '之前，完成了' + formatInt(times) + '阶层' + pluralize(times, '', '');
       }
     }
   },
@@ -147,10 +147,9 @@ let ComplexityChallenge = {
     let remaining = this.getComplexityChallengeRequirement(x) - player.complexities;
     // Note that "unlocking chroma and colors of chroma" is slightly more detailed than the
     // "unlocking chroma and colors" in the game.
-    let thing = ['buying boosts', 'unlocking the Eternity Producer', 'unlocking chroma and colors of chroma',
-    'buying Eternity Generator ' + formatOrdinalInt(8), 'buying studies'][x - 2];
-    return 'Are you sure you want to disable ' + thing + '? Complexity Challenge ' + formatOrdinalInt(x) +
-    ' will not be unlocked ' + (remaining === 1 ? 'until next complexity.' : 'for ' + formatInt(remaining) + ' more complexities.');
+    let thing = ['购买推进', '解锁永恒产生者', '解锁色度和颜色',
+    '购买永恒发生器' + formatOrdinalInt(8), '购买课题'][x - 2];
+    return '您确定要禁用' + thing + '吗？您需要' + (remaining === 1 ? '再进行1次繁复重置' : '再进行' + formatInt(remaining) + '次繁复重置') + '才能解锁繁复挑战' + formatOrdinalInt(x) + '。';
   },
   toggleSafeguard(x) {
     let message = this.getEnteringMessage(x);
@@ -159,7 +158,7 @@ let ComplexityChallenge = {
       return;
     }
     player.complexityChallengeSafeguards[x - 2] = !player.complexityChallengeSafeguards[x - 2];
-    if (x === 6 && !player.complexityChallengeSafeguards[x - 2] &&
+    if (x === 6 && !player.complexityChallengeSafeguards[x - 2] && ComplexityChallenge.isComplexityChallengeRunning(6) &&
       ComplexityAchievements.isComplexityAchievementActive(4, 4) && Studies.rebuyAfterComplexityChallenge6()) {
       // Note that finality resets all four things used here (studies and purchase order, both from before last respec
       // and current) before complexity reset is called, so this does nothing in the case of
@@ -209,7 +208,7 @@ let ComplexityChallenge = {
   },
   longTimeText() {
     let complexityChallenges = [2, 3, 4, 5, 6].filter(x => this.longTimeOn(x));
-    return 'Complexity Challenge' + pluralize(complexityChallenges.length, '', 's') + ' ' + coordinate('*', '', complexityChallenges);
+    return '繁复挑战' + pluralize(complexityChallenges.length, '', '') + '' + coordinate('*', '', complexityChallenges);
   },
   removeLongTimeMessage() {
     for (let i = 2; i <= 6; i++) {

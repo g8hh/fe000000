@@ -44,9 +44,9 @@ let EternityChallenge = {
     () => EternityStars.amount(),
   ],
   resourceNames: [
-    null, 'stars', 'boosts', 'prestige power', 'infinity points',
-    'infinity stars', 'total EC completions',
-    'eternity points', 'eternity stars',
+    null, '星辰', '推进', '转生之力', '无限点数',
+    '无限星辰', '永恒挑战完成阶层',
+    '永恒点数', '永恒星辰',
   ],
   costs: [Infinity, 5, 6, 8, 10, 12, 15, 20, 24],
   totalCompletionsRewardThresholds: [null, 8, 16, 24, 32],
@@ -72,7 +72,7 @@ let EternityChallenge = {
     } else if (this.getUnlockedEternityChallenge() !== 0) {
       return 'Another EC already unlocked';
     } else if (Decimal.lt(this.getEternityChallengeResourceAmount(x), this.getEternityChallengeRequirement(x))) {
-      return 'Requires more ' + this.getEternityChallengeResourceName(x);
+      return '需要更多' + this.getEternityChallengeResourceName(x);
     } else if (Studies.unspentTheorems() < this.getEternityChallengeCost(x)) {
       return 'Requires more unspent theorems';
     }
@@ -91,12 +91,12 @@ let EternityChallenge = {
       // use formatInt, which checks slightly different settings).
       if (this.isEternityChallengeRunning(unlocked)) {
         if (this.isEternityChallengeCompleted(unlocked)) {
-          return 'Exit Eternity Challenge ' + formatOrdinalInt(unlocked) + ' (already fully completed)';
+          return '退出永恒挑战' + formatOrdinalInt(unlocked) + '(已完全完成)';
         } else {
-          return 'Exit Eternity Challenge ' + formatOrdinalInt(unlocked) + ' (this will ' + (EternityPrestigeLayer.canEternity() ? '' : 'not ') + 'complete it)';
+          return '退出永恒挑战' + formatOrdinalInt(unlocked) + '(' + (EternityPrestigeLayer.canEternity() ? '将' : '不会') + '完成它)';
         }
       } else if (this.canEternityChallengeBeStarted(unlocked)) {
-        return 'Start Eternity Challenge ' + formatOrdinalInt(unlocked);
+        return '开始永恒挑战' + formatOrdinalInt(unlocked);
       }
     }
   },
@@ -256,18 +256,17 @@ let EternityChallenge = {
     // This could be done as easily in the HTML but it seems nice to have a method.
     // Also, we don't use formatInt because it might show the current resource amount incorrectly
     // (for example, 2 stars rather than 1.75).
-    return formatMaybeInt(this.getEternityChallengeResourceAmount(x)) + '/' + formatMaybeInt(this.getEternityChallengeRequirement(x)) +
-      ' ' + this.getEternityChallengeResourceName(x);
+    return '现有' + formatMaybeInt(this.getEternityChallengeResourceAmount(x)) + this.getEternityChallengeResourceName(x) + '，需要' + formatMaybeInt(this.getEternityChallengeRequirement(x)) + this.getEternityChallengeResourceName(x);
   },
   eternityChallengeStatusDescription(x) {
     let description;
     if (this.isEternityChallengeCompleted(x)) {
-      description = 'Completed (' + formatInt(this.getEternityChallengeCompletions(x)) + '/' + formatInt(4) + ')';
+      description = '已完成(' + formatInt(this.getEternityChallengeCompletions(x)) + '阶层，上限为' + formatInt(4) + '阶层)';
     } else {
-      description = formatInt(this.getEternityChallengeCompletions(x)) + '/' + formatInt(4) + ' completions';
+      description = '完成' + formatInt(this.getEternityChallengeCompletions(x)) + '阶层，上限为' + formatInt(4) + '阶层';
     }
     if (this.isEternityChallengeRunning(x)) {
-      description += ', running';
+      description += '，正在进行';
     }
     return description;
   },
@@ -322,8 +321,8 @@ let EternityChallenge = {
       return true;
     }
     if (Options.confirmation('eternityChallengeRespec') && !confirm(
-      'Are you sure you want to respec your unlocked eternity challenge and ' +
-      EternityPrestigeLayer.resetText() + '?')) return false;
+      '您确定要洗点解锁的永恒挑战，并' +
+      EternityPrestigeLayer.resetText() + '吗？')) return false;
     this.respec();
     if (EternityPrestigeLayer.canEternity()) {
       EternityPrestigeLayer.eternity(false);
@@ -395,21 +394,21 @@ let EternityChallenge = {
   eternityChallengeText() {
     let cc = this.currentEternityChallenge();
     if (cc === 1) {
-      return 'Eternity Challenge ' + formatOrdinalInt(1) + ' exponents: ' +
-        formatPrecisely(this.eternityChallenge1InfinityStarsEffect()) + ' to normal generators, ' +
-        formatPrecisely(this.eternityChallenge1EternityStarsEffect()) + ' to infinity generators';
+      return '永恒挑战' + formatOrdinalInt(1) + '的指数：' +
+        '通常发生器为' + formatPrecisely(this.eternityChallenge1InfinityStarsEffect()) + '，无限发生器为' +
+        formatPrecisely(this.eternityChallenge1EternityStarsEffect()) + '';
     } else if (cc === 4) {
-      return 'Eternity Challenge ' + formatOrdinalInt(4) + ': ' + formatInt(this.eternityChallenge4DoneInfinities()) + '/' +
-        formatInt(this.eternityChallenge4AllowedInfinities()) + ' infinities done';
+      return '永恒挑战' + formatOrdinalInt(4) + '：进行了' + formatInt(this.eternityChallenge4DoneInfinities()) + '次无限重置，最高可以进行' +
+        formatInt(this.eternityChallenge4AllowedInfinities()) + '次无限重置';
     } else {
       return 'This text should never appear.';
     }
   },
   eternityChallengeTotalCompletionsReward4Text() {
     if (ComplexityAchievements.isComplexityAchievementActive(2, 2)) {
-      return 'Chroma buildup speed ' + formatInt(this.getTotalCompletionsRewardRawEffect(4)) + 'x.';
+      return '色度增长速度变为原来的' + formatInt(this.getTotalCompletionsRewardRawEffect(4)) + '倍。';
     } else {
-      return 'Autobuyers for eternity upgrades, eternity generators, and Eternity Producer upgrades, and chroma buildup speed ' + formatInt(this.getTotalCompletionsRewardRawEffect(4)) + 'x.';
+      return '获得永恒升级，永恒发生器和永恒产生者的自动购买器，色度增长速度变为原来的' + formatInt(this.getTotalCompletionsRewardRawEffect(4)) + '倍。';
     }
   },
   hasAllECsForever() {
@@ -553,7 +552,7 @@ let EternityChallenge = {
     if (nextCompletions === 4) {
       return '';
     } else if (this.eternityChallengeCompletionsIsTierPossible(x, nextCompletions)) {
-      return ', next at ' + format(this.getEternityChallengeGoalAtTier(x, this.getNextEternityChallengeCompletions(x))) + ' IP';
+      return '，下次需要' + format(this.getEternityChallengeGoalAtTier(x, this.getNextEternityChallengeCompletions(x))) + '无限点数';
     } else {
       return ', too many infinities for more'
     }

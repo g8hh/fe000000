@@ -212,7 +212,7 @@ let ColorPreset = {
       try {
         document.execCommand('copy');
       } catch(ex) {
-        alert('Copying to clipboard failed.');
+        alert('未能复制到剪贴板。');
       }
     }
     if (!player.options.exportShow) {
@@ -244,13 +244,13 @@ let ColorPreset = {
     Colors.updateColors();
   },
   import() {
-    this.importString(prompt('Enter color scheme (as previously exported):'));
+    this.importString(prompt('输入颜色主题(即之前导出的主题)：'));
   },
   hasPreset(x) {
     return player.colorPresets.length >= x;
   },
   presetName(x) {
-    if (!this.hasPreset(x)) return 'Untitled';
+    if (!this.hasPreset(x)) return '未命名';
     return player.colorPresets[x - 1].name;
   },
   presetColors(x) {
@@ -264,7 +264,7 @@ let ColorPreset = {
     player.colorPresets[x - 1].colors = colors;
   },
   presetSetToCurrentColors(x) {
-    if (Options.confirmation('presetChange') && !confirm('Are you sure you want to change this color preset?')) {
+    if (Options.confirmation('presetChange') && !confirm('您确定要改为目前的颜色主题吗？')) {
       return;
     }
     this.setPresetColors(x, this.exportString());
@@ -316,7 +316,7 @@ let ColorPreset = {
     this.redisplayPreset(y);
   },
   presetDelete(x) {
-    if (Options.confirmation('presetDeletion') && !confirm('Are you sure you want to delete this color preset?')) {
+    if (Options.confirmation('presetDeletion') && !confirm('您确定要删除该颜色预设吗？')) {
       return;
     }
     player.colorPresets = player.colorPresets.slice(0, x - 1).concat(player.colorPresets.slice(x));
@@ -327,7 +327,7 @@ let ColorPreset = {
   },
   presetCreate() {
     if (!this.hasPreset(32)) {
-      player.colorPresets.push({'name': 'Untitled', 'colors': this.exportString()});
+      player.colorPresets.push({'name': '未命名', 'colors': this.exportString()});
       this.redisplayPreset(player.colorPresets.length);
     }
   },

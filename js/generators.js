@@ -177,7 +177,7 @@ let Generators = {
     player.options.viewGeneratorsWhenStarsAtLimit = x;
   },
   term(singular, title) {
-    let x = (PrestigeLayerProgress.hasReached('infinity') ? 'normal generator' : 'generator') + (singular ? '' : 's');
+    let x = (PrestigeLayerProgress.hasReached('infinity') ? '通常发生器' : '发生器') + (singular ? '' : '');
     if (title) {
       return x[0].toUpperCase() + x.slice(1);
     } else {

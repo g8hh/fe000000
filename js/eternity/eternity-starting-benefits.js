@@ -45,9 +45,9 @@ let EternityStartingBenefits = {
     if (x === 1) {
       return 'the first infinity challenge';
     } else if (x === 8) {
-      return 'all ' + formatInt(8) + ' infinity challenges';
+      return '所有' + formatInt(8) + '个无限挑战';
     } else {
-      return 'the first ' + formatInt(x) + ' infinity challenges';
+      return '前' + formatInt(x) + '个无限挑战';
     }
   }
 }

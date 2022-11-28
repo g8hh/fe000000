@@ -1131,11 +1131,11 @@ function updateDisplay() {
   if (shouldUpdate("e2")) {let v = FastResetText.getText(); if (e[2].textContent !== v) {e[2].textContent = v};};
   if (shouldUpdate("e3")) {let v = format(InfinityPrestigeLayer.starRequirementForInfinity()); if (e[3].textContent !== v) {e[3].textContent = v};};
   if (shouldUpdate("e4")) {let v = formatInt(InfinityPrestigeLayer.infinityPoints()); if (e[4].textContent !== v) {e[4].textContent = v};};
-  if (shouldUpdate("e5")) {let v = pluralize(InfinityPrestigeLayer.infinityPoints(), '', 's'); if (e[5].textContent !== v) {e[5].textContent = v};};
+  if (shouldUpdate("e5")) {let v = pluralize(InfinityPrestigeLayer.infinityPoints(), '', ''); if (e[5].textContent !== v) {e[5].textContent = v};};
   if (shouldUpdate("e6")) {let v = formatInt(InfinityPrestigeLayer.totalInfinityPoints()); if (e[6].textContent !== v) {e[6].textContent = v};};
   if (shouldUpdate("e7")) {let v = formatTime(player.stats.timeSinceInfinity, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[7].textContent !== v) {e[7].textContent = v};};
   if (shouldUpdate("e8")) {let v = formatInt(InfinityPrestigeLayer.infinityPointGain()); if (e[8].textContent !== v) {e[8].textContent = v};};
-  if (shouldUpdate("e9")) {let v = pluralize(InfinityPrestigeLayer.infinityPointGain(), '', 's'); if (e[9].textContent !== v) {e[9].textContent = v};};
+  if (shouldUpdate("e9")) {let v = pluralize(InfinityPrestigeLayer.infinityPointGain(), '', ''); if (e[9].textContent !== v) {e[9].textContent = v};};
   if (shouldUpdate("e10")) {let v = InfinityPrestigeLayer.infinityPointGainRatioText(); if (e[10].textContent !== v) {e[10].textContent = v};};
   if (shouldUpdate("e11")) {let v = formatInt(InfinityPrestigeLayer.infinityPoints()); if (e[11].textContent !== v) {e[11].textContent = v};};
   if (shouldUpdate("e12")) {let v = formatInt(InfinityPrestigeLayer.newInfinityPoints()); if (e[12].textContent !== v) {e[12].textContent = v};};
@@ -1147,11 +1147,11 @@ function updateDisplay() {
   if (shouldUpdate("e18")) {let v = format(InfinityPrestigeLayer.peakLogIPPerSecDisplay()); if (e[18].textContent !== v) {e[18].textContent = v};};
   if (shouldUpdate("e19")) {let v = format(EternityPrestigeLayer.infinityPointRequirementForEternity()); if (e[19].textContent !== v) {e[19].textContent = v};};
   if (shouldUpdate("e20")) {let v = formatInt(EternityPrestigeLayer.eternityPoints()); if (e[20].textContent !== v) {e[20].textContent = v};};
-  if (shouldUpdate("e21")) {let v = pluralize(EternityPrestigeLayer.eternityPoints(), '', 's'); if (e[21].textContent !== v) {e[21].textContent = v};};
+  if (shouldUpdate("e21")) {let v = pluralize(EternityPrestigeLayer.eternityPoints(), '', ''); if (e[21].textContent !== v) {e[21].textContent = v};};
   if (shouldUpdate("e22")) {let v = formatInt(EternityPrestigeLayer.totalEternityPoints()); if (e[22].textContent !== v) {e[22].textContent = v};};
   if (shouldUpdate("e23")) {let v = formatTime(player.stats.timeSinceEternity, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[23].textContent !== v) {e[23].textContent = v};};
   if (shouldUpdate("e24")) {let v = formatInt(EternityPrestigeLayer.eternityPointGain()); if (e[24].textContent !== v) {e[24].textContent = v};};
-  if (shouldUpdate("e25")) {let v = pluralize(EternityPrestigeLayer.eternityPointGain(), '', 's'); if (e[25].textContent !== v) {e[25].textContent = v};};
+  if (shouldUpdate("e25")) {let v = pluralize(EternityPrestigeLayer.eternityPointGain(), '', ''); if (e[25].textContent !== v) {e[25].textContent = v};};
   if (shouldUpdate("e26")) {let v = EternityPrestigeLayer.eternityPointGainRatioText(); if (e[26].textContent !== v) {e[26].textContent = v};};
   if (shouldUpdate("e27")) {let v = formatInt(EternityPrestigeLayer.eternityPoints()); if (e[27].textContent !== v) {e[27].textContent = v};};
   if (shouldUpdate("e28")) {let v = formatInt(EternityPrestigeLayer.newEternityPoints()); if (e[28].textContent !== v) {e[28].textContent = v};};
@@ -1162,17 +1162,17 @@ function updateDisplay() {
   if (shouldUpdate("e33")) {let v = format(EternityPrestigeLayer.currentLogEPPerSecDisplay()); if (e[33].textContent !== v) {e[33].textContent = v};};
   if (shouldUpdate("e34")) {let v = format(EternityPrestigeLayer.peakLogEPPerSecDisplay()); if (e[34].textContent !== v) {e[34].textContent = v};};
   if (shouldUpdate("e35")) {let v = formatInt(EternityChallenge.tiersCompletedOnEternity()); if (e[35].textContent !== v) {e[35].textContent = v};};
-  if (shouldUpdate("e36")) {let v = pluralize(EternityChallenge.tiersCompletedOnEternity(), '', 's'); if (e[36].textContent !== v) {e[36].textContent = v};};
+  if (shouldUpdate("e36")) {let v = pluralize(EternityChallenge.tiersCompletedOnEternity(), '', ''); if (e[36].textContent !== v) {e[36].textContent = v};};
   if (shouldUpdate("e37")) {let v = formatInt(EternityChallenge.getEternityChallengeCompletions()); if (e[37].textContent !== v) {e[37].textContent = v};};
   if (shouldUpdate("e38")) {let v = formatInt(EternityChallenge.getNextEternityChallengeCompletions()); if (e[38].textContent !== v) {e[38].textContent = v};};
   if (shouldUpdate("e39")) {let v = EternityChallenge.eternityChallengeCompletionsNextText(); if (e[39].textContent !== v) {e[39].textContent = v};};
   if (shouldUpdate("e40")) {let v = ComplexityPrestigeLayer.requirementForComplexity(); if (e[40].textContent !== v) {e[40].textContent = v};};
   if (shouldUpdate("e41")) {let v = formatInt(ComplexityPrestigeLayer.complexityPoints()); if (e[41].textContent !== v) {e[41].textContent = v};};
-  if (shouldUpdate("e42")) {let v = pluralize(ComplexityPrestigeLayer.complexityPoints(), '', 's'); if (e[42].textContent !== v) {e[42].textContent = v};};
+  if (shouldUpdate("e42")) {let v = pluralize(ComplexityPrestigeLayer.complexityPoints(), '', ''); if (e[42].textContent !== v) {e[42].textContent = v};};
   if (shouldUpdate("e43")) {let v = formatInt(ComplexityPrestigeLayer.totalComplexityPoints()); if (e[43].textContent !== v) {e[43].textContent = v};};
   if (shouldUpdate("e44")) {let v = formatTime(player.stats.timeSinceComplexity, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[44].textContent !== v) {e[44].textContent = v};};
   if (shouldUpdate("e45")) {let v = formatInt(ComplexityPrestigeLayer.complexityPointGain()); if (e[45].textContent !== v) {e[45].textContent = v};};
-  if (shouldUpdate("e46")) {let v = pluralize(ComplexityPrestigeLayer.complexityPointGain(), '', 's'); if (e[46].textContent !== v) {e[46].textContent = v};};
+  if (shouldUpdate("e46")) {let v = pluralize(ComplexityPrestigeLayer.complexityPointGain(), '', ''); if (e[46].textContent !== v) {e[46].textContent = v};};
   if (shouldUpdate("e47")) {let v = ComplexityPrestigeLayer.complexityPointGainRatioText(); if (e[47].textContent !== v) {e[47].textContent = v};};
   if (shouldUpdate("e48")) {let v = formatInt(ComplexityPrestigeLayer.complexityPoints()); if (e[48].textContent !== v) {e[48].textContent = v};};
   if (shouldUpdate("e49")) {let v = formatInt(ComplexityPrestigeLayer.newComplexityPoints()); if (e[49].textContent !== v) {e[49].textContent = v};};
@@ -1184,26 +1184,26 @@ function updateDisplay() {
   if (shouldUpdate("e55")) {let v = format(ComplexityPrestigeLayer.peakLogCPPerSecDisplay()); if (e[55].textContent !== v) {e[55].textContent = v};};
   if (shouldUpdate("e56")) {let v = format(FinalityPrestigeLayer.complexityPointRequirementForFinality()); if (e[56].textContent !== v) {e[56].textContent = v};};
   if (shouldUpdate("e57")) {let v = formatInt(FinalityPrestigeLayer.finalityPoints()); if (e[57].textContent !== v) {e[57].textContent = v};};
-  if (shouldUpdate("e58")) {let v = pluralize(FinalityPrestigeLayer.finalityPoints(), '', 's'); if (e[58].textContent !== v) {e[58].textContent = v};};
+  if (shouldUpdate("e58")) {let v = pluralize(FinalityPrestigeLayer.finalityPoints(), '', ''); if (e[58].textContent !== v) {e[58].textContent = v};};
   if (shouldUpdate("e59")) {let v = formatInt(FinalityPrestigeLayer.totalFinalityPoints()); if (e[59].textContent !== v) {e[59].textContent = v};};
   if (shouldUpdate("e60")) {let v = formatInt(FinalityPrestigeLayer.finalityShards()); if (e[60].textContent !== v) {e[60].textContent = v};};
-  if (shouldUpdate("e61")) {let v = pluralize(FinalityPrestigeLayer.finalityShards(), '', 's'); if (e[61].textContent !== v) {e[61].textContent = v};};
+  if (shouldUpdate("e61")) {let v = pluralize(FinalityPrestigeLayer.finalityShards(), '', ''); if (e[61].textContent !== v) {e[61].textContent = v};};
   if (shouldUpdate("e62")) {let v = formatInt(FinalityPrestigeLayer.totalFinalityShards()); if (e[62].textContent !== v) {e[62].textContent = v};};
   if (shouldUpdate("e63")) {let v = formatTime(player.stats.timeSinceFinality, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[63].textContent !== v) {e[63].textContent = v};};
   if (shouldUpdate("e64")) {let v = formatInt(FinalityPrestigeLayer.finalityPointGain()); if (e[64].textContent !== v) {e[64].textContent = v};};
-  if (shouldUpdate("e65")) {let v = pluralize(FinalityPrestigeLayer.finalityPointGain(), '', 's'); if (e[65].textContent !== v) {e[65].textContent = v};};
+  if (shouldUpdate("e65")) {let v = pluralize(FinalityPrestigeLayer.finalityPointGain(), '', ''); if (e[65].textContent !== v) {e[65].textContent = v};};
   if (shouldUpdate("e66")) {let v = FinalityPrestigeLayer.finalityPointGainRatioText(); if (e[66].textContent !== v) {e[66].textContent = v};};
   if (shouldUpdate("e67")) {let v = formatInt(FinalityPrestigeLayer.finalityPoints()); if (e[67].textContent !== v) {e[67].textContent = v};};
   if (shouldUpdate("e68")) {let v = formatInt(FinalityPrestigeLayer.newFinalityPoints()); if (e[68].textContent !== v) {e[68].textContent = v};};
   if (shouldUpdate("e69")) {let v = formatTime(player.stats.timeSinceFinality, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[69].textContent !== v) {e[69].textContent = v};};
   if (shouldUpdate("e70")) {let v = formatInt(FinalityPrestigeLayer.finalityShardGain()); if (e[70].textContent !== v) {e[70].textContent = v};};
-  if (shouldUpdate("e71")) {let v = pluralize(FinalityPrestigeLayer.finalityShardGain(), '', 's'); if (e[71].textContent !== v) {e[71].textContent = v};};
+  if (shouldUpdate("e71")) {let v = pluralize(FinalityPrestigeLayer.finalityShardGain(), '', ''); if (e[71].textContent !== v) {e[71].textContent = v};};
   if (shouldUpdate("e72")) {let v = FinalityPrestigeLayer.finalityShardGainRatioText(); if (e[72].textContent !== v) {e[72].textContent = v};};
   if (shouldUpdate("e73")) {let v = formatInt(FinalityPrestigeLayer.finalityShards()); if (e[73].textContent !== v) {e[73].textContent = v};};
   if (shouldUpdate("e74")) {let v = formatInt(FinalityPrestigeLayer.newFinalityShards()); if (e[74].textContent !== v) {e[74].textContent = v};};
   if (shouldUpdate("e75")) {let v = format(InfinityPrestigeLayer.starRequirementForInfinity()); if (e[75].textContent !== v) {e[75].textContent = v};};
   if (shouldUpdate("e76")) {let v = formatInt(InfinityPrestigeLayer.infinityPoints()); if (e[76].textContent !== v) {e[76].textContent = v};};
-  if (shouldUpdate("e77")) {let v = pluralize(InfinityPrestigeLayer.infinityPoints(), '', 's'); if (e[77].textContent !== v) {e[77].textContent = v};};
+  if (shouldUpdate("e77")) {let v = pluralize(InfinityPrestigeLayer.infinityPoints(), '', ''); if (e[77].textContent !== v) {e[77].textContent = v};};
   if (shouldUpdate("e78")) {let v = formatInt(InfinityPrestigeLayer.totalInfinityPoints()); if (e[78].textContent !== v) {e[78].textContent = v};};
   if (shouldUpdate("e79")) {let v = formatTime(player.stats.timeSinceInfinity, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[79].textContent !== v) {e[79].textContent = v};};
   if (shouldUpdate("e80")) {let v = formatInt(InfinityPrestigeLayer.infinityPointGain()); if (e[80].textContent !== v) {e[80].textContent = v};};
@@ -1218,7 +1218,7 @@ function updateDisplay() {
   if (shouldUpdate("e89")) {let v = format(InfinityPrestigeLayer.peakLogIPPerSecDisplay()); if (e[89].textContent !== v) {e[89].textContent = v};};
   if (shouldUpdate("e90")) {let v = format(EternityPrestigeLayer.infinityPointRequirementForEternity()); if (e[90].textContent !== v) {e[90].textContent = v};};
   if (shouldUpdate("e91")) {let v = formatInt(EternityPrestigeLayer.eternityPoints()); if (e[91].textContent !== v) {e[91].textContent = v};};
-  if (shouldUpdate("e92")) {let v = pluralize(EternityPrestigeLayer.eternityPoints(), '', 's'); if (e[92].textContent !== v) {e[92].textContent = v};};
+  if (shouldUpdate("e92")) {let v = pluralize(EternityPrestigeLayer.eternityPoints(), '', ''); if (e[92].textContent !== v) {e[92].textContent = v};};
   if (shouldUpdate("e93")) {let v = formatInt(EternityPrestigeLayer.totalEternityPoints()); if (e[93].textContent !== v) {e[93].textContent = v};};
   if (shouldUpdate("e94")) {let v = formatTime(player.stats.timeSinceEternity, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[94].textContent !== v) {e[94].textContent = v};};
   if (shouldUpdate("e95")) {let v = formatInt(EternityPrestigeLayer.eternityPointGain()); if (e[95].textContent !== v) {e[95].textContent = v};};
@@ -1232,13 +1232,13 @@ function updateDisplay() {
   if (shouldUpdate("e103")) {let v = format(EternityPrestigeLayer.currentLogEPPerSecDisplay()); if (e[103].textContent !== v) {e[103].textContent = v};};
   if (shouldUpdate("e104")) {let v = format(EternityPrestigeLayer.peakLogEPPerSecDisplay()); if (e[104].textContent !== v) {e[104].textContent = v};};
   if (shouldUpdate("e105")) {let v = formatInt(EternityChallenge.tiersCompletedOnEternity()); if (e[105].textContent !== v) {e[105].textContent = v};};
-  if (shouldUpdate("e106")) {let v = pluralize(EternityChallenge.tiersCompletedOnEternity(), '', 's'); if (e[106].textContent !== v) {e[106].textContent = v};};
+  if (shouldUpdate("e106")) {let v = pluralize(EternityChallenge.tiersCompletedOnEternity(), '', ''); if (e[106].textContent !== v) {e[106].textContent = v};};
   if (shouldUpdate("e107")) {let v = formatInt(EternityChallenge.getEternityChallengeCompletions()); if (e[107].textContent !== v) {e[107].textContent = v};};
   if (shouldUpdate("e108")) {let v = formatInt(EternityChallenge.getNextEternityChallengeCompletions()); if (e[108].textContent !== v) {e[108].textContent = v};};
   if (shouldUpdate("e109")) {let v = EternityChallenge.eternityChallengeCompletionsNextText(); if (e[109].textContent !== v) {e[109].textContent = v};};
   if (shouldUpdate("e110")) {let v = format(ComplexityPrestigeLayer.eternityPointRequirementForComplexity()); if (e[110].textContent !== v) {e[110].textContent = v};};
   if (shouldUpdate("e111")) {let v = formatInt(ComplexityPrestigeLayer.complexityPoints()); if (e[111].textContent !== v) {e[111].textContent = v};};
-  if (shouldUpdate("e112")) {let v = pluralize(ComplexityPrestigeLayer.complexityPoints(), '', 's'); if (e[112].textContent !== v) {e[112].textContent = v};};
+  if (shouldUpdate("e112")) {let v = pluralize(ComplexityPrestigeLayer.complexityPoints(), '', ''); if (e[112].textContent !== v) {e[112].textContent = v};};
   if (shouldUpdate("e113")) {let v = formatInt(ComplexityPrestigeLayer.totalComplexityPoints()); if (e[113].textContent !== v) {e[113].textContent = v};};
   if (shouldUpdate("e114")) {let v = formatTime(player.stats.timeSinceComplexity, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[114].textContent !== v) {e[114].textContent = v};};
   if (shouldUpdate("e115")) {let v = formatInt(ComplexityPrestigeLayer.complexityPointGain()); if (e[115].textContent !== v) {e[115].textContent = v};};
@@ -1253,10 +1253,10 @@ function updateDisplay() {
   if (shouldUpdate("e124")) {let v = format(ComplexityPrestigeLayer.peakLogCPPerSecDisplay()); if (e[124].textContent !== v) {e[124].textContent = v};};
   if (shouldUpdate("e125")) {let v = format(FinalityPrestigeLayer.complexityPointRequirementForFinality()); if (e[125].textContent !== v) {e[125].textContent = v};};
   if (shouldUpdate("e126")) {let v = formatInt(FinalityPrestigeLayer.finalityPoints()); if (e[126].textContent !== v) {e[126].textContent = v};};
-  if (shouldUpdate("e127")) {let v = pluralize(FinalityPrestigeLayer.finalityPoints(), '', 's'); if (e[127].textContent !== v) {e[127].textContent = v};};
+  if (shouldUpdate("e127")) {let v = pluralize(FinalityPrestigeLayer.finalityPoints(), '', ''); if (e[127].textContent !== v) {e[127].textContent = v};};
   if (shouldUpdate("e128")) {let v = formatInt(FinalityPrestigeLayer.totalFinalityPoints()); if (e[128].textContent !== v) {e[128].textContent = v};};
   if (shouldUpdate("e129")) {let v = formatInt(FinalityPrestigeLayer.finalityShards()); if (e[129].textContent !== v) {e[129].textContent = v};};
-  if (shouldUpdate("e130")) {let v = pluralize(FinalityPrestigeLayer.finalityShards(), '', 's'); if (e[130].textContent !== v) {e[130].textContent = v};};
+  if (shouldUpdate("e130")) {let v = pluralize(FinalityPrestigeLayer.finalityShards(), '', ''); if (e[130].textContent !== v) {e[130].textContent = v};};
   if (shouldUpdate("e131")) {let v = formatInt(FinalityPrestigeLayer.totalFinalityShards()); if (e[131].textContent !== v) {e[131].textContent = v};};
   if (shouldUpdate("e132")) {let v = formatTime(player.stats.timeSinceFinality, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[132].textContent !== v) {e[132].textContent = v};};
   if (shouldUpdate("e133")) {let v = formatInt(FinalityPrestigeLayer.finalityPointGain()); if (e[133].textContent !== v) {e[133].textContent = v};};
@@ -1270,7 +1270,7 @@ function updateDisplay() {
   if (shouldUpdate("e141")) {let v = formatInt(FinalityPrestigeLayer.newFinalityShards()); if (e[141].textContent !== v) {e[141].textContent = v};};
   if (shouldUpdate("e142")) {let v = News.getMessage(); if (e[142].textContent !== v) {e[142].textContent = v};};
   if (shouldUpdate("e143")) {let v = title(numbers[Stats.lastRunsToShow()]); if (e[143].textContent !== v) {e[143].textContent = v};};
-  if (shouldUpdate("e144")) {let v = pluralize(Stats.lastRunsToShow(), '', 's'); if (e[144].textContent !== v) {e[144].textContent = v};};
+  if (shouldUpdate("e144")) {let v = pluralize(Stats.lastRunsToShow(), '', ''); if (e[144].textContent !== v) {e[144].textContent = v};};
   if (shouldUpdate("e145")) {let v = ComplexityChallenge.longTimeText(); if (e[145].textContent !== v) {e[145].textContent = v};};
   if (shouldUpdate("b0")) {let v = Options.smallerHeader() ? 'none' : ''; if (b[0].style.display !== v) {b[0].style.display = v};};
   if (shouldUpdate("b1")) {let v = ResetButtons.isResetButtonVisible('infinity') ? '' : 'none'; if (b[1].style.display !== v) {b[1].style.display = v};};
@@ -1452,7 +1452,7 @@ function updateDisplay() {
     if (shouldUpdate("e151")) {let v = EternityChallenge.eternityChallengeText(); if (e[151].textContent !== v) {e[151].textContent = v};};
     if (shouldUpdate("b108")) {let v = Boost.isVisible() ? '' : 'none'; if (b[108].style.display !== v) {b[108].style.display = v};};
     if (shouldUpdate("e152")) {let v = formatInt(Boost.bought()); if (e[152].textContent !== v) {e[152].textContent = v};};
-    if (shouldUpdate("e153")) {let v = pluralize(Boost.bought(), '', 's'); if (e[153].textContent !== v) {e[153].textContent = v};};
+    if (shouldUpdate("e153")) {let v = pluralize(Boost.bought(), '', ''); if (e[153].textContent !== v) {e[153].textContent = v};};
     if (shouldUpdate("e154")) {let v = Generators.term(); if (e[154].textContent !== v) {e[154].textContent = v};};
     if (shouldUpdate("e155")) {let v = format(Boost.multiplier()); if (e[155].textContent !== v) {e[155].textContent = v};};
     if (shouldUpdate("e156")) {let v = format(Boost.multiplierPer()); if (e[156].textContent !== v) {e[156].textContent = v};};
@@ -1476,7 +1476,7 @@ function updateDisplay() {
     if (shouldUpdate("e166")) {let v = Boost.bestBoostPowerDescription(); if (e[166].textContent !== v) {e[166].textContent = v};};
     if (shouldUpdate("e167")) {let v = format(Boost.bestBoostPower()); if (e[167].textContent !== v) {e[167].textContent = v};};
     if (shouldUpdate("e168")) {let v = formatInt(Boost.extraTheoremsActualAndDisplay()); if (e[168].textContent !== v) {e[168].textContent = v};};
-    if (shouldUpdate("e169")) {let v = pluralize(Boost.extraTheoremsActualAndDisplay(), '', 's'); if (e[169].textContent !== v) {e[169].textContent = v};};
+    if (shouldUpdate("e169")) {let v = pluralize(Boost.extraTheoremsActualAndDisplay(), '', ''); if (e[169].textContent !== v) {e[169].textContent = v};};
     if (shouldUpdate("e170")) {let v = format(Boost.nextExtraTheorem()); if (e[170].textContent !== v) {e[170].textContent = v};};
     if (shouldUpdate("b117")) {let v = PrestigeLayerProgress.hasReached('prestige') ? '' : 'none'; if (b[117].style.display !== v) {b[117].style.display = v};};
     if (shouldUpdate("e171")) {let v = Generators.term(); if (e[171].textContent !== v) {e[171].textContent = v};};
@@ -1609,16 +1609,16 @@ function updateDisplay() {
   }
   if (b[171].style.display !== "none") {
     if (shouldUpdate("e246")) {let v = formatInt(InfinityPoints.amount()); if (e[246].textContent !== v) {e[246].textContent = v};};
-    if (shouldUpdate("e247")) {let v = pluralize(InfinityPoints.amount(), '', 's'); if (e[247].textContent !== v) {e[247].textContent = v};};
+    if (shouldUpdate("e247")) {let v = pluralize(InfinityPoints.amount(), '', ''); if (e[247].textContent !== v) {e[247].textContent = v};};
     if (shouldUpdate("b172")) {let v = InfinityMaxAll.anythingToBuy() ? "" : "disabled"; if (b[172].className !== v) {b[172].className = v};};
     if (shouldUpdate("b173")) {let v = InfinityMaxAll.anyUpgradesToBuy() ? "" : "disabled"; if (b[173].className !== v) {b[173].className = v};};
     if (shouldUpdate("b174")) {let v = InfinityMaxAll.anyGeneratorsToBuy() ? "" : "disabled"; if (b[174].className !== v) {b[174].className = v};};
     if (shouldUpdate("e248")) {let v = formatInt(InfinityPoints.totalIPProducedThisEternity()); if (e[248].textContent !== v) {e[248].textContent = v};};
-    if (shouldUpdate("e249")) {let v = pluralize(InfinityPoints.totalIPProducedThisEternity(), '', 's'); if (e[249].textContent !== v) {e[249].textContent = v};};
+    if (shouldUpdate("e249")) {let v = pluralize(InfinityPoints.totalIPProducedThisEternity(), '', ''); if (e[249].textContent !== v) {e[249].textContent = v};};
     if (shouldUpdate("e250")) {let v = Generators.term(); if (e[250].textContent !== v) {e[250].textContent = v};};
     if (shouldUpdate("e251")) {let v = format(InfinityPoints.multiplier()); if (e[251].textContent !== v) {e[251].textContent = v};};
     if (shouldUpdate("e252")) {let v = formatInt(Infinities.amount()); if (e[252].textContent !== v) {e[252].textContent = v};};
-    if (shouldUpdate("e253")) {let v = pluralize(Infinities.amount(), 'y', 'ies'); if (e[253].textContent !== v) {e[253].textContent = v};};
+    if (shouldUpdate("e253")) {let v = pluralize(Infinities.amount(), '', ''); if (e[253].textContent !== v) {e[253].textContent = v};};
     if (shouldUpdate("e254")) {let v = formatMaybeInt(Infinities.infinityGeneratorMultiplier()); if (e[254].textContent !== v) {e[254].textContent = v};};
     if (shouldUpdate("b175")) {let v = InfinityPrestigeLayer.canInfinityBeBroken() ? '' : 'none'; if (b[175].style.display !== v) {b[175].style.display = v};};
     if (shouldUpdate("e255")) {let v = InfinityPrestigeLayer.breakInfinityButtonText(); if (e[255].textContent !== v) {e[255].textContent = v};};
@@ -1737,7 +1737,7 @@ function updateDisplay() {
   }
   if (b[226].style.display !== "none") {
     if (shouldUpdate("e319")) {let v = formatInt(Challenge.numberOfChallengesCompleted()); if (e[319].textContent !== v) {e[319].textContent = v};};
-    if (shouldUpdate("e320")) {let v = pluralize(Challenge.numberOfChallengesCompleted(), '', 's'); if (e[320].textContent !== v) {e[320].textContent = v};};
+    if (shouldUpdate("e320")) {let v = pluralize(Challenge.numberOfChallengesCompleted(), '', ''); if (e[320].textContent !== v) {e[320].textContent = v};};
     if (shouldUpdate("e321")) {let v = Generators.term(); if (e[321].textContent !== v) {e[321].textContent = v};};
     if (shouldUpdate("e322")) {let v = format(Challenge.multiplier()); if (e[322].textContent !== v) {e[322].textContent = v};};
     if (shouldUpdate("e323")) {let v = Challenge.restartOnCompletion() ? "On" : "Off"; if (e[323].textContent !== v) {e[323].textContent = v};};
@@ -1847,7 +1847,7 @@ function updateDisplay() {
   }
   if (b[253].style.display !== "none") {
     if (shouldUpdate("e401")) {let v = formatInt(Autobuyers.numberOfAutobuyers()); if (e[401].textContent !== v) {e[401].textContent = v};};
-    if (shouldUpdate("e402")) {let v = pluralize(Autobuyers.numberOfAutobuyers(), '', 's'); if (e[402].textContent !== v) {e[402].textContent = v};};
+    if (shouldUpdate("e402")) {let v = pluralize(Autobuyers.numberOfAutobuyers(), '', ''); if (e[402].textContent !== v) {e[402].textContent = v};};
     if (shouldUpdate("b254")) {let v = Autobuyers.isLockedResetAutobuyer(15) ? '' : 'none'; if (b[254].style.display !== v) {b[254].style.display = v};};
     if (shouldUpdate("b255")) {let v = Autobuyers.isLockedResetAutobuyer(15) ? '' : 'none'; if (b[255].style.display !== v) {b[255].style.display = v};};
     if (shouldUpdate("b257")) {let v = Autobuyers.anyLockedResetAutobuyers() ? '' : 'none'; if (b[257].style.display !== v) {b[257].style.display = v};};
@@ -2058,11 +2058,11 @@ function updateDisplay() {
     if (shouldUpdate("b342")) {let v = Autobuyer(11).hasAutobuyer() ? '' : 'none'; if (b[342].style.display !== v) {b[342].style.display = v};};
     if (shouldUpdate("e543")) {let v = Autobuyer(11).mode(); if (e[543].textContent !== v) {e[543].textContent = v};};
     if (shouldUpdate("b346")) {let v = Autobuyer(12).hasAutobuyer() ? '' : 'none'; if (b[346].style.display !== v) {b[346].style.display = v};};
-    if (shouldUpdate("b349")) {let v = "X times best of last " + numbers[Stats.lastRunsToShow()]; if (b[349].text !== v) {b[349].text = v};};
+    if (shouldUpdate("b349")) {let v = "最近" + numbers[Stats.lastRunsToShow()] + "周目最高的X倍"; if (b[349].text !== v) {b[349].text = v};};
     if (shouldUpdate("e544")) {let v = Autobuyer(12).displayMode(); if (e[544].textContent !== v) {e[544].textContent = v};};
     if (shouldUpdate("b351")) {let v = Autobuyer(12).hasGeneration() ? '' : 'none'; if (b[351].style.display !== v) {b[351].style.display = v};};
     if (shouldUpdate("b353")) {let v = Autobuyer(13).hasAutobuyer() ? '' : 'none'; if (b[353].style.display !== v) {b[353].style.display = v};};
-    if (shouldUpdate("b356")) {let v = "X times best of last " + numbers[Stats.lastRunsToShow()]; if (b[356].text !== v) {b[356].text = v};};
+    if (shouldUpdate("b356")) {let v = "最近" + numbers[Stats.lastRunsToShow()] + "周目最高的X倍"; if (b[356].text !== v) {b[356].text = v};};
     if (shouldUpdate("b357")) {let v = (Chroma.isUnlocked() || PrestigeLayerProgress.hasReached('complexity')) ? '' : 'none'; if (b[357].style.display !== v) {b[357].style.display = v};};
     if (shouldUpdate("b358")) {let v = (Chroma.isUnlocked() || PrestigeLayerProgress.hasReached('complexity')) ? '' : 'none'; if (b[358].style.display !== v) {b[358].style.display = v};};
     if (shouldUpdate("e545")) {let v = Autobuyer(13).displayMode(); if (e[545].textContent !== v) {e[545].textContent = v};};
@@ -2071,7 +2071,7 @@ function updateDisplay() {
     if (shouldUpdate("e546")) {let v = Autobuyer(14).displayMode(); if (e[546].textContent !== v) {e[546].textContent = v};};
     if (shouldUpdate("b366")) {let v = Autobuyer(14).hasGeneration() ? '' : 'none'; if (b[366].style.display !== v) {b[366].style.display = v};};
     if (shouldUpdate("b368")) {let v = Autobuyer(15).hasAutobuyer() ? '' : 'none'; if (b[368].style.display !== v) {b[368].style.display = v};};
-    if (shouldUpdate("b371")) {let v = "X times best of last " + numbers[Stats.lastRunsToShow()]; if (b[371].text !== v) {b[371].text = v};};
+    if (shouldUpdate("b371")) {let v = "最近" + numbers[Stats.lastRunsToShow()] + "周目最高的X倍"; if (b[371].text !== v) {b[371].text = v};};
     if (shouldUpdate("b372")) {let v = (Powers.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'; if (b[372].style.display !== v) {b[372].style.display = v};};
     if (shouldUpdate("b373")) {let v = (Galaxy.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'; if (b[373].style.display !== v) {b[373].style.display = v};};
     if (shouldUpdate("e547")) {let v = Autobuyer(15).displayMode(); if (e[547].textContent !== v) {e[547].textContent = v};};
@@ -2080,7 +2080,7 @@ function updateDisplay() {
   }
   if (b[379].style.display !== "none") {
     if (shouldUpdate("e548")) {let v = formatInt(InfinityChallenge.numberOfInfinityChallengesCompleted()); if (e[548].textContent !== v) {e[548].textContent = v};};
-    if (shouldUpdate("e549")) {let v = pluralize(InfinityChallenge.numberOfInfinityChallengesCompleted(), '', 's'); if (e[549].textContent !== v) {e[549].textContent = v};};
+    if (shouldUpdate("e549")) {let v = pluralize(InfinityChallenge.numberOfInfinityChallengesCompleted(), '', ''); if (e[549].textContent !== v) {e[549].textContent = v};};
     if (shouldUpdate("e550")) {let v = format(InfinityChallenge.multiplier()); if (e[550].textContent !== v) {e[550].textContent = v};};
     if (shouldUpdate("e551")) {let v = format(InfinityChallenge.totalStarsProducedThisEternity()); if (e[551].textContent !== v) {e[551].textContent = v};};
     if (shouldUpdate("e552")) {let v = InfinityChallenge.restartOnCompletion() ? "On" : "Off"; if (e[552].textContent !== v) {e[552].textContent = v};};
@@ -2180,15 +2180,15 @@ function updateDisplay() {
   }
   if (b[398].style.display !== "none") {
     if (shouldUpdate("e628")) {let v = formatInt(EternityPoints.amount()); if (e[628].textContent !== v) {e[628].textContent = v};};
-    if (shouldUpdate("e629")) {let v = pluralize(EternityPoints.amount(), '', 's'); if (e[629].textContent !== v) {e[629].textContent = v};};
+    if (shouldUpdate("e629")) {let v = pluralize(EternityPoints.amount(), '', ''); if (e[629].textContent !== v) {e[629].textContent = v};};
     if (shouldUpdate("b399")) {let v = EternityMaxAll.anythingToBuy() ? "" : "disabled"; if (b[399].className !== v) {b[399].className = v};};
     if (shouldUpdate("b400")) {let v = EternityMaxAll.anyUpgradesToBuy() ? "" : "disabled"; if (b[400].className !== v) {b[400].className = v};};
     if (shouldUpdate("b401")) {let v = EternityMaxAll.anyGeneratorsToBuy() ? "" : "disabled"; if (b[401].className !== v) {b[401].className = v};};
     if (shouldUpdate("e630")) {let v = formatInt(EternityPoints.totalEPProducedThisComplexity()); if (e[630].textContent !== v) {e[630].textContent = v};};
-    if (shouldUpdate("e631")) {let v = pluralize(EternityPoints.totalEPProducedThisComplexity(), '', 's'); if (e[631].textContent !== v) {e[631].textContent = v};};
+    if (shouldUpdate("e631")) {let v = pluralize(EternityPoints.totalEPProducedThisComplexity(), '', ''); if (e[631].textContent !== v) {e[631].textContent = v};};
     if (shouldUpdate("e632")) {let v = format(EternityUpgrade(3).effect()); if (e[632].textContent !== v) {e[632].textContent = v};};
     if (shouldUpdate("e633")) {let v = formatMaybeInt(Eternities.amount()); if (e[633].textContent !== v) {e[633].textContent = v};};
-    if (shouldUpdate("e634")) {let v = pluralize(Eternities.amount(), 'y', 'ies'); if (e[634].textContent !== v) {e[634].textContent = v};};
+    if (shouldUpdate("e634")) {let v = pluralize(Eternities.amount(), '', ''); if (e[634].textContent !== v) {e[634].textContent = v};};
     if (shouldUpdate("e635")) {let v = formatMaybeInt(Eternities.eternityGeneratorMultiplierForDisplay()); if (e[635].textContent !== v) {e[635].textContent = v};};
     if (shouldUpdate("e636")) {let v = format(EternityStars.amount()); if (e[636].textContent !== v) {e[636].textContent = v};};
     if (shouldUpdate("e637")) {let v = format(EternityStars.multiplier()); if (e[637].textContent !== v) {e[637].textContent = v};};
@@ -2313,7 +2313,7 @@ function updateDisplay() {
   }
   if (b[456].style.display !== "none") {
     if (shouldUpdate("e703")) {let v = formatMaybeInt(Eternities.amount()); if (e[703].textContent !== v) {e[703].textContent = v};};
-    if (shouldUpdate("e704")) {let v = pluralize(Eternities.amount(), 'y', 'ies'); if (e[704].textContent !== v) {e[704].textContent = v};};
+    if (shouldUpdate("e704")) {let v = pluralize(Eternities.amount(), '', ''); if (e[704].textContent !== v) {e[704].textContent = v};};
     if (shouldUpdate("b457")) {let v = (EternityMilestones.hasEternityMilestone(6) || PrestigeLayerProgress.hasReached('complexity')) ? '' : 'none'; if (b[457].style.display !== v) {b[457].style.display = v};};
     if (shouldUpdate("e705")) {let v = formatInt(6); if (e[705].textContent !== v) {e[705].textContent = v};};
     if (shouldUpdate("e706")) {let v = (EternityMilestones.isEternityMilestoneDisabled(6) ? "Disabled" : "Enabled") + (EternityMilestones.hasEternityMilestone(6) ? '' : ' (once unlocked)'); if (e[706].textContent !== v) {e[706].textContent = v};};
@@ -2327,16 +2327,16 @@ function updateDisplay() {
     if (shouldUpdate("b462")) {let v = EternityMilestones.color(1); if (b[462].style.background !== v) {b[462].style.background = v};};
     if (shouldUpdate("e710")) {let v = formatInt(1); if (e[710].textContent !== v) {e[710].textContent = v};};
     if (shouldUpdate("e711")) {let v = EternityMilestones.milestoneStatusDescription(1); if (e[711].textContent !== v) {e[711].textContent = v};};
-    if (shouldUpdate("e712")) {let v = PrestigeLayerNames.layersAboveDisplay('prestige'); if (e[712].textContent !== v) {e[712].textContent = v};};
+    if (shouldUpdate("e712")) {let v = PrestigeLayerNames.layersAboveDisplay('转生'); if (e[712].textContent !== v) {e[712].textContent = v};};
     if (shouldUpdate("e713")) {let v = formatInt(EternityStartingBenefits.rawStars()); if (e[713].textContent !== v) {e[713].textContent = v};};
     if (shouldUpdate("b463")) {let v = EternityMilestones.color(2); if (b[463].style.background !== v) {b[463].style.background = v};};
     if (shouldUpdate("e714")) {let v = formatInt(2); if (e[714].textContent !== v) {e[714].textContent = v};};
     if (shouldUpdate("e715")) {let v = EternityMilestones.milestoneStatusDescription(2); if (e[715].textContent !== v) {e[715].textContent = v};};
-    if (shouldUpdate("e716")) {let v = PrestigeLayerNames.layersAboveDisplay('eternity'); if (e[716].textContent !== v) {e[716].textContent = v};};
+    if (shouldUpdate("e716")) {let v = PrestigeLayerNames.layersAboveDisplay('永恒'); if (e[716].textContent !== v) {e[716].textContent = v};};
     if (shouldUpdate("b464")) {let v = EternityMilestones.color(3); if (b[464].style.background !== v) {b[464].style.background = v};};
     if (shouldUpdate("e717")) {let v = formatInt(3); if (e[717].textContent !== v) {e[717].textContent = v};};
     if (shouldUpdate("e718")) {let v = EternityMilestones.milestoneStatusDescription(3); if (e[718].textContent !== v) {e[718].textContent = v};};
-    if (shouldUpdate("e719")) {let v = PrestigeLayerNames.layersAboveDisplay('eternity'); if (e[719].textContent !== v) {e[719].textContent = v};};
+    if (shouldUpdate("e719")) {let v = PrestigeLayerNames.layersAboveDisplay('永恒'); if (e[719].textContent !== v) {e[719].textContent = v};};
     if (shouldUpdate("e720")) {let v = formatInt(EternityStartingBenefits.rawInfinityPoints()); if (e[720].textContent !== v) {e[720].textContent = v};};
     if (shouldUpdate("b465")) {let v = EternityMilestones.color(4); if (b[465].style.background !== v) {b[465].style.background = v};};
     if (shouldUpdate("e721")) {let v = formatInt(4); if (e[721].textContent !== v) {e[721].textContent = v};};
@@ -2346,7 +2346,7 @@ function updateDisplay() {
     if (shouldUpdate("b466")) {let v = EternityMilestones.color(5); if (b[466].style.background !== v) {b[466].style.background = v};};
     if (shouldUpdate("e725")) {let v = formatInt(5); if (e[725].textContent !== v) {e[725].textContent = v};};
     if (shouldUpdate("e726")) {let v = EternityMilestones.milestoneStatusDescription(5); if (e[726].textContent !== v) {e[726].textContent = v};};
-    if (shouldUpdate("e727")) {let v = PrestigeLayerNames.layersAboveDisplay('eternity'); if (e[727].textContent !== v) {e[727].textContent = v};};
+    if (shouldUpdate("e727")) {let v = PrestigeLayerNames.layersAboveDisplay('永恒'); if (e[727].textContent !== v) {e[727].textContent = v};};
     if (shouldUpdate("e728")) {let v = formatInt(EternityStartingBenefits.rawInfinities()); if (e[728].textContent !== v) {e[728].textContent = v};};
     if (shouldUpdate("b467")) {let v = EternityMilestones.color(6); if (b[467].style.background !== v) {b[467].style.background = v};};
     if (shouldUpdate("e729")) {let v = formatInt(6); if (e[729].textContent !== v) {e[729].textContent = v};};
@@ -2393,9 +2393,9 @@ function updateDisplay() {
   }
   if (b[479].style.display !== "none") {
     if (shouldUpdate("e759")) {let v = formatInt(Studies.totalTheorems()); if (e[759].textContent !== v) {e[759].textContent = v};};
-    if (shouldUpdate("e760")) {let v = pluralize(Studies.totalTheorems(), '', 's'); if (e[760].textContent !== v) {e[760].textContent = v};};
+    if (shouldUpdate("e760")) {let v = pluralize(Studies.totalTheorems(), '', ''); if (e[760].textContent !== v) {e[760].textContent = v};};
     if (shouldUpdate("e761")) {let v = formatInt(Studies.unspentTheorems()); if (e[761].textContent !== v) {e[761].textContent = v};};
-    if (shouldUpdate("e762")) {let v = pluralize(Studies.unspentTheorems(), '', 's'); if (e[762].textContent !== v) {e[762].textContent = v};};
+    if (shouldUpdate("e762")) {let v = pluralize(Studies.unspentTheorems(), '', ''); if (e[762].textContent !== v) {e[762].textContent = v};};
     if (shouldUpdate("b480")) {let v = Options.showFullOptions('studies') ? 'none' : ''; if (b[480].style.display !== v) {b[480].style.display = v};};
     if (shouldUpdate("b481")) {let v = Studies.canRespec() ? "" : "disabled"; if (b[481].className !== v) {b[481].className = v};};
     if (shouldUpdate("b481")) {let v = Studies.canAccessFourthRow() ? 'none' : ''; if (b[481].style.display !== v) {b[481].style.display = v};};
@@ -2630,90 +2630,90 @@ function updateDisplay() {
     if (shouldUpdate("e841")) {let v = formatOrdinalInt(1); if (e[841].textContent !== v) {e[841].textContent = v};};
     if (shouldUpdate("e842")) {let v = format(Study(1).rawTotalEffect()); if (e[842].textContent !== v) {e[842].textContent = v};};
     if (shouldUpdate("e843")) {let v = formatInt(Study(1).displayCost()); if (e[843].textContent !== v) {e[843].textContent = v};};
-    if (shouldUpdate("e844")) {let v = pluralize(Study(1).displayCost(), '', 's'); if (e[844].textContent !== v) {e[844].textContent = v};};
+    if (shouldUpdate("e844")) {let v = pluralize(Study(1).displayCost(), '', ''); if (e[844].textContent !== v) {e[844].textContent = v};};
     if (shouldUpdate("b565")) {let v = Study(2).className(); if (b[565].className !== v) {b[565].className = v};};
     if (shouldUpdate("e845")) {let v = formatOrdinalInt(2); if (e[845].textContent !== v) {e[845].textContent = v};};
     if (shouldUpdate("e846")) {let v = format(Study(2).rawEffect()); if (e[846].textContent !== v) {e[846].textContent = v};};
     if (shouldUpdate("e847")) {let v = formatInt(Study(2).displayCost()); if (e[847].textContent !== v) {e[847].textContent = v};};
-    if (shouldUpdate("e848")) {let v = pluralize(Study(2).displayCost(), '', 's'); if (e[848].textContent !== v) {e[848].textContent = v};};
+    if (shouldUpdate("e848")) {let v = pluralize(Study(2).displayCost(), '', ''); if (e[848].textContent !== v) {e[848].textContent = v};};
     if (shouldUpdate("b566")) {let v = Study(3).className(); if (b[566].className !== v) {b[566].className = v};};
     if (shouldUpdate("e849")) {let v = formatOrdinalInt(3); if (e[849].textContent !== v) {e[849].textContent = v};};
     if (shouldUpdate("e850")) {let v = format(Study(3).rawEffect()); if (e[850].textContent !== v) {e[850].textContent = v};};
     if (shouldUpdate("e851")) {let v = formatInt(Study(3).displayCost()); if (e[851].textContent !== v) {e[851].textContent = v};};
-    if (shouldUpdate("e852")) {let v = pluralize(Study(3).displayCost(), '', 's'); if (e[852].textContent !== v) {e[852].textContent = v};};
+    if (shouldUpdate("e852")) {let v = pluralize(Study(3).displayCost(), '', ''); if (e[852].textContent !== v) {e[852].textContent = v};};
     if (shouldUpdate("b567")) {let v = Study(4).className(); if (b[567].className !== v) {b[567].className = v};};
     if (shouldUpdate("e853")) {let v = formatOrdinalInt(4); if (e[853].textContent !== v) {e[853].textContent = v};};
     if (shouldUpdate("e854")) {let v = format(Study(4).rawEffect()); if (e[854].textContent !== v) {e[854].textContent = v};};
     if (shouldUpdate("e855")) {let v = formatInt(Study(4).displayCost()); if (e[855].textContent !== v) {e[855].textContent = v};};
-    if (shouldUpdate("e856")) {let v = pluralize(Study(4).displayCost(), '', 's'); if (e[856].textContent !== v) {e[856].textContent = v};};
+    if (shouldUpdate("e856")) {let v = pluralize(Study(4).displayCost(), '', ''); if (e[856].textContent !== v) {e[856].textContent = v};};
     if (shouldUpdate("b568")) {let v = Study(5).className(); if (b[568].className !== v) {b[568].className = v};};
     if (shouldUpdate("e857")) {let v = formatOrdinalInt(5); if (e[857].textContent !== v) {e[857].textContent = v};};
     if (shouldUpdate("e858")) {let v = format(Study(5).rawEffect()); if (e[858].textContent !== v) {e[858].textContent = v};};
     if (shouldUpdate("e859")) {let v = formatInt(Study(5).displayCost()); if (e[859].textContent !== v) {e[859].textContent = v};};
-    if (shouldUpdate("e860")) {let v = pluralize(Study(5).displayCost(), '', 's'); if (e[860].textContent !== v) {e[860].textContent = v};};
+    if (shouldUpdate("e860")) {let v = pluralize(Study(5).displayCost(), '', ''); if (e[860].textContent !== v) {e[860].textContent = v};};
     if (shouldUpdate("b569")) {let v = Study(6).className(); if (b[569].className !== v) {b[569].className = v};};
     if (shouldUpdate("e861")) {let v = formatOrdinalInt(6); if (e[861].textContent !== v) {e[861].textContent = v};};
     if (shouldUpdate("e862")) {let v = format(Study(6).rawEffect()); if (e[862].textContent !== v) {e[862].textContent = v};};
     if (shouldUpdate("e863")) {let v = formatInt(Study(6).displayCost()); if (e[863].textContent !== v) {e[863].textContent = v};};
-    if (shouldUpdate("e864")) {let v = pluralize(Study(6).displayCost(), '', 's'); if (e[864].textContent !== v) {e[864].textContent = v};};
+    if (shouldUpdate("e864")) {let v = pluralize(Study(6).displayCost(), '', ''); if (e[864].textContent !== v) {e[864].textContent = v};};
     if (shouldUpdate("b570")) {let v = Study(7).className(); if (b[570].className !== v) {b[570].className = v};};
     if (shouldUpdate("e865")) {let v = formatOrdinalInt(7); if (e[865].textContent !== v) {e[865].textContent = v};};
     if (shouldUpdate("e866")) {let v = Study(7).cappedText(); if (e[866].textContent !== v) {e[866].textContent = v};};
     if (shouldUpdate("e867")) {let v = format(Study(7).rawEffect()); if (e[867].textContent !== v) {e[867].textContent = v};};
     if (shouldUpdate("e868")) {let v = formatInt(Study(7).displayCost()); if (e[868].textContent !== v) {e[868].textContent = v};};
-    if (shouldUpdate("e869")) {let v = pluralize(Study(7).displayCost(), '', 's'); if (e[869].textContent !== v) {e[869].textContent = v};};
+    if (shouldUpdate("e869")) {let v = pluralize(Study(7).displayCost(), '', ''); if (e[869].textContent !== v) {e[869].textContent = v};};
     if (shouldUpdate("b571")) {let v = Study(8).className(); if (b[571].className !== v) {b[571].className = v};};
     if (shouldUpdate("e870")) {let v = formatOrdinalInt(8); if (e[870].textContent !== v) {e[870].textContent = v};};
     if (shouldUpdate("e871")) {let v = format(Study(8).rawEffect()); if (e[871].textContent !== v) {e[871].textContent = v};};
     if (shouldUpdate("e872")) {let v = formatInt(Study(8).displayCost()); if (e[872].textContent !== v) {e[872].textContent = v};};
-    if (shouldUpdate("e873")) {let v = pluralize(Study(8).displayCost(), '', 's'); if (e[873].textContent !== v) {e[873].textContent = v};};
+    if (shouldUpdate("e873")) {let v = pluralize(Study(8).displayCost(), '', ''); if (e[873].textContent !== v) {e[873].textContent = v};};
     if (shouldUpdate("b572")) {let v = Study(9).className(); if (b[572].className !== v) {b[572].className = v};};
     if (shouldUpdate("e874")) {let v = formatOrdinalInt(9); if (e[874].textContent !== v) {e[874].textContent = v};};
     if (shouldUpdate("b573")) {let v = InfinityChallenge.isInfinityChallengeRunning(7) ? '' : 'none'; if (b[573].style.display !== v) {b[573].style.display = v};};
     if (shouldUpdate("e875")) {let v = format(Study(9).rawEffect()); if (e[875].textContent !== v) {e[875].textContent = v};};
     if (shouldUpdate("e876")) {let v = formatInt(Study(9).displayCost()); if (e[876].textContent !== v) {e[876].textContent = v};};
-    if (shouldUpdate("e877")) {let v = pluralize(Study(9).displayCost(), '', 's'); if (e[877].textContent !== v) {e[877].textContent = v};};
+    if (shouldUpdate("e877")) {let v = pluralize(Study(9).displayCost(), '', ''); if (e[877].textContent !== v) {e[877].textContent = v};};
     if (shouldUpdate("b574")) {let v = Study(10).className(); if (b[574].className !== v) {b[574].className = v};};
     if (shouldUpdate("e878")) {let v = formatOrdinalInt(10); if (e[878].textContent !== v) {e[878].textContent = v};};
     if (shouldUpdate("e879")) {let v = format(Study(10).rawEffect()); if (e[879].textContent !== v) {e[879].textContent = v};};
     if (shouldUpdate("e880")) {let v = formatInt(Study(10).displayCost()); if (e[880].textContent !== v) {e[880].textContent = v};};
-    if (shouldUpdate("e881")) {let v = pluralize(Study(10).displayCost(), '', 's'); if (e[881].textContent !== v) {e[881].textContent = v};};
+    if (shouldUpdate("e881")) {let v = pluralize(Study(10).displayCost(), '', ''); if (e[881].textContent !== v) {e[881].textContent = v};};
     if (shouldUpdate("b575")) {let v = Study(11).className(); if (b[575].className !== v) {b[575].className = v};};
     if (shouldUpdate("e882")) {let v = formatOrdinalInt(11); if (e[882].textContent !== v) {e[882].textContent = v};};
     if (shouldUpdate("e883")) {let v = Study(11).cappedText(); if (e[883].textContent !== v) {e[883].textContent = v};};
     if (shouldUpdate("e884")) {let v = format(Study(11).rawEffect()); if (e[884].textContent !== v) {e[884].textContent = v};};
     if (shouldUpdate("e885")) {let v = formatInt(Study(11).displayCost()); if (e[885].textContent !== v) {e[885].textContent = v};};
-    if (shouldUpdate("e886")) {let v = pluralize(Study(11).displayCost(), '', 's'); if (e[886].textContent !== v) {e[886].textContent = v};};
+    if (shouldUpdate("e886")) {let v = pluralize(Study(11).displayCost(), '', ''); if (e[886].textContent !== v) {e[886].textContent = v};};
     if (shouldUpdate("b576")) {let v = Study(12).className(); if (b[576].className !== v) {b[576].className = v};};
     if (shouldUpdate("e887")) {let v = formatOrdinalInt(12); if (e[887].textContent !== v) {e[887].textContent = v};};
     if (shouldUpdate("e888")) {let v = format(Study(12).rawEffect()); if (e[888].textContent !== v) {e[888].textContent = v};};
     if (shouldUpdate("e889")) {let v = formatInt(Study(12).displayCost()); if (e[889].textContent !== v) {e[889].textContent = v};};
-    if (shouldUpdate("e890")) {let v = pluralize(Study(12).displayCost(), '', 's'); if (e[890].textContent !== v) {e[890].textContent = v};};
+    if (shouldUpdate("e890")) {let v = pluralize(Study(12).displayCost(), '', ''); if (e[890].textContent !== v) {e[890].textContent = v};};
     if (shouldUpdate("b577")) {let v = Studies.canAccessFourthRow() ? '' : 'none'; if (b[577].style.display !== v) {b[577].style.display = v};};
     if (shouldUpdate("b578")) {let v = Study(13).className(); if (b[578].className !== v) {b[578].className = v};};
     if (shouldUpdate("e891")) {let v = formatOrdinalInt(13); if (e[891].textContent !== v) {e[891].textContent = v};};
     if (shouldUpdate("e892")) {let v = format(Study(13).effect()); if (e[892].textContent !== v) {e[892].textContent = v};};
     if (shouldUpdate("e893")) {let v = format(Study(13).nextEffect()); if (e[893].textContent !== v) {e[893].textContent = v};};
     if (shouldUpdate("e894")) {let v = formatInt(Study(13).displayCost()); if (e[894].textContent !== v) {e[894].textContent = v};};
-    if (shouldUpdate("e895")) {let v = pluralize(Study(13).displayCost(), '', 's'); if (e[895].textContent !== v) {e[895].textContent = v};};
+    if (shouldUpdate("e895")) {let v = pluralize(Study(13).displayCost(), '', ''); if (e[895].textContent !== v) {e[895].textContent = v};};
     if (shouldUpdate("b579")) {let v = Study(14).className(); if (b[579].className !== v) {b[579].className = v};};
     if (shouldUpdate("e896")) {let v = formatOrdinalInt(14); if (e[896].textContent !== v) {e[896].textContent = v};};
     if (shouldUpdate("e897")) {let v = format(Study(14).effect()); if (e[897].textContent !== v) {e[897].textContent = v};};
     if (shouldUpdate("e898")) {let v = format(Study(14).nextEffect()); if (e[898].textContent !== v) {e[898].textContent = v};};
     if (shouldUpdate("e899")) {let v = formatInt(Study(14).displayCost()); if (e[899].textContent !== v) {e[899].textContent = v};};
-    if (shouldUpdate("e900")) {let v = pluralize(Study(14).displayCost(), '', 's'); if (e[900].textContent !== v) {e[900].textContent = v};};
+    if (shouldUpdate("e900")) {let v = pluralize(Study(14).displayCost(), '', ''); if (e[900].textContent !== v) {e[900].textContent = v};};
     if (shouldUpdate("b580")) {let v = Study(15).className(); if (b[580].className !== v) {b[580].className = v};};
     if (shouldUpdate("e901")) {let v = formatOrdinalInt(15); if (e[901].textContent !== v) {e[901].textContent = v};};
     if (shouldUpdate("e902")) {let v = format(Study(15).effect()); if (e[902].textContent !== v) {e[902].textContent = v};};
     if (shouldUpdate("e903")) {let v = format(Study(15).nextEffect()); if (e[903].textContent !== v) {e[903].textContent = v};};
     if (shouldUpdate("e904")) {let v = formatInt(Study(15).displayCost()); if (e[904].textContent !== v) {e[904].textContent = v};};
-    if (shouldUpdate("e905")) {let v = pluralize(Study(15).displayCost(), '', 's'); if (e[905].textContent !== v) {e[905].textContent = v};};
+    if (shouldUpdate("e905")) {let v = pluralize(Study(15).displayCost(), '', ''); if (e[905].textContent !== v) {e[905].textContent = v};};
     if (shouldUpdate("b581")) {let v = Study(16).className(); if (b[581].className !== v) {b[581].className = v};};
     if (shouldUpdate("e906")) {let v = formatOrdinalInt(16); if (e[906].textContent !== v) {e[906].textContent = v};};
     if (shouldUpdate("e907")) {let v = format(Study(16).effect()); if (e[907].textContent !== v) {e[907].textContent = v};};
     if (shouldUpdate("e908")) {let v = format(Study(16).nextEffect()); if (e[908].textContent !== v) {e[908].textContent = v};};
     if (shouldUpdate("e909")) {let v = formatInt(Study(16).displayCost()); if (e[909].textContent !== v) {e[909].textContent = v};};
-    if (shouldUpdate("e910")) {let v = pluralize(Study(16).displayCost(), '', 's'); if (e[910].textContent !== v) {e[910].textContent = v};};
+    if (shouldUpdate("e910")) {let v = pluralize(Study(16).displayCost(), '', ''); if (e[910].textContent !== v) {e[910].textContent = v};};
     if (shouldUpdate("b582")) {let v = Studies.canAccessFourthRow() ? '' : 'none'; if (b[582].style.display !== v) {b[582].style.display = v};};
     if (shouldUpdate("e911")) {let v = formatPrecisely(Studies.chromaCapMultiplier()); if (e[911].textContent !== v) {e[911].textContent = v};};
     if (shouldUpdate("e912")) {let v = format(Stars.amount()); if (e[912].textContent !== v) {e[912].textContent = v};};
@@ -3017,7 +3017,7 @@ function updateDisplay() {
     if (shouldUpdate("b858")) {let v = EternityProducer.canUnlock() ? '' : 'disabled'; if (b[858].className !== v) {b[858].className = v};};
     if (shouldUpdate("e1062")) {let v = format(EternityProducer.unlockCost()); if (e[1062].textContent !== v) {e[1062].textContent = v};};
     if (shouldUpdate("e1063")) {let v = formatMaybeInt(EternityProducer.productionPerSecondIfUnlocked()); if (e[1063].textContent !== v) {e[1063].textContent = v};};
-    if (shouldUpdate("e1064")) {let v = pluralize(EternityProducer.productionPerSecondIfUnlocked(), 'y', 'ies'); if (e[1064].textContent !== v) {e[1064].textContent = v};};
+    if (shouldUpdate("e1064")) {let v = pluralize(EternityProducer.productionPerSecondIfUnlocked(), '', ''); if (e[1064].textContent !== v) {e[1064].textContent = v};};
     if (shouldUpdate("b859")) {let v = Decimal.eq(EternityProducer.productionPerSecondIfUnlocked(), EternityProducer.rawProductionPerSecond()) ? 'none' : ''; if (b[859].style.display !== v) {b[859].style.display = v};};
     if (shouldUpdate("e1065")) {let v = formatMaybeInt(EternityProducer.rawProductionPerSecond()); if (e[1065].textContent !== v) {e[1065].textContent = v};};
     if (shouldUpdate("e1066")) {let v = format(EternityProducer.rawMultiplier()); if (e[1066].textContent !== v) {e[1066].textContent = v};};
@@ -3026,12 +3026,12 @@ function updateDisplay() {
     if (shouldUpdate("b862")) {let v = (EternityProducer.isUnlocked() || Options.showAllTabs()) ? '' : 'none'; if (b[862].style.display !== v) {b[862].style.display = v};};
     if (shouldUpdate("b863")) {let v = EternityProducer.isUnlocked() ? 'none' : ''; if (b[863].style.display !== v) {b[863].style.display = v};};
     if (shouldUpdate("e1067")) {let v = formatMaybeInt(Eternities.amount()); if (e[1067].textContent !== v) {e[1067].textContent = v};};
-    if (shouldUpdate("e1068")) {let v = pluralize(Eternities.amount(), 'y', 'ies'); if (e[1068].textContent !== v) {e[1068].textContent = v};};
+    if (shouldUpdate("e1068")) {let v = pluralize(Eternities.amount(), '', ''); if (e[1068].textContent !== v) {e[1068].textContent = v};};
     if (shouldUpdate("e1069")) {let v = format(EternityProducer.multiplier()); if (e[1069].textContent !== v) {e[1069].textContent = v};};
     if (shouldUpdate("e1070")) {let v = formatMaybeInt(EternityProducer.productionPerSecond()); if (e[1070].textContent !== v) {e[1070].textContent = v};};
-    if (shouldUpdate("e1071")) {let v = pluralize(EternityProducer.productionPerSecond(), 'y', 'ies'); if (e[1071].textContent !== v) {e[1071].textContent = v};};
+    if (shouldUpdate("e1071")) {let v = pluralize(EternityProducer.productionPerSecond(), '', ''); if (e[1071].textContent !== v) {e[1071].textContent = v};};
     if (shouldUpdate("e1072")) {let v = formatInt(EternityPoints.amount()); if (e[1072].textContent !== v) {e[1072].textContent = v};};
-    if (shouldUpdate("e1073")) {let v = pluralize(EternityPoints.amount(), '', 's'); if (e[1073].textContent !== v) {e[1073].textContent = v};};
+    if (shouldUpdate("e1073")) {let v = pluralize(EternityPoints.amount(), '', ''); if (e[1073].textContent !== v) {e[1073].textContent = v};};
     if (shouldUpdate("b864")) {let v = EternityProducer.anythingToBuy() ? "" : "disabled"; if (b[864].className !== v) {b[864].className = v};};
     if (shouldUpdate("b865")) {let v = EternityProducerUpgrade(1).atDisplayBoughtLimit() ? 'none' : ''; if (b[865].style.display !== v) {b[865].style.display = v};};
     if (shouldUpdate("e1074")) {let v = formatInt(EternityProducerUpgrade(1).effect()); if (e[1074].textContent !== v) {e[1074].textContent = v};};
@@ -3121,9 +3121,9 @@ function updateDisplay() {
   }
   if (b[912].style.display !== "none") {
     if (shouldUpdate("e1112")) {let v = formatInt(EternityChallenge.getTotalEternityChallengeCompletions()); if (e[1112].textContent !== v) {e[1112].textContent = v};};
-    if (shouldUpdate("e1113")) {let v = pluralize(EternityChallenge.getTotalEternityChallengeCompletions(), '', 's'); if (e[1113].textContent !== v) {e[1113].textContent = v};};
+    if (shouldUpdate("e1113")) {let v = pluralize(EternityChallenge.getTotalEternityChallengeCompletions(), '', ''); if (e[1113].textContent !== v) {e[1113].textContent = v};};
     if (shouldUpdate("e1114")) {let v = formatInt(EternityChallenge.extraTheoremsActualAndDisplay()); if (e[1114].textContent !== v) {e[1114].textContent = v};};
-    if (shouldUpdate("e1115")) {let v = pluralize(EternityChallenge.extraTheoremsActualAndDisplay(), '', 's'); if (e[1115].textContent !== v) {e[1115].textContent = v};};
+    if (shouldUpdate("e1115")) {let v = pluralize(EternityChallenge.extraTheoremsActualAndDisplay(), '', ''); if (e[1115].textContent !== v) {e[1115].textContent = v};};
     if (shouldUpdate("e1116")) {let v = formatInt(1); if (e[1116].textContent !== v) {e[1116].textContent = v};};
     if (shouldUpdate("b913")) {let v = EternityChallenge.isEternityChallengeUnlockingMeaningless() ? 'none' : ''; if (b[913].style.display !== v) {b[913].style.display = v};};
     if (shouldUpdate("e1117")) {let v = EternityChallenge.isRespecOn() ? "On" : "Off"; if (e[1117].textContent !== v) {e[1117].textContent = v};};
@@ -3144,7 +3144,7 @@ function updateDisplay() {
     if (shouldUpdate("b923")) {let v = EternityChallenge.isAutoECCompletionOn() || EternityChallenge.imminentAutoECCompletionTiers() === 0 ? '' : 'none'; if (b[923].style.display !== v) {b[923].style.display = v};};
     if (shouldUpdate("b924")) {let v = !EternityChallenge.isAutoECCompletionOn() && EternityChallenge.imminentAutoECCompletionTiers() !== 0 ? '' : 'none'; if (b[924].style.display !== v) {b[924].style.display = v};};
     if (shouldUpdate("e1123")) {let v = formatInt(EternityChallenge.imminentAutoECCompletionTiers()); if (e[1123].textContent !== v) {e[1123].textContent = v};};
-    if (shouldUpdate("e1124")) {let v = pluralize(EternityChallenge.imminentAutoECCompletionTiers(), '', 's'); if (e[1124].textContent !== v) {e[1124].textContent = v};};
+    if (shouldUpdate("e1124")) {let v = pluralize(EternityChallenge.imminentAutoECCompletionTiers(), '', ''); if (e[1124].textContent !== v) {e[1124].textContent = v};};
     if (shouldUpdate("e1125")) {let v = EternityChallenge.isAutoECCompletionOn() ? "On" : "Off"; if (e[1125].textContent !== v) {e[1125].textContent = v};};
     if (shouldUpdate("b925")) {let v = EternityChallenge.showAutoECCompletion() ? 'none' : ''; if (b[925].style.display !== v) {b[925].style.display = v};};
     if (shouldUpdate("b926")) {let v = EternityChallenge.getTotalCompletionsRewardClass(1); if (b[926].className !== v) {b[926].className = v};};
@@ -3180,7 +3180,7 @@ function updateDisplay() {
     if (shouldUpdate("e1139")) {let v = EternityChallenge.eternityChallengeRequirementDescription(1); if (e[1139].textContent !== v) {e[1139].textContent = v};};
     if (shouldUpdate("b942")) {let v = EternityChallenge.isEternityChallengeUnlockingMeaningless() ? 'none' : ''; if (b[942].style.display !== v) {b[942].style.display = v};};
     if (shouldUpdate("e1140")) {let v = formatInt(EternityChallenge.getEternityChallengeCost(1)); if (e[1140].textContent !== v) {e[1140].textContent = v};};
-    if (shouldUpdate("e1141")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(1), '', 's'); if (e[1141].textContent !== v) {e[1141].textContent = v};};
+    if (shouldUpdate("e1141")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(1), '', ''); if (e[1141].textContent !== v) {e[1141].textContent = v};};
     if (shouldUpdate("e1142")) {let v = format(EternityChallenge.getEternityChallengeGoal(1)); if (e[1142].textContent !== v) {e[1142].textContent = v};};
     if (shouldUpdate("e1143")) {let v = EternityChallenge.eternityChallengeStatusDescription(1); if (e[1143].textContent !== v) {e[1143].textContent = v};};
     if (shouldUpdate("b943")) {let v = EternityChallenge.canPressEternityChallengeButton(1) ? '' : 'disabled'; if (b[943].className !== v) {b[943].className = v};};
@@ -3194,7 +3194,7 @@ function updateDisplay() {
     if (shouldUpdate("e1148")) {let v = EternityChallenge.eternityChallengeRequirementDescription(2); if (e[1148].textContent !== v) {e[1148].textContent = v};};
     if (shouldUpdate("b947")) {let v = EternityChallenge.isEternityChallengeUnlockingMeaningless() ? 'none' : ''; if (b[947].style.display !== v) {b[947].style.display = v};};
     if (shouldUpdate("e1149")) {let v = formatInt(EternityChallenge.getEternityChallengeCost(2)); if (e[1149].textContent !== v) {e[1149].textContent = v};};
-    if (shouldUpdate("e1150")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(2), '', 's'); if (e[1150].textContent !== v) {e[1150].textContent = v};};
+    if (shouldUpdate("e1150")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(2), '', ''); if (e[1150].textContent !== v) {e[1150].textContent = v};};
     if (shouldUpdate("e1151")) {let v = format(EternityChallenge.getEternityChallengeGoal(2)); if (e[1151].textContent !== v) {e[1151].textContent = v};};
     if (shouldUpdate("e1152")) {let v = EternityChallenge.eternityChallengeStatusDescription(2); if (e[1152].textContent !== v) {e[1152].textContent = v};};
     if (shouldUpdate("b948")) {let v = EternityChallenge.canPressEternityChallengeButton(2) ? '' : 'disabled'; if (b[948].className !== v) {b[948].className = v};};
@@ -3208,7 +3208,7 @@ function updateDisplay() {
     if (shouldUpdate("e1157")) {let v = EternityChallenge.eternityChallengeRequirementDescription(3); if (e[1157].textContent !== v) {e[1157].textContent = v};};
     if (shouldUpdate("b952")) {let v = EternityChallenge.isEternityChallengeUnlockingMeaningless() ? 'none' : ''; if (b[952].style.display !== v) {b[952].style.display = v};};
     if (shouldUpdate("e1158")) {let v = formatInt(EternityChallenge.getEternityChallengeCost(3)); if (e[1158].textContent !== v) {e[1158].textContent = v};};
-    if (shouldUpdate("e1159")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(3), '', 's'); if (e[1159].textContent !== v) {e[1159].textContent = v};};
+    if (shouldUpdate("e1159")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(3), '', ''); if (e[1159].textContent !== v) {e[1159].textContent = v};};
     if (shouldUpdate("e1160")) {let v = format(EternityChallenge.getEternityChallengeGoal(3)); if (e[1160].textContent !== v) {e[1160].textContent = v};};
     if (shouldUpdate("e1161")) {let v = EternityChallenge.eternityChallengeStatusDescription(3); if (e[1161].textContent !== v) {e[1161].textContent = v};};
     if (shouldUpdate("b953")) {let v = EternityChallenge.canPressEternityChallengeButton(3) ? '' : 'disabled'; if (b[953].className !== v) {b[953].className = v};};
@@ -3219,12 +3219,12 @@ function updateDisplay() {
     if (shouldUpdate("b955")) {let v = EternityChallenge.color(4); if (b[955].style.background !== v) {b[955].style.background = v};};
     if (shouldUpdate("e1165")) {let v = formatOrdinalInt(4); if (e[1165].textContent !== v) {e[1165].textContent = v};};
     if (shouldUpdate("e1166")) {let v = formatInt(EternityChallenge.eternityChallenge4AllowedInfinities()); if (e[1166].textContent !== v) {e[1166].textContent = v};};
-    if (shouldUpdate("e1167")) {let v = pluralize(EternityChallenge.eternityChallenge4AllowedInfinities(), '', 's'); if (e[1167].textContent !== v) {e[1167].textContent = v};};
+    if (shouldUpdate("e1167")) {let v = pluralize(EternityChallenge.eternityChallenge4AllowedInfinities(), '', ''); if (e[1167].textContent !== v) {e[1167].textContent = v};};
     if (shouldUpdate("b956")) {let v = EternityChallenge.isRequirementDisplayOn() ? '' : 'none'; if (b[956].style.display !== v) {b[956].style.display = v};};
     if (shouldUpdate("e1168")) {let v = EternityChallenge.eternityChallengeRequirementDescription(4); if (e[1168].textContent !== v) {e[1168].textContent = v};};
     if (shouldUpdate("b957")) {let v = EternityChallenge.isEternityChallengeUnlockingMeaningless() ? 'none' : ''; if (b[957].style.display !== v) {b[957].style.display = v};};
     if (shouldUpdate("e1169")) {let v = formatInt(EternityChallenge.getEternityChallengeCost(4)); if (e[1169].textContent !== v) {e[1169].textContent = v};};
-    if (shouldUpdate("e1170")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(4), '', 's'); if (e[1170].textContent !== v) {e[1170].textContent = v};};
+    if (shouldUpdate("e1170")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(4), '', ''); if (e[1170].textContent !== v) {e[1170].textContent = v};};
     if (shouldUpdate("e1171")) {let v = format(EternityChallenge.getEternityChallengeGoal(4)); if (e[1171].textContent !== v) {e[1171].textContent = v};};
     if (shouldUpdate("e1172")) {let v = EternityChallenge.eternityChallengeStatusDescription(4); if (e[1172].textContent !== v) {e[1172].textContent = v};};
     if (shouldUpdate("b958")) {let v = EternityChallenge.canPressEternityChallengeButton(4) ? '' : 'disabled'; if (b[958].className !== v) {b[958].className = v};};
@@ -3239,7 +3239,7 @@ function updateDisplay() {
     if (shouldUpdate("e1178")) {let v = EternityChallenge.eternityChallengeRequirementDescription(5); if (e[1178].textContent !== v) {e[1178].textContent = v};};
     if (shouldUpdate("b962")) {let v = EternityChallenge.isEternityChallengeUnlockingMeaningless() ? 'none' : ''; if (b[962].style.display !== v) {b[962].style.display = v};};
     if (shouldUpdate("e1179")) {let v = formatInt(EternityChallenge.getEternityChallengeCost(5)); if (e[1179].textContent !== v) {e[1179].textContent = v};};
-    if (shouldUpdate("e1180")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(5), '', 's'); if (e[1180].textContent !== v) {e[1180].textContent = v};};
+    if (shouldUpdate("e1180")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(5), '', ''); if (e[1180].textContent !== v) {e[1180].textContent = v};};
     if (shouldUpdate("e1181")) {let v = format(EternityChallenge.getEternityChallengeGoal(5)); if (e[1181].textContent !== v) {e[1181].textContent = v};};
     if (shouldUpdate("e1182")) {let v = EternityChallenge.eternityChallengeStatusDescription(5); if (e[1182].textContent !== v) {e[1182].textContent = v};};
     if (shouldUpdate("b963")) {let v = EternityChallenge.canPressEternityChallengeButton(5) ? '' : 'disabled'; if (b[963].className !== v) {b[963].className = v};};
@@ -3253,7 +3253,7 @@ function updateDisplay() {
     if (shouldUpdate("e1187")) {let v = EternityChallenge.eternityChallengeRequirementDescription(6); if (e[1187].textContent !== v) {e[1187].textContent = v};};
     if (shouldUpdate("b967")) {let v = EternityChallenge.isEternityChallengeUnlockingMeaningless() ? 'none' : ''; if (b[967].style.display !== v) {b[967].style.display = v};};
     if (shouldUpdate("e1188")) {let v = formatInt(EternityChallenge.getEternityChallengeCost(6)); if (e[1188].textContent !== v) {e[1188].textContent = v};};
-    if (shouldUpdate("e1189")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(6), '', 's'); if (e[1189].textContent !== v) {e[1189].textContent = v};};
+    if (shouldUpdate("e1189")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(6), '', ''); if (e[1189].textContent !== v) {e[1189].textContent = v};};
     if (shouldUpdate("e1190")) {let v = format(EternityChallenge.getEternityChallengeGoal(6)); if (e[1190].textContent !== v) {e[1190].textContent = v};};
     if (shouldUpdate("e1191")) {let v = EternityChallenge.eternityChallengeStatusDescription(6); if (e[1191].textContent !== v) {e[1191].textContent = v};};
     if (shouldUpdate("b968")) {let v = EternityChallenge.canPressEternityChallengeButton(6) ? '' : 'disabled'; if (b[968].className !== v) {b[968].className = v};};
@@ -3267,7 +3267,7 @@ function updateDisplay() {
     if (shouldUpdate("e1196")) {let v = EternityChallenge.eternityChallengeRequirementDescription(7); if (e[1196].textContent !== v) {e[1196].textContent = v};};
     if (shouldUpdate("b972")) {let v = EternityChallenge.isEternityChallengeUnlockingMeaningless() ? 'none' : ''; if (b[972].style.display !== v) {b[972].style.display = v};};
     if (shouldUpdate("e1197")) {let v = formatInt(EternityChallenge.getEternityChallengeCost(7)); if (e[1197].textContent !== v) {e[1197].textContent = v};};
-    if (shouldUpdate("e1198")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(7), '', 's'); if (e[1198].textContent !== v) {e[1198].textContent = v};};
+    if (shouldUpdate("e1198")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(7), '', ''); if (e[1198].textContent !== v) {e[1198].textContent = v};};
     if (shouldUpdate("e1199")) {let v = format(EternityChallenge.getEternityChallengeGoal(7)); if (e[1199].textContent !== v) {e[1199].textContent = v};};
     if (shouldUpdate("e1200")) {let v = EternityChallenge.eternityChallengeStatusDescription(7); if (e[1200].textContent !== v) {e[1200].textContent = v};};
     if (shouldUpdate("b973")) {let v = EternityChallenge.canPressEternityChallengeButton(7) ? '' : 'disabled'; if (b[973].className !== v) {b[973].className = v};};
@@ -3281,7 +3281,7 @@ function updateDisplay() {
     if (shouldUpdate("e1205")) {let v = EternityChallenge.eternityChallengeRequirementDescription(8); if (e[1205].textContent !== v) {e[1205].textContent = v};};
     if (shouldUpdate("b977")) {let v = EternityChallenge.isEternityChallengeUnlockingMeaningless() ? 'none' : ''; if (b[977].style.display !== v) {b[977].style.display = v};};
     if (shouldUpdate("e1206")) {let v = formatInt(EternityChallenge.getEternityChallengeCost(8)); if (e[1206].textContent !== v) {e[1206].textContent = v};};
-    if (shouldUpdate("e1207")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(8), '', 's'); if (e[1207].textContent !== v) {e[1207].textContent = v};};
+    if (shouldUpdate("e1207")) {let v = pluralize(EternityChallenge.getEternityChallengeCost(8), '', ''); if (e[1207].textContent !== v) {e[1207].textContent = v};};
     if (shouldUpdate("e1208")) {let v = format(EternityChallenge.getEternityChallengeGoal(8)); if (e[1208].textContent !== v) {e[1208].textContent = v};};
     if (shouldUpdate("e1209")) {let v = EternityChallenge.eternityChallengeStatusDescription(8); if (e[1209].textContent !== v) {e[1209].textContent = v};};
     if (shouldUpdate("b978")) {let v = EternityChallenge.canPressEternityChallengeButton(8) ? '' : 'disabled'; if (b[978].className !== v) {b[978].className = v};};
@@ -3377,7 +3377,7 @@ function updateDisplay() {
     if (shouldUpdate("e1256")) {let v = Chroma.colorName(5, true); if (e[1256].textContent !== v) {e[1256].textContent = v};};
     if (shouldUpdate("e1257")) {let v = format(Chroma.colorAmount(5)); if (e[1257].textContent !== v) {e[1257].textContent = v};};
     if (shouldUpdate("e1258")) {let v = formatInt(Chroma.extraTheoremsActualAndDisplay()); if (e[1258].textContent !== v) {e[1258].textContent = v};};
-    if (shouldUpdate("e1259")) {let v = pluralize(Chroma.extraTheoremsActualAndDisplay(), '', 's'); if (e[1259].textContent !== v) {e[1259].textContent = v};};
+    if (shouldUpdate("e1259")) {let v = pluralize(Chroma.extraTheoremsActualAndDisplay(), '', ''); if (e[1259].textContent !== v) {e[1259].textContent = v};};
     if (shouldUpdate("e1260")) {let v = format(Chroma.nextExtraTheorem()); if (e[1260].textContent !== v) {e[1260].textContent = v};};
     if (shouldUpdate("b1018")) {let v = Chroma.producingAll() ? 'none' : ''; if (b[1018].style.display !== v) {b[1018].style.display = v};};
     if (shouldUpdate("e1261")) {let v = Chroma.colorName(5); if (e[1261].textContent !== v) {e[1261].textContent = v};};
@@ -3398,12 +3398,12 @@ function updateDisplay() {
   }
   if (b[1024].style.display !== "none") {
     if (shouldUpdate("e1270")) {let v = formatInt(ComplexityPoints.amount()); if (e[1270].textContent !== v) {e[1270].textContent = v};};
-    if (shouldUpdate("e1271")) {let v = pluralize(ComplexityPoints.amount(), '', 's'); if (e[1271].textContent !== v) {e[1271].textContent = v};};
+    if (shouldUpdate("e1271")) {let v = pluralize(ComplexityPoints.amount(), '', ''); if (e[1271].textContent !== v) {e[1271].textContent = v};};
     if (shouldUpdate("b1025")) {let v = ComplexityMaxAll.anythingToBuy() ? "" : "disabled"; if (b[1025].className !== v) {b[1025].className = v};};
     if (shouldUpdate("e1272")) {let v = formatInt(ComplexityPoints.totalCPProducedThisFinality()); if (e[1272].textContent !== v) {e[1272].textContent = v};};
-    if (shouldUpdate("e1273")) {let v = pluralize(ComplexityPoints.totalCPProducedThisFinality(), '', 's'); if (e[1273].textContent !== v) {e[1273].textContent = v};};
+    if (shouldUpdate("e1273")) {let v = pluralize(ComplexityPoints.totalCPProducedThisFinality(), '', ''); if (e[1273].textContent !== v) {e[1273].textContent = v};};
     if (shouldUpdate("e1274")) {let v = formatInt(Complexities.amount()); if (e[1274].textContent !== v) {e[1274].textContent = v};};
-    if (shouldUpdate("e1275")) {let v = pluralize(Complexities.amount(), 'y', 'ies'); if (e[1275].textContent !== v) {e[1275].textContent = v};};
+    if (shouldUpdate("e1275")) {let v = pluralize(Complexities.amount(), '', ''); if (e[1275].textContent !== v) {e[1275].textContent = v};};
     if (shouldUpdate("e1276")) {let v = formatMaybeInt(Complexities.complexityGeneratorMultiplier()); if (e[1276].textContent !== v) {e[1276].textContent = v};};
     if (shouldUpdate("e1277")) {let v = formatMaybeInt(Complexities.permanenceAndChromaMultiplier()); if (e[1277].textContent !== v) {e[1277].textContent = v};};
     if (shouldUpdate("b1026")) {let v = EternityChallenge.autoECFromComplexities() ? '' : 'none'; if (b[1026].style.display !== v) {b[1026].style.display = v};};
@@ -3505,13 +3505,13 @@ function updateDisplay() {
   }
   if (b[1065].style.display !== "none") {
     if (shouldUpdate("e1336")) {let v = formatInt(ComplexityChallenge.getTotalComplexityChallengeCompletions()); if (e[1336].textContent !== v) {e[1336].textContent = v};};
-    if (shouldUpdate("e1337")) {let v = pluralize(ComplexityChallenge.getTotalComplexityChallengeCompletions(), '', 's'); if (e[1337].textContent !== v) {e[1337].textContent = v};};
+    if (shouldUpdate("e1337")) {let v = pluralize(ComplexityChallenge.getTotalComplexityChallengeCompletions(), '', ''); if (e[1337].textContent !== v) {e[1337].textContent = v};};
     if (shouldUpdate("b1066")) {let v = ComplexityPrestigeLayer.canComplexity() ? "disabled" : ""; if (b[1066].className !== v) {b[1066].className = v};};
     if (shouldUpdate("b1067")) {let v = ComplexityPrestigeLayer.canComplexity() ? '' : 'none'; if (b[1067].style.display !== v) {b[1067].style.display = v};};
     if (shouldUpdate("e1338")) {let v = formatInt(Complexities.amount()); if (e[1338].textContent !== v) {e[1338].textContent = v};};
-    if (shouldUpdate("e1339")) {let v = pluralize(Complexities.amount(), 'y', 'ies'); if (e[1339].textContent !== v) {e[1339].textContent = v};};
+    if (shouldUpdate("e1339")) {let v = pluralize(Complexities.amount(), '', ''); if (e[1339].textContent !== v) {e[1339].textContent = v};};
     if (shouldUpdate("e1340")) {let v = formatInt(ComplexityChallenge.numberUnlocked()); if (e[1340].textContent !== v) {e[1340].textContent = v};};
-    if (shouldUpdate("e1341")) {let v = pluralize(ComplexityChallenge.numberUnlocked(), '', 's'); if (e[1341].textContent !== v) {e[1341].textContent = v};};
+    if (shouldUpdate("e1341")) {let v = pluralize(ComplexityChallenge.numberUnlocked(), '', ''); if (e[1341].textContent !== v) {e[1341].textContent = v};};
     if (shouldUpdate("e1342")) {let v = format(ComplexityStars.complexityChallengeRewardMultiplier()); if (e[1342].textContent !== v) {e[1342].textContent = v};};
     if (shouldUpdate("e1343")) {let v = format(ComplexityStars.amount()); if (e[1343].textContent !== v) {e[1343].textContent = v};};
     if (shouldUpdate("b1068")) {let v = FinalityMilestones.isFinalityMilestoneActive(9) ? '' : 'none'; if (b[1068].style.display !== v) {b[1068].style.display = v};};
@@ -3519,7 +3519,7 @@ function updateDisplay() {
     if (shouldUpdate("e1344")) {let v = formatOrdinalInt(6); if (e[1344].textContent !== v) {e[1344].textContent = v};};
     if (shouldUpdate("e1345")) {let v = format(ComplexityStars.complexityChallengeRewardMultiplier(6)); if (e[1345].textContent !== v) {e[1345].textContent = v};};
     if (shouldUpdate("e1346")) {let v = format(ComplexityStars.extraAmount()); if (e[1346].textContent !== v) {e[1346].textContent = v};};
-    if (shouldUpdate("e1347")) {let v = PrestigeLayerNames.layersAboveDisplay('complexity'); if (e[1347].textContent !== v) {e[1347].textContent = v};};
+    if (shouldUpdate("e1347")) {let v = PrestigeLayerNames.layersAboveDisplay('繁复'); if (e[1347].textContent !== v) {e[1347].textContent = v};};
     if (shouldUpdate("e1348")) {let v = PrestigeLayerProgress.hasReached('finality') ? 'complexity or finality' : 'complexity'; if (e[1348].textContent !== v) {e[1348].textContent = v};};
     if (shouldUpdate("b1070")) {let v = (Powers.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? 'none' : ''; if (b[1070].style.display !== v) {b[1070].style.display = v};};
     if (shouldUpdate("b1071")) {let v = (Powers.isUnlocked() || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'; if (b[1071].style.display !== v) {b[1071].style.display = v};};
@@ -3610,7 +3610,7 @@ function updateDisplay() {
     if (shouldUpdate("b1106")) {let v = (ComplexityAchievements.hasComplexityAchievement(4, 4) && ComplexityChallenge.isComplexityChallengeUnlocked(6)) ? '' : 'none'; if (b[1106].style.display !== v) {b[1106].style.display = v};};
     if (shouldUpdate("b1107")) {let v = (ComplexityAchievements.hasComplexityAchievement(4, 4) && ComplexityChallenge.isComplexityChallengeUnlocked(6)) ? '' : 'none'; if (b[1107].style.display !== v) {b[1107].style.display = v};};
     if (shouldUpdate("e1400")) {let v = formatInt(ComplexityChallenge.getComplexityChallengeReward(6)); if (e[1400].textContent !== v) {e[1400].textContent = v};};
-    if (shouldUpdate("e1401")) {let v = pluralize(ComplexityChallenge.getComplexityChallengeReward(6), '', 's'); if (e[1401].textContent !== v) {e[1401].textContent = v};};
+    if (shouldUpdate("e1401")) {let v = pluralize(ComplexityChallenge.getComplexityChallengeReward(6), '', ''); if (e[1401].textContent !== v) {e[1401].textContent = v};};
     if (shouldUpdate("e1402")) {let v = formatInt(ComplexityChallenge.getComplexityChallengeNextReward(6)); if (e[1402].textContent !== v) {e[1402].textContent = v};};
     if (shouldUpdate("b1108")) {let v = ComplexityChallenge.showActualExtraTheorems() ? '' : 'none'; if (b[1108].style.display !== v) {b[1108].style.display = v};};
     if (shouldUpdate("b1109")) {let v = ComplexityChallenge.showActualExtraTheorems() ? '' : 'none'; if (b[1109].style.display !== v) {b[1109].style.display = v};};
@@ -3622,7 +3622,7 @@ function updateDisplay() {
   }
   if (b[1113].style.display !== "none") {
     if (shouldUpdate("e1405")) {let v = formatInt(ComplexityAchievements.getTotalAchievementsUnlocked()); if (e[1405].textContent !== v) {e[1405].textContent = v};};
-    if (shouldUpdate("e1406")) {let v = pluralize(ComplexityAchievements.getTotalAchievementsUnlocked(), '', 's'); if (e[1406].textContent !== v) {e[1406].textContent = v};};
+    if (shouldUpdate("e1406")) {let v = pluralize(ComplexityAchievements.getTotalAchievementsUnlocked(), '', ''); if (e[1406].textContent !== v) {e[1406].textContent = v};};
     if (shouldUpdate("b1114")) {let v = (ComplexityAchievements.hasComplexityAchievement(1, 3) || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'; if (b[1114].style.display !== v) {b[1114].style.display = v};};
     if (shouldUpdate("e1407")) {let v = (ComplexityAchievements.isComplexityAchievementDisabled(1, 3) ? "Disabled" : "Enabled") + (ComplexityAchievements.hasComplexityAchievement(1, 3) ? '' : ' (once unlocked)'); if (e[1407].textContent !== v) {e[1407].textContent = v};};
     if (shouldUpdate("b1115")) {let v = (ComplexityChallenge.isComplexityChallengeUnlocked(4) || PrestigeLayerProgress.hasReached('finality')) ? '' : 'none'; if (b[1115].style.display !== v) {b[1115].style.display = v};};
@@ -3630,7 +3630,7 @@ function updateDisplay() {
     if (shouldUpdate("b1116")) {let v = ComplexityAchievements.getAchievementsUnlockedRewardClass(1); if (b[1116].className !== v) {b[1116].className = v};};
     if (shouldUpdate("e1409")) {let v = formatInt(ComplexityAchievements.getAchievementsUnlockedRewardThreshold(1)); if (e[1409].textContent !== v) {e[1409].textContent = v};};
     if (shouldUpdate("b1117")) {let v = ComplexityAchievements.getAchievementsUnlockedRewardClass(1); if (b[1117].className !== v) {b[1117].className = v};};
-    if (shouldUpdate("e1410")) {let v = PrestigeLayerNames.layersAboveDisplay('complexity'); if (e[1410].textContent !== v) {e[1410].textContent = v};};
+    if (shouldUpdate("e1410")) {let v = PrestigeLayerNames.layersAboveDisplay('繁复'); if (e[1410].textContent !== v) {e[1410].textContent = v};};
     if (shouldUpdate("e1411")) {let v = formatInt(ComplexityAchievements.getAchievementsUnlockedRewardRawEffect(1)); if (e[1411].textContent !== v) {e[1411].textContent = v};};
     if (shouldUpdate("b1118")) {let v = ComplexityAchievements.getAchievementsUnlockedRewardClass(2); if (b[1118].className !== v) {b[1118].className = v};};
     if (shouldUpdate("e1412")) {let v = formatInt(ComplexityAchievements.getAchievementsUnlockedRewardThreshold(2)); if (e[1412].textContent !== v) {e[1412].textContent = v};};
@@ -3642,7 +3642,7 @@ function updateDisplay() {
     if (shouldUpdate("b1122")) {let v = ComplexityAchievements.getAchievementsUnlockedRewardClass(4); if (b[1122].className !== v) {b[1122].className = v};};
     if (shouldUpdate("e1415")) {let v = formatInt(ComplexityAchievements.getAchievementsUnlockedRewardThreshold(4)); if (e[1415].textContent !== v) {e[1415].textContent = v};};
     if (shouldUpdate("b1123")) {let v = ComplexityAchievements.getAchievementsUnlockedRewardClass(4); if (b[1123].className !== v) {b[1123].className = v};};
-    if (shouldUpdate("e1416")) {let v = PrestigeLayerNames.layersAboveDisplay('complexity'); if (e[1416].textContent !== v) {e[1416].textContent = v};};
+    if (shouldUpdate("e1416")) {let v = PrestigeLayerNames.layersAboveDisplay('繁复'); if (e[1416].textContent !== v) {e[1416].textContent = v};};
     if (shouldUpdate("e1417")) {let v = format(ComplexityAchievements.getAchievementsUnlockedRewardRawEffect(4)); if (e[1417].textContent !== v) {e[1417].textContent = v};};
     if (shouldUpdate("b1124")) {let v = ComplexityAchievements.color(1, 1); if (b[1124].style.background !== v) {b[1124].style.background = v};};
     if (shouldUpdate("e1418")) {let v = ComplexityAchievements.getComplexityAchievementName(1, 1); if (e[1418].textContent !== v) {e[1418].textContent = v};};
@@ -3654,7 +3654,7 @@ function updateDisplay() {
     if (shouldUpdate("e1423")) {let v = ComplexityAchievements.getComplexityAchievementName(1, 2); if (e[1423].textContent !== v) {e[1423].textContent = v};};
     if (shouldUpdate("e1424")) {let v = formatOrdinalInt(2); if (e[1424].textContent !== v) {e[1424].textContent = v};};
     if (shouldUpdate("e1425")) {let v = ComplexityAchievements.complexityAchievementStatusDescription(1, 2); if (e[1425].textContent !== v) {e[1425].textContent = v};};
-    if (shouldUpdate("e1426")) {let v = PrestigeLayerNames.layersAboveDisplay('complexity'); if (e[1426].textContent !== v) {e[1426].textContent = v};};
+    if (shouldUpdate("e1426")) {let v = PrestigeLayerNames.layersAboveDisplay('繁复'); if (e[1426].textContent !== v) {e[1426].textContent = v};};
     if (shouldUpdate("e1427")) {let v = formatInt(ComplexityAchievements.rawEffect(1, 2)); if (e[1427].textContent !== v) {e[1427].textContent = v};};
     if (shouldUpdate("b1126")) {let v = ComplexityAchievements.color(1, 3); if (b[1126].style.background !== v) {b[1126].style.background = v};};
     if (shouldUpdate("e1428")) {let v = ComplexityAchievements.getComplexityAchievementName(1, 3); if (e[1428].textContent !== v) {e[1428].textContent = v};};
@@ -3726,7 +3726,7 @@ function updateDisplay() {
     if (shouldUpdate("e1481")) {let v = formatInt(20); if (e[1481].textContent !== v) {e[1481].textContent = v};};
     if (shouldUpdate("e1482")) {let v = formatOrdinalInt(6); if (e[1482].textContent !== v) {e[1482].textContent = v};};
     if (shouldUpdate("e1483")) {let v = ComplexityAchievements.complexityAchievementStatusDescription(4, 2); if (e[1483].textContent !== v) {e[1483].textContent = v};};
-    if (shouldUpdate("e1484")) {let v = PrestigeLayerNames.layersAboveDisplay('complexity'); if (e[1484].textContent !== v) {e[1484].textContent = v};};
+    if (shouldUpdate("e1484")) {let v = PrestigeLayerNames.layersAboveDisplay('繁复'); if (e[1484].textContent !== v) {e[1484].textContent = v};};
     if (shouldUpdate("b1140")) {let v = ComplexityAchievements.color(4, 3); if (b[1140].style.background !== v) {b[1140].style.background = v};};
     if (shouldUpdate("e1485")) {let v = ComplexityAchievements.getComplexityAchievementName(4, 3); if (e[1485].textContent !== v) {e[1485].textContent = v};};
     if (shouldUpdate("e1486")) {let v = formatOrdinalInt(6); if (e[1486].textContent !== v) {e[1486].textContent = v};};
@@ -3749,12 +3749,12 @@ function updateDisplay() {
     if (shouldUpdate("b1149")) {let v = Powers.isUnlocked() ? 'none' : ''; if (b[1149].style.display !== v) {b[1149].style.display = v};};
     if (shouldUpdate("e1494")) {let v = formatInt(Powers.equipped().length); if (e[1494].textContent !== v) {e[1494].textContent = v};};
     if (shouldUpdate("e1495")) {let v = formatInt(Powers.equippedLimit()); if (e[1495].textContent !== v) {e[1495].textContent = v};};
-    if (shouldUpdate("e1496")) {let v = pluralize(Powers.equippedLimit(), '', 's'); if (e[1496].textContent !== v) {e[1496].textContent = v};};
+    if (shouldUpdate("e1496")) {let v = pluralize(Powers.equippedLimit(), '', ''); if (e[1496].textContent !== v) {e[1496].textContent = v};};
     if (shouldUpdate("b1150")) {let v = Explanations.isVisible('powers', 'main') ? '' : 'none'; if (b[1150].style.display !== v) {b[1150].style.display = v};};
     if (shouldUpdate("e1497")) {let v = Explanations.isShown('powers', 'main') ? 'Shown' : 'Hidden'; if (e[1497].textContent !== v) {e[1497].textContent = v};};
     if (shouldUpdate("b1151")) {let v = Explanations.isShown('powers', 'main') ? '' : 'none'; if (b[1151].style.display !== v) {b[1151].style.display = v};};
     if (shouldUpdate("e1498")) {let v = formatInt(Powers.equippedLimit()); if (e[1498].textContent !== v) {e[1498].textContent = v};};
-    if (shouldUpdate("e1499")) {let v = pluralize(Powers.equippedLimit(), '', 's'); if (e[1499].textContent !== v) {e[1499].textContent = v};};
+    if (shouldUpdate("e1499")) {let v = pluralize(Powers.equippedLimit(), '', ''); if (e[1499].textContent !== v) {e[1499].textContent = v};};
     if (shouldUpdate("e1500")) {let v = format(1 / 512); if (e[1500].textContent !== v) {e[1500].textContent = v};};
     if (shouldUpdate("e1501")) {let v = format(1 / 32); if (e[1501].textContent !== v) {e[1501].textContent = v};};
     if (shouldUpdate("e1502")) {let v = format(1 / 16); if (e[1502].textContent !== v) {e[1502].textContent = v};};
@@ -3771,7 +3771,7 @@ function updateDisplay() {
     if (shouldUpdate("b1157")) {let v = Powers.isPowerGainOn() || Powers.imminentPowerGain() === 0 ? '' : 'none'; if (b[1157].style.display !== v) {b[1157].style.display = v};};
     if (shouldUpdate("b1158")) {let v = !Powers.isPowerGainOn() && Powers.imminentPowerGain() !== 0 ? '' : 'none'; if (b[1158].style.display !== v) {b[1158].style.display = v};};
     if (shouldUpdate("e1508")) {let v = formatInt(Powers.imminentPowerGain()); if (e[1508].textContent !== v) {e[1508].textContent = v};};
-    if (shouldUpdate("e1509")) {let v = pluralize(Powers.imminentPowerGain(), '', 's'); if (e[1509].textContent !== v) {e[1509].textContent = v};};
+    if (shouldUpdate("e1509")) {let v = pluralize(Powers.imminentPowerGain(), '', ''); if (e[1509].textContent !== v) {e[1509].textContent = v};};
     if (shouldUpdate("e1510")) {let v = format(RNG.lowRarityThreshold()); if (e[1510].textContent !== v) {e[1510].textContent = v};};
     if (shouldUpdate("b1159")) {let v = Powers.showNextPower() ? '' : 'none'; if (b[1159].style.display !== v) {b[1159].style.display = v};};
     if (shouldUpdate("b1160")) {let v = Powers.nextKept() ? 'none' : ''; if (b[1160].style.display !== v) {b[1160].style.display = v};};
@@ -4046,12 +4046,12 @@ function updateDisplay() {
     if (shouldUpdate("b1292")) {let v = Powers.canDelete(12) ? '' : 'disabled'; if (b[1292].className !== v) {b[1292].className = v};};
     if (shouldUpdate("e1616")) {let v = format(PowerShards.shardGainStored(12)); if (e[1616].textContent !== v) {e[1616].textContent = v};};
     if (shouldUpdate("e1617")) {let v = formatInt(Powers.maximumEquippedLimit()); if (e[1617].textContent !== v) {e[1617].textContent = v};};
-    if (shouldUpdate("e1618")) {let v = pluralize(Powers.maximumEquippedLimit(), '', 's'); if (e[1618].textContent !== v) {e[1618].textContent = v};};
+    if (shouldUpdate("e1618")) {let v = pluralize(Powers.maximumEquippedLimit(), '', ''); if (e[1618].textContent !== v) {e[1618].textContent = v};};
     if (shouldUpdate("e1619")) {let v = formatInt(Powers.maximumEquippedLimit()); if (e[1619].textContent !== v) {e[1619].textContent = v};};
-    if (shouldUpdate("e1620")) {let v = pluralize(Powers.maximumEquippedLimit(), '', 's'); if (e[1620].textContent !== v) {e[1620].textContent = v};};
+    if (shouldUpdate("e1620")) {let v = pluralize(Powers.maximumEquippedLimit(), '', ''); if (e[1620].textContent !== v) {e[1620].textContent = v};};
     if (shouldUpdate("e1621")) {let v = formatInt(Powers.maximumEquippedLimit()); if (e[1621].textContent !== v) {e[1621].textContent = v};};
     if (shouldUpdate("e1622")) {let v = formatInt(ComplexityPoints.amount()); if (e[1622].textContent !== v) {e[1622].textContent = v};};
-    if (shouldUpdate("e1623")) {let v = pluralize(ComplexityPoints.amount(), '', 's'); if (e[1623].textContent !== v) {e[1623].textContent = v};};
+    if (shouldUpdate("e1623")) {let v = pluralize(ComplexityPoints.amount(), '', ''); if (e[1623].textContent !== v) {e[1623].textContent = v};};
     if (shouldUpdate("b1293")) {let v = Powers.anythingToBuy() ? "" : "disabled"; if (b[1293].className !== v) {b[1293].className = v};};
     if (shouldUpdate("b1294")) {let v = PowerUpgrade(1).atDisplayBoughtLimit() ? 'none' : ''; if (b[1294].style.display !== v) {b[1294].style.display = v};};
     if (shouldUpdate("e1624")) {let v = formatPrecisely(PowerUpgrade(1).effectDisplay()); if (e[1624].textContent !== v) {e[1624].textContent = v};};
@@ -4101,7 +4101,7 @@ function updateDisplay() {
     if (shouldUpdate("b1320")) {let v = PowerShardUpgrade(1).atBoughtLimit() ? 'none' : ''; if (b[1320].style.display !== v) {b[1320].style.display = v};};
     if (shouldUpdate("b1321")) {let v = PowerShardUpgrade(1).canBuy() ? "" : "disabled"; if (b[1321].className !== v) {b[1321].className = v};};
     if (shouldUpdate("e1643")) {let v = formatInt(PowerShardUpgrade(1).cost()); if (e[1643].textContent !== v) {e[1643].textContent = v};};
-    if (shouldUpdate("e1644")) {let v = pluralize(PowerShardUpgrade(1).cost(), '', 's'); if (e[1644].textContent !== v) {e[1644].textContent = v};};
+    if (shouldUpdate("e1644")) {let v = pluralize(PowerShardUpgrade(1).cost(), '', ''); if (e[1644].textContent !== v) {e[1644].textContent = v};};
     if (shouldUpdate("b1322")) {let v = PowerShardUpgrade(1).atBoughtLimit() ? 'none' : ''; if (b[1322].style.display !== v) {b[1322].style.display = v};};
     if (shouldUpdate("b1323")) {let v = PowerShardUpgrade(1).canBuy() ? "" : "disabled"; if (b[1323].className !== v) {b[1323].className = v};};
     if (shouldUpdate("b1324")) {let v = ComplexityAutobuyer(12).hasComplexityAutobuyer() ? '' : 'none'; if (b[1324].style.display !== v) {b[1324].style.display = v};};
@@ -4114,7 +4114,7 @@ function updateDisplay() {
     if (shouldUpdate("b1327")) {let v = PowerShardUpgrade(2).atBoughtLimit() ? 'none' : ''; if (b[1327].style.display !== v) {b[1327].style.display = v};};
     if (shouldUpdate("b1328")) {let v = PowerShardUpgrade(2).canBuy() ? "" : "disabled"; if (b[1328].className !== v) {b[1328].className = v};};
     if (shouldUpdate("e1649")) {let v = formatInt(PowerShardUpgrade(2).cost()); if (e[1649].textContent !== v) {e[1649].textContent = v};};
-    if (shouldUpdate("e1650")) {let v = pluralize(PowerShardUpgrade(2).cost(), '', 's'); if (e[1650].textContent !== v) {e[1650].textContent = v};};
+    if (shouldUpdate("e1650")) {let v = pluralize(PowerShardUpgrade(2).cost(), '', ''); if (e[1650].textContent !== v) {e[1650].textContent = v};};
     if (shouldUpdate("b1329")) {let v = PowerShardUpgrade(2).atBoughtLimit() ? 'none' : ''; if (b[1329].style.display !== v) {b[1329].style.display = v};};
     if (shouldUpdate("b1330")) {let v = PowerShardUpgrade(2).canBuy() ? "" : "disabled"; if (b[1330].className !== v) {b[1330].className = v};};
     if (shouldUpdate("b1331")) {let v = ComplexityAutobuyer(13).hasComplexityAutobuyer() ? '' : 'none'; if (b[1331].style.display !== v) {b[1331].style.display = v};};
@@ -4127,7 +4127,7 @@ function updateDisplay() {
     if (shouldUpdate("b1334")) {let v = PowerShardUpgrade(3).atBoughtLimit() ? 'none' : ''; if (b[1334].style.display !== v) {b[1334].style.display = v};};
     if (shouldUpdate("b1335")) {let v = PowerShardUpgrade(3).canBuy() ? "" : "disabled"; if (b[1335].className !== v) {b[1335].className = v};};
     if (shouldUpdate("e1655")) {let v = formatInt(PowerShardUpgrade(3).cost()); if (e[1655].textContent !== v) {e[1655].textContent = v};};
-    if (shouldUpdate("e1656")) {let v = pluralize(PowerShardUpgrade(3).cost(), '', 's'); if (e[1656].textContent !== v) {e[1656].textContent = v};};
+    if (shouldUpdate("e1656")) {let v = pluralize(PowerShardUpgrade(3).cost(), '', ''); if (e[1656].textContent !== v) {e[1656].textContent = v};};
     if (shouldUpdate("b1336")) {let v = PowerShardUpgrade(3).atBoughtLimit() ? 'none' : ''; if (b[1336].style.display !== v) {b[1336].style.display = v};};
     if (shouldUpdate("b1337")) {let v = PowerShardUpgrade(3).canBuy() ? "" : "disabled"; if (b[1337].className !== v) {b[1337].className = v};};
     if (shouldUpdate("b1338")) {let v = ComplexityAutobuyer(14).hasComplexityAutobuyer() ? '' : 'none'; if (b[1338].style.display !== v) {b[1338].style.display = v};};
@@ -4140,7 +4140,7 @@ function updateDisplay() {
     if (shouldUpdate("b1341")) {let v = PowerShardUpgrade(4).atBoughtLimit() ? 'none' : ''; if (b[1341].style.display !== v) {b[1341].style.display = v};};
     if (shouldUpdate("b1342")) {let v = PowerShardUpgrade(4).canBuy() ? "" : "disabled"; if (b[1342].className !== v) {b[1342].className = v};};
     if (shouldUpdate("e1661")) {let v = formatInt(PowerShardUpgrade(4).cost()); if (e[1661].textContent !== v) {e[1661].textContent = v};};
-    if (shouldUpdate("e1662")) {let v = pluralize(PowerShardUpgrade(4).cost(), '', 's'); if (e[1662].textContent !== v) {e[1662].textContent = v};};
+    if (shouldUpdate("e1662")) {let v = pluralize(PowerShardUpgrade(4).cost(), '', ''); if (e[1662].textContent !== v) {e[1662].textContent = v};};
     if (shouldUpdate("b1343")) {let v = PowerShardUpgrade(4).atBoughtLimit() ? 'none' : ''; if (b[1343].style.display !== v) {b[1343].style.display = v};};
     if (shouldUpdate("b1344")) {let v = PowerShardUpgrade(4).canBuy() ? "" : "disabled"; if (b[1344].className !== v) {b[1344].className = v};};
     if (shouldUpdate("b1345")) {let v = ComplexityAutobuyer(15).hasComplexityAutobuyer() ? '' : 'none'; if (b[1345].style.display !== v) {b[1345].style.display = v};};
@@ -4228,8 +4228,8 @@ function updateDisplay() {
     if (shouldUpdate("b1484")) {let v = SpecialTabs.isTabVisible('galaxies') ?  'none' : ''; if (b[1484].style.display !== v) {b[1484].style.display = v};};
     if (shouldUpdate("b1485")) {let v = (Oracle.isUnlocked() || Options.showAllTabs()) ? '' : 'none'; if (b[1485].style.display !== v) {b[1485].style.display = v};};
     if (shouldUpdate("b1486")) {let v = Oracle.isUnlocked() ? 'none' : ''; if (b[1486].style.display !== v) {b[1486].style.display = v};};
-    if (shouldUpdate("e1671")) {let v = pluralize(Oracle.displayTime(), '', 's'); if (e[1671].textContent !== v) {e[1671].textContent = v};};
-    if (shouldUpdate("e1672")) {let v = pluralize(Oracle.displayTicks(), '', 's'); if (e[1672].textContent !== v) {e[1672].textContent = v};};
+    if (shouldUpdate("e1671")) {let v = pluralize(Oracle.displayTime(), '', ''); if (e[1671].textContent !== v) {e[1671].textContent = v};};
+    if (shouldUpdate("e1672")) {let v = pluralize(Oracle.displayTicks(), '', ''); if (e[1672].textContent !== v) {e[1672].textContent = v};};
     if (shouldUpdate("b1489")) {let v = Oracle.isUnlocked() ? '' : 'disabled'; if (b[1489].className !== v) {b[1489].className = v};};
     if (shouldUpdate("e1673")) {let v = Oracle.alert() ? "On" : "Off"; if (e[1673].textContent !== v) {e[1673].textContent = v};};
     if (shouldUpdate("e1674")) {let v = Oracle.powerDisplay() ? "On" : "Off"; if (e[1674].textContent !== v) {e[1674].textContent = v};};
@@ -4411,20 +4411,20 @@ function updateDisplay() {
     if (shouldUpdate("e1763")) {let v = formatInt(Galaxy.finalityShardUpgradeAmount()); if (e[1763].textContent !== v) {e[1763].textContent = v};};
     if (shouldUpdate("e1764")) {let v = formatInt(Galaxy.amount()); if (e[1764].textContent !== v) {e[1764].textContent = v};};
     if (shouldUpdate("b1576")) {let v = Galaxy.showSpecialZeroText() ? '' : 'none'; if (b[1576].style.display !== v) {b[1576].style.display = v};};
-    if (shouldUpdate("e1765")) {let v = pluralize(Galaxy.amount(), 'y', 'ies'); if (e[1765].textContent !== v) {e[1765].textContent = v};};
+    if (shouldUpdate("e1765")) {let v = pluralize(Galaxy.amount(), '', ''); if (e[1765].textContent !== v) {e[1765].textContent = v};};
     if (shouldUpdate("e1766")) {let v = format(Galaxy.nextStellarProductGalaxy()); if (e[1766].textContent !== v) {e[1766].textContent = v};};
     if (shouldUpdate("e1767")) {let v = format(Galaxy.nextComplexityPointGalaxy()); if (e[1767].textContent !== v) {e[1767].textContent = v};};
     if (shouldUpdate("e1768")) {let v = formatPrecisely(Galaxy.getStrengthIncrease()); if (e[1768].textContent !== v) {e[1768].textContent = v};};
     if (shouldUpdate("e1769")) {let v = formatTime(player.stats.timeSinceComplexity, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[1769].textContent !== v) {e[1769].textContent = v};};
     if (shouldUpdate("e1770")) {let v = formatPrecisely(Galaxy.effect()); if (e[1770].textContent !== v) {e[1770].textContent = v};};
     if (shouldUpdate("e1771")) {let v = formatInt(Galaxy.dilated()); if (e[1771].textContent !== v) {e[1771].textContent = v};};
-    if (shouldUpdate("e1772")) {let v = pluralize(Galaxy.dilated(), 'y', 'ies'); if (e[1772].textContent !== v) {e[1772].textContent = v};};
-    if (shouldUpdate("e1773")) {let v = Galaxy.dilated() === 1 ? 'is' : 'are'; if (e[1773].textContent !== v) {e[1773].textContent = v};};
+    if (shouldUpdate("e1772")) {let v = pluralize(Galaxy.dilated(), '', ''); if (e[1772].textContent !== v) {e[1772].textContent = v};};
+    if (shouldUpdate("e1773")) {let v = Galaxy.dilated() === 1 ? '' : ''; if (e[1773].textContent !== v) {e[1773].textContent = v};};
     if (shouldUpdate("e1774")) {let v = formatInt(Galaxy.effectSpeed()); if (e[1774].textContent !== v) {e[1774].textContent = v};};
     if (shouldUpdate("e1775")) {let v = formatPrecisely(Galaxy.effectCap()); if (e[1775].textContent !== v) {e[1775].textContent = v};};
     if (shouldUpdate("e1776")) {let v = formatTime(Galaxy.timeToReachEffectCap(), {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[1776].textContent !== v) {e[1776].textContent = v};};
     if (shouldUpdate("e1777")) {let v = formatInt(Galaxy.nextDilated()); if (e[1777].textContent !== v) {e[1777].textContent = v};};
-    if (shouldUpdate("e1778")) {let v = pluralize(Galaxy.nextDilated(), 'y', 'ies'); if (e[1778].textContent !== v) {e[1778].textContent = v};};
+    if (shouldUpdate("e1778")) {let v = pluralize(Galaxy.nextDilated(), '', ''); if (e[1778].textContent !== v) {e[1778].textContent = v};};
     if (shouldUpdate("e1779")) {let v = formatInt(Galaxy.nextEffectSpeed()); if (e[1779].textContent !== v) {e[1779].textContent = v};};
     if (shouldUpdate("e1780")) {let v = formatPrecisely(Galaxy.nextEffectCap()); if (e[1780].textContent !== v) {e[1780].textContent = v};};
     if (shouldUpdate("e1781")) {let v = formatTime(Galaxy.nextTimeToReachEffectCap(), {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[1781].textContent !== v) {e[1781].textContent = v};};
@@ -4436,12 +4436,12 @@ function updateDisplay() {
   }
   if (b[1581].style.display !== "none") {
     if (shouldUpdate("e1785")) {let v = formatInt(FinalityPoints.amount()); if (e[1785].textContent !== v) {e[1785].textContent = v};};
-    if (shouldUpdate("e1786")) {let v = pluralize(FinalityPoints.amount(), '', 's'); if (e[1786].textContent !== v) {e[1786].textContent = v};};
+    if (shouldUpdate("e1786")) {let v = pluralize(FinalityPoints.amount(), '', ''); if (e[1786].textContent !== v) {e[1786].textContent = v};};
     if (shouldUpdate("b1582")) {let v = FinalityMaxAll.anythingToBuy() ? "" : "disabled"; if (b[1582].className !== v) {b[1582].className = v};};
     if (shouldUpdate("e1787")) {let v = formatInt(FinalityPoints.totalFPProduced()); if (e[1787].textContent !== v) {e[1787].textContent = v};};
-    if (shouldUpdate("e1788")) {let v = pluralize(FinalityPoints.totalFPProduced(), '', 's'); if (e[1788].textContent !== v) {e[1788].textContent = v};};
+    if (shouldUpdate("e1788")) {let v = pluralize(FinalityPoints.totalFPProduced(), '', ''); if (e[1788].textContent !== v) {e[1788].textContent = v};};
     if (shouldUpdate("e1789")) {let v = formatInt(Finalities.amount()); if (e[1789].textContent !== v) {e[1789].textContent = v};};
-    if (shouldUpdate("e1790")) {let v = pluralize(Finalities.amount(), 'y', 'ies'); if (e[1790].textContent !== v) {e[1790].textContent = v};};
+    if (shouldUpdate("e1790")) {let v = pluralize(Finalities.amount(), '', ''); if (e[1790].textContent !== v) {e[1790].textContent = v};};
     if (shouldUpdate("e1791")) {let v = formatMaybeInt(Finalities.finalityGeneratorMultiplier()); if (e[1791].textContent !== v) {e[1791].textContent = v};};
     if (shouldUpdate("e1792")) {let v = formatMaybeInt(Finalities.finalityGeneratorPerPurchaseMultiplier()); if (e[1792].textContent !== v) {e[1792].textContent = v};};
     if (shouldUpdate("b1583")) {let v = EternityChallenge.autoECFromFinalities() ? '' : 'none'; if (b[1583].style.display !== v) {b[1583].style.display = v};};
@@ -4519,17 +4519,17 @@ function updateDisplay() {
   }
   if (b[1611].style.display !== "none") {
     if (shouldUpdate("e1838")) {let v = formatInt(FinalityShards.total()); if (e[1838].textContent !== v) {e[1838].textContent = v};};
-    if (shouldUpdate("e1839")) {let v = pluralize(FinalityShards.total(), '', 's'); if (e[1839].textContent !== v) {e[1839].textContent = v};};
+    if (shouldUpdate("e1839")) {let v = pluralize(FinalityShards.total(), '', ''); if (e[1839].textContent !== v) {e[1839].textContent = v};};
     if (shouldUpdate("e1840")) {let v = formatInt(FinalityShards.amount()); if (e[1840].textContent !== v) {e[1840].textContent = v};};
-    if (shouldUpdate("e1841")) {let v = pluralize(FinalityShards.amount(), '', 's'); if (e[1841].textContent !== v) {e[1841].textContent = v};};
+    if (shouldUpdate("e1841")) {let v = pluralize(FinalityShards.amount(), '', ''); if (e[1841].textContent !== v) {e[1841].textContent = v};};
     if (shouldUpdate("b1612")) {let v = FinalityShards.anythingToBuy() ? "" : "disabled"; if (b[1612].className !== v) {b[1612].className = v};};
     if (shouldUpdate("e1842")) {let v = formatInt(FinalityShards.totalUpgrades()); if (e[1842].textContent !== v) {e[1842].textContent = v};};
-    if (shouldUpdate("e1843")) {let v = pluralize(FinalityShards.totalUpgrades(), '', 's'); if (e[1843].textContent !== v) {e[1843].textContent = v};};
+    if (shouldUpdate("e1843")) {let v = pluralize(FinalityShards.totalUpgrades(), '', ''); if (e[1843].textContent !== v) {e[1843].textContent = v};};
     if (shouldUpdate("e1844")) {let v = formatInt(FinalityShards.totalUpgradeBonuses()); if (e[1844].textContent !== v) {e[1844].textContent = v};};
     if (shouldUpdate("e1845")) {let v = formatInt(1); if (e[1845].textContent !== v) {e[1845].textContent = v};};
     if (shouldUpdate("e1846")) {let v = formatInt(4); if (e[1846].textContent !== v) {e[1846].textContent = v};};
     if (shouldUpdate("e1847")) {let v = formatInt(FinalityPrestigeLayer.finalityShardGain()); if (e[1847].textContent !== v) {e[1847].textContent = v};};
-    if (shouldUpdate("e1848")) {let v = pluralize(FinalityPrestigeLayer.finalityShardGain(), '', 's'); if (e[1848].textContent !== v) {e[1848].textContent = v};};
+    if (shouldUpdate("e1848")) {let v = pluralize(FinalityPrestigeLayer.finalityShardGain(), '', ''); if (e[1848].textContent !== v) {e[1848].textContent = v};};
     if (shouldUpdate("e1849")) {let v = formatInt(16); if (e[1849].textContent !== v) {e[1849].textContent = v};};
     if (shouldUpdate("e1850")) {let v = formatInt(1); if (e[1850].textContent !== v) {e[1850].textContent = v};};
     if (shouldUpdate("e1851")) {let v = formatInt(1); if (e[1851].textContent !== v) {e[1851].textContent = v};};
@@ -4649,7 +4649,7 @@ function updateDisplay() {
     if (shouldUpdate("b1653")) {let v = FinalityShardUpgrade(1).atBoughtLimit() ? 'none' : ''; if (b[1653].style.display !== v) {b[1653].style.display = v};};
     if (shouldUpdate("b1654")) {let v = FinalityShardUpgrade(1).canBuy() ? "" : "disabled"; if (b[1654].className !== v) {b[1654].className = v};};
     if (shouldUpdate("e1893")) {let v = formatInt(FinalityShardUpgrade(1).cost()); if (e[1893].textContent !== v) {e[1893].textContent = v};};
-    if (shouldUpdate("e1894")) {let v = pluralize(FinalityShardUpgrade(1).cost(), '', 's'); if (e[1894].textContent !== v) {e[1894].textContent = v};};
+    if (shouldUpdate("e1894")) {let v = pluralize(FinalityShardUpgrade(1).cost(), '', ''); if (e[1894].textContent !== v) {e[1894].textContent = v};};
     if (shouldUpdate("b1655")) {let v = FinalityShardUpgrade(1).atBoughtLimit() ? 'none' : ''; if (b[1655].style.display !== v) {b[1655].style.display = v};};
     if (shouldUpdate("b1656")) {let v = FinalityShardUpgrade(1).canBuy() ? "" : "disabled"; if (b[1656].className !== v) {b[1656].className = v};};
     if (shouldUpdate("e1895")) {let v = formatInt(FinalityShardUpgrade(2).bought()); if (e[1895].textContent !== v) {e[1895].textContent = v};};
@@ -4661,7 +4661,7 @@ function updateDisplay() {
     if (shouldUpdate("b1659")) {let v = FinalityShardUpgrade(2).atBoughtLimit() ? 'none' : ''; if (b[1659].style.display !== v) {b[1659].style.display = v};};
     if (shouldUpdate("b1660")) {let v = FinalityShardUpgrade(2).canBuy() ? "" : "disabled"; if (b[1660].className !== v) {b[1660].className = v};};
     if (shouldUpdate("e1899")) {let v = formatInt(FinalityShardUpgrade(2).cost()); if (e[1899].textContent !== v) {e[1899].textContent = v};};
-    if (shouldUpdate("e1900")) {let v = pluralize(FinalityShardUpgrade(2).cost(), '', 's'); if (e[1900].textContent !== v) {e[1900].textContent = v};};
+    if (shouldUpdate("e1900")) {let v = pluralize(FinalityShardUpgrade(2).cost(), '', ''); if (e[1900].textContent !== v) {e[1900].textContent = v};};
     if (shouldUpdate("b1661")) {let v = FinalityShardUpgrade(2).atBoughtLimit() ? 'none' : ''; if (b[1661].style.display !== v) {b[1661].style.display = v};};
     if (shouldUpdate("b1662")) {let v = FinalityShardUpgrade(2).canBuy() ? "" : "disabled"; if (b[1662].className !== v) {b[1662].className = v};};
     if (shouldUpdate("e1901")) {let v = formatInt(FinalityShardUpgrade(3).bought()); if (e[1901].textContent !== v) {e[1901].textContent = v};};
@@ -4673,7 +4673,7 @@ function updateDisplay() {
     if (shouldUpdate("b1665")) {let v = FinalityShardUpgrade(3).atBoughtLimit() ? 'none' : ''; if (b[1665].style.display !== v) {b[1665].style.display = v};};
     if (shouldUpdate("b1666")) {let v = FinalityShardUpgrade(3).canBuy() ? "" : "disabled"; if (b[1666].className !== v) {b[1666].className = v};};
     if (shouldUpdate("e1905")) {let v = formatInt(FinalityShardUpgrade(3).cost()); if (e[1905].textContent !== v) {e[1905].textContent = v};};
-    if (shouldUpdate("e1906")) {let v = pluralize(FinalityShardUpgrade(3).cost(), '', 's'); if (e[1906].textContent !== v) {e[1906].textContent = v};};
+    if (shouldUpdate("e1906")) {let v = pluralize(FinalityShardUpgrade(3).cost(), '', ''); if (e[1906].textContent !== v) {e[1906].textContent = v};};
     if (shouldUpdate("b1667")) {let v = FinalityShardUpgrade(3).atBoughtLimit() ? 'none' : ''; if (b[1667].style.display !== v) {b[1667].style.display = v};};
     if (shouldUpdate("b1668")) {let v = FinalityShardUpgrade(3).canBuy() ? "" : "disabled"; if (b[1668].className !== v) {b[1668].className = v};};
     if (shouldUpdate("e1907")) {let v = formatInt(FinalityShardUpgrade(4).bought()); if (e[1907].textContent !== v) {e[1907].textContent = v};};
@@ -4685,7 +4685,7 @@ function updateDisplay() {
     if (shouldUpdate("b1671")) {let v = FinalityShardUpgrade(4).atBoughtLimit() ? 'none' : ''; if (b[1671].style.display !== v) {b[1671].style.display = v};};
     if (shouldUpdate("b1672")) {let v = FinalityShardUpgrade(4).canBuy() ? "" : "disabled"; if (b[1672].className !== v) {b[1672].className = v};};
     if (shouldUpdate("e1911")) {let v = formatInt(FinalityShardUpgrade(4).cost()); if (e[1911].textContent !== v) {e[1911].textContent = v};};
-    if (shouldUpdate("e1912")) {let v = pluralize(FinalityShardUpgrade(4).cost(), '', 's'); if (e[1912].textContent !== v) {e[1912].textContent = v};};
+    if (shouldUpdate("e1912")) {let v = pluralize(FinalityShardUpgrade(4).cost(), '', ''); if (e[1912].textContent !== v) {e[1912].textContent = v};};
     if (shouldUpdate("b1673")) {let v = FinalityShardUpgrade(4).atBoughtLimit() ? 'none' : ''; if (b[1673].style.display !== v) {b[1673].style.display = v};};
     if (shouldUpdate("b1674")) {let v = FinalityShardUpgrade(4).canBuy() ? "" : "disabled"; if (b[1674].className !== v) {b[1674].className = v};};
     if (shouldUpdate("e1913")) {let v = formatInt(FinalityShardUpgrade(5).bought()); if (e[1913].textContent !== v) {e[1913].textContent = v};};
@@ -4697,7 +4697,7 @@ function updateDisplay() {
     if (shouldUpdate("b1677")) {let v = FinalityShardUpgrade(5).atBoughtLimit() ? 'none' : ''; if (b[1677].style.display !== v) {b[1677].style.display = v};};
     if (shouldUpdate("b1678")) {let v = FinalityShardUpgrade(5).canBuy() ? "" : "disabled"; if (b[1678].className !== v) {b[1678].className = v};};
     if (shouldUpdate("e1917")) {let v = formatInt(FinalityShardUpgrade(5).cost()); if (e[1917].textContent !== v) {e[1917].textContent = v};};
-    if (shouldUpdate("e1918")) {let v = pluralize(FinalityShardUpgrade(5).cost(), '', 's'); if (e[1918].textContent !== v) {e[1918].textContent = v};};
+    if (shouldUpdate("e1918")) {let v = pluralize(FinalityShardUpgrade(5).cost(), '', ''); if (e[1918].textContent !== v) {e[1918].textContent = v};};
     if (shouldUpdate("b1679")) {let v = FinalityShardUpgrade(5).atBoughtLimit() ? 'none' : ''; if (b[1679].style.display !== v) {b[1679].style.display = v};};
     if (shouldUpdate("b1680")) {let v = FinalityShardUpgrade(5).canBuy() ? "" : "disabled"; if (b[1680].className !== v) {b[1680].className = v};};
     if (shouldUpdate("e1919")) {let v = formatInt(FinalityShardUpgrade(6).bought()); if (e[1919].textContent !== v) {e[1919].textContent = v};};
@@ -4709,7 +4709,7 @@ function updateDisplay() {
     if (shouldUpdate("b1683")) {let v = FinalityShardUpgrade(6).atBoughtLimit() ? 'none' : ''; if (b[1683].style.display !== v) {b[1683].style.display = v};};
     if (shouldUpdate("b1684")) {let v = FinalityShardUpgrade(6).canBuy() ? "" : "disabled"; if (b[1684].className !== v) {b[1684].className = v};};
     if (shouldUpdate("e1923")) {let v = formatInt(FinalityShardUpgrade(6).cost()); if (e[1923].textContent !== v) {e[1923].textContent = v};};
-    if (shouldUpdate("e1924")) {let v = pluralize(FinalityShardUpgrade(6).cost(), '', 's'); if (e[1924].textContent !== v) {e[1924].textContent = v};};
+    if (shouldUpdate("e1924")) {let v = pluralize(FinalityShardUpgrade(6).cost(), '', ''); if (e[1924].textContent !== v) {e[1924].textContent = v};};
     if (shouldUpdate("b1685")) {let v = FinalityShardUpgrade(6).atBoughtLimit() ? 'none' : ''; if (b[1685].style.display !== v) {b[1685].style.display = v};};
     if (shouldUpdate("b1686")) {let v = FinalityShardUpgrade(6).canBuy() ? "" : "disabled"; if (b[1686].className !== v) {b[1686].className = v};};
     if (shouldUpdate("e1925")) {let v = formatInt(FinalityShardUpgrade(7).bought()); if (e[1925].textContent !== v) {e[1925].textContent = v};};
@@ -4721,7 +4721,7 @@ function updateDisplay() {
     if (shouldUpdate("b1689")) {let v = FinalityShardUpgrade(7).atBoughtLimit() ? 'none' : ''; if (b[1689].style.display !== v) {b[1689].style.display = v};};
     if (shouldUpdate("b1690")) {let v = FinalityShardUpgrade(7).canBuy() ? "" : "disabled"; if (b[1690].className !== v) {b[1690].className = v};};
     if (shouldUpdate("e1929")) {let v = formatInt(FinalityShardUpgrade(7).cost()); if (e[1929].textContent !== v) {e[1929].textContent = v};};
-    if (shouldUpdate("e1930")) {let v = pluralize(FinalityShardUpgrade(7).cost(), '', 's'); if (e[1930].textContent !== v) {e[1930].textContent = v};};
+    if (shouldUpdate("e1930")) {let v = pluralize(FinalityShardUpgrade(7).cost(), '', ''); if (e[1930].textContent !== v) {e[1930].textContent = v};};
     if (shouldUpdate("b1691")) {let v = FinalityShardUpgrade(7).atBoughtLimit() ? 'none' : ''; if (b[1691].style.display !== v) {b[1691].style.display = v};};
     if (shouldUpdate("b1692")) {let v = FinalityShardUpgrade(7).canBuy() ? "" : "disabled"; if (b[1692].className !== v) {b[1692].className = v};};
     if (shouldUpdate("e1931")) {let v = formatInt(FinalityShardUpgrade(8).bought()); if (e[1931].textContent !== v) {e[1931].textContent = v};};
@@ -4733,7 +4733,7 @@ function updateDisplay() {
     if (shouldUpdate("b1695")) {let v = FinalityShardUpgrade(8).atBoughtLimit() ? 'none' : ''; if (b[1695].style.display !== v) {b[1695].style.display = v};};
     if (shouldUpdate("b1696")) {let v = FinalityShardUpgrade(8).canBuy() ? "" : "disabled"; if (b[1696].className !== v) {b[1696].className = v};};
     if (shouldUpdate("e1935")) {let v = formatInt(FinalityShardUpgrade(8).cost()); if (e[1935].textContent !== v) {e[1935].textContent = v};};
-    if (shouldUpdate("e1936")) {let v = pluralize(FinalityShardUpgrade(8).cost(), '', 's'); if (e[1936].textContent !== v) {e[1936].textContent = v};};
+    if (shouldUpdate("e1936")) {let v = pluralize(FinalityShardUpgrade(8).cost(), '', ''); if (e[1936].textContent !== v) {e[1936].textContent = v};};
     if (shouldUpdate("b1697")) {let v = FinalityShardUpgrade(8).atBoughtLimit() ? 'none' : ''; if (b[1697].style.display !== v) {b[1697].style.display = v};};
     if (shouldUpdate("b1698")) {let v = FinalityShardUpgrade(8).canBuy() ? "" : "disabled"; if (b[1698].className !== v) {b[1698].className = v};};
     if (shouldUpdate("b1699")) {let v = Trivia.show('finality shard bought limits') ? '' : 'none'; if (b[1699].style.display !== v) {b[1699].style.display = v};};
@@ -4743,33 +4743,33 @@ function updateDisplay() {
     if (shouldUpdate("e1939")) {let v = formatInt(6); if (e[1939].textContent !== v) {e[1939].textContent = v};};
     if (shouldUpdate("e1940")) {let v = formatInt(FinalityShardUpgrade(3).boughtLimit()); if (e[1940].textContent !== v) {e[1940].textContent = v};};
     if (shouldUpdate("e1941")) {let v = formatInt(FinalityShards.totalUpgrades()); if (e[1941].textContent !== v) {e[1941].textContent = v};};
-    if (shouldUpdate("e1942")) {let v = pluralize(FinalityShards.totalUpgrades(), '', 's'); if (e[1942].textContent !== v) {e[1942].textContent = v};};
+    if (shouldUpdate("e1942")) {let v = pluralize(FinalityShards.totalUpgrades(), '', ''); if (e[1942].textContent !== v) {e[1942].textContent = v};};
     if (shouldUpdate("e1943")) {let v = formatInt(FinalityShards.totalUpgradeBonuses()); if (e[1943].textContent !== v) {e[1943].textContent = v};};
     if (shouldUpdate("e1944")) {let v = formatInt(1); if (e[1944].textContent !== v) {e[1944].textContent = v};};
     if (shouldUpdate("e1945")) {let v = formatInt(4); if (e[1945].textContent !== v) {e[1945].textContent = v};};
     if (shouldUpdate("b1701")) {let v = FinalityStartingBenefits.stars().gt(0) ? '' : 'none'; if (b[1701].style.display !== v) {b[1701].style.display = v};};
     if (shouldUpdate("b1702")) {let v = FinalityStartingBenefits.stars().gt(0) ? '' : 'none'; if (b[1702].style.display !== v) {b[1702].style.display = v};};
-    if (shouldUpdate("e1946")) {let v = PrestigeLayerNames.layersAboveDisplay('prestige'); if (e[1946].textContent !== v) {e[1946].textContent = v};};
+    if (shouldUpdate("e1946")) {let v = PrestigeLayerNames.layersAboveDisplay('转生'); if (e[1946].textContent !== v) {e[1946].textContent = v};};
     if (shouldUpdate("e1947")) {let v = formatInt(FinalityStartingBenefits.stars()); if (e[1947].textContent !== v) {e[1947].textContent = v};};
-    if (shouldUpdate("e1948")) {let v = pluralize(FinalityStartingBenefits.stars(), '', 's'); if (e[1948].textContent !== v) {e[1948].textContent = v};};
+    if (shouldUpdate("e1948")) {let v = pluralize(FinalityStartingBenefits.stars(), '', ''); if (e[1948].textContent !== v) {e[1948].textContent = v};};
     if (shouldUpdate("b1703")) {let v = FinalityStartingBenefits.infinityPoints().gt(0) ? '' : 'none'; if (b[1703].style.display !== v) {b[1703].style.display = v};};
     if (shouldUpdate("b1704")) {let v = FinalityStartingBenefits.infinityPoints().gt(0) ? '' : 'none'; if (b[1704].style.display !== v) {b[1704].style.display = v};};
-    if (shouldUpdate("e1949")) {let v = PrestigeLayerNames.layersAboveDisplay('eternity'); if (e[1949].textContent !== v) {e[1949].textContent = v};};
+    if (shouldUpdate("e1949")) {let v = PrestigeLayerNames.layersAboveDisplay('永恒'); if (e[1949].textContent !== v) {e[1949].textContent = v};};
     if (shouldUpdate("e1950")) {let v = formatInt(FinalityStartingBenefits.infinityPoints()); if (e[1950].textContent !== v) {e[1950].textContent = v};};
-    if (shouldUpdate("e1951")) {let v = pluralize(FinalityStartingBenefits.infinityPoints(), '', 's'); if (e[1951].textContent !== v) {e[1951].textContent = v};};
+    if (shouldUpdate("e1951")) {let v = pluralize(FinalityStartingBenefits.infinityPoints(), '', ''); if (e[1951].textContent !== v) {e[1951].textContent = v};};
     if (shouldUpdate("b1705")) {let v = FinalityStartingBenefits.eternityPoints().gt(0) ? '' : 'none'; if (b[1705].style.display !== v) {b[1705].style.display = v};};
     if (shouldUpdate("b1706")) {let v = FinalityStartingBenefits.eternityPoints().gt(0) ? '' : 'none'; if (b[1706].style.display !== v) {b[1706].style.display = v};};
-    if (shouldUpdate("e1952")) {let v = PrestigeLayerNames.layersAboveDisplay('complexity'); if (e[1952].textContent !== v) {e[1952].textContent = v};};
+    if (shouldUpdate("e1952")) {let v = PrestigeLayerNames.layersAboveDisplay('繁复'); if (e[1952].textContent !== v) {e[1952].textContent = v};};
     if (shouldUpdate("e1953")) {let v = formatInt(FinalityStartingBenefits.eternityPoints()); if (e[1953].textContent !== v) {e[1953].textContent = v};};
-    if (shouldUpdate("e1954")) {let v = pluralize(FinalityStartingBenefits.eternityPoints(), '', 's'); if (e[1954].textContent !== v) {e[1954].textContent = v};};
+    if (shouldUpdate("e1954")) {let v = pluralize(FinalityStartingBenefits.eternityPoints(), '', ''); if (e[1954].textContent !== v) {e[1954].textContent = v};};
     if (shouldUpdate("b1707")) {let v = FinalityStartingBenefits.anyComplexityStartingBenefits() ? '' : 'none'; if (b[1707].style.display !== v) {b[1707].style.display = v};};
     if (shouldUpdate("b1708")) {let v = FinalityStartingBenefits.anyComplexityStartingBenefits() ? '' : 'none'; if (b[1708].style.display !== v) {b[1708].style.display = v};};
-    if (shouldUpdate("e1955")) {let v = PrestigeLayerNames.layersAboveDisplay('finality'); if (e[1955].textContent !== v) {e[1955].textContent = v};};
+    if (shouldUpdate("e1955")) {let v = PrestigeLayerNames.layersAboveDisplay('终焉'); if (e[1955].textContent !== v) {e[1955].textContent = v};};
     if (shouldUpdate("e1956")) {let v = FinalityStartingBenefits.complexityStartingBenefitsDisplay(); if (e[1956].textContent !== v) {e[1956].textContent = v};};
     if (shouldUpdate("b1709")) {let v = FinalityStartingBenefits.anyGalaxies() ? '' : 'none'; if (b[1709].style.display !== v) {b[1709].style.display = v};};
     if (shouldUpdate("b1710")) {let v = FinalityStartingBenefits.anyGalaxies() ? '' : 'none'; if (b[1710].style.display !== v) {b[1710].style.display = v};};
     if (shouldUpdate("e1957")) {let v = formatInt(FinalityStartingBenefits.galaxies()); if (e[1957].textContent !== v) {e[1957].textContent = v};};
-    if (shouldUpdate("e1958")) {let v = pluralize(FinalityStartingBenefits.galaxies(), 'y', 'ies'); if (e[1958].textContent !== v) {e[1958].textContent = v};};
+    if (shouldUpdate("e1958")) {let v = pluralize(FinalityStartingBenefits.galaxies(), '', ''); if (e[1958].textContent !== v) {e[1958].textContent = v};};
     if (shouldUpdate("b1711")) {let v = Trivia.show('complexity achievement order') ? '' : 'none'; if (b[1711].style.display !== v) {b[1711].style.display = v};};
     if (shouldUpdate("b1712")) {let v = Trivia.show('complexity achievement order') ? '' : 'none'; if (b[1712].style.display !== v) {b[1712].style.display = v};};
     if (shouldUpdate("b1713")) {let v = FinalityShardPresets.hasPreset(1) ? '' : 'none'; if (b[1713].style.display !== v) {b[1713].style.display = v};};
@@ -4841,7 +4841,7 @@ function updateDisplay() {
   }
   if (b[1842].style.display !== "none") {
     if (shouldUpdate("e1960")) {let v = formatMaybeInt(Finalities.amount()); if (e[1960].textContent !== v) {e[1960].textContent = v};};
-    if (shouldUpdate("e1961")) {let v = pluralize(Finalities.amount(), 'y', 'ies'); if (e[1961].textContent !== v) {e[1961].textContent = v};};
+    if (shouldUpdate("e1961")) {let v = pluralize(Finalities.amount(), '', ''); if (e[1961].textContent !== v) {e[1961].textContent = v};};
     if (shouldUpdate("b1843")) {let v = FinalityMilestones.color(1); if (b[1843].style.background !== v) {b[1843].style.background = v};};
     if (shouldUpdate("e1962")) {let v = formatInt(FinalityMilestones.getFinalityMilestoneRequirement(1)); if (e[1962].textContent !== v) {e[1962].textContent = v};};
     if (shouldUpdate("e1963")) {let v = FinalityMilestones.milestoneStatusDescription(1); if (e[1963].textContent !== v) {e[1963].textContent = v};};
@@ -4852,12 +4852,12 @@ function updateDisplay() {
     if (shouldUpdate("b1845")) {let v = FinalityMilestones.color(3); if (b[1845].style.background !== v) {b[1845].style.background = v};};
     if (shouldUpdate("e1967")) {let v = formatInt(FinalityMilestones.getFinalityMilestoneRequirement(3)); if (e[1967].textContent !== v) {e[1967].textContent = v};};
     if (shouldUpdate("e1968")) {let v = FinalityMilestones.milestoneStatusDescription(3); if (e[1968].textContent !== v) {e[1968].textContent = v};};
-    if (shouldUpdate("e1969")) {let v = PrestigeLayerNames.layersAboveDisplay('finality'); if (e[1969].textContent !== v) {e[1969].textContent = v};};
+    if (shouldUpdate("e1969")) {let v = PrestigeLayerNames.layersAboveDisplay('终焉'); if (e[1969].textContent !== v) {e[1969].textContent = v};};
     if (shouldUpdate("e1970")) {let v = formatInt(FinalityMilestones.rawStartingComplexityPoints()); if (e[1970].textContent !== v) {e[1970].textContent = v};};
     if (shouldUpdate("b1846")) {let v = FinalityMilestones.color(4); if (b[1846].style.background !== v) {b[1846].style.background = v};};
     if (shouldUpdate("e1971")) {let v = formatInt(FinalityMilestones.getFinalityMilestoneRequirement(4)); if (e[1971].textContent !== v) {e[1971].textContent = v};};
     if (shouldUpdate("e1972")) {let v = FinalityMilestones.milestoneStatusDescription(4); if (e[1972].textContent !== v) {e[1972].textContent = v};};
-    if (shouldUpdate("e1973")) {let v = PrestigeLayerNames.layersAboveDisplay('finality'); if (e[1973].textContent !== v) {e[1973].textContent = v};};
+    if (shouldUpdate("e1973")) {let v = PrestigeLayerNames.layersAboveDisplay('终焉'); if (e[1973].textContent !== v) {e[1973].textContent = v};};
     if (shouldUpdate("e1974")) {let v = formatInt(FinalityMilestones.rawKeptComplexityChallenges()); if (e[1974].textContent !== v) {e[1974].textContent = v};};
     if (shouldUpdate("b1847")) {let v = FinalityMilestones.color(5); if (b[1847].style.background !== v) {b[1847].style.background = v};};
     if (shouldUpdate("e1975")) {let v = formatInt(FinalityMilestones.getFinalityMilestoneRequirement(5)); if (e[1975].textContent !== v) {e[1975].textContent = v};};
@@ -4875,7 +4875,7 @@ function updateDisplay() {
     if (shouldUpdate("e1983")) {let v = formatInt(FinalityMilestones.getFinalityMilestoneRequirement(9)); if (e[1983].textContent !== v) {e[1983].textContent = v};};
     if (shouldUpdate("e1984")) {let v = FinalityMilestones.milestoneStatusDescription(9); if (e[1984].textContent !== v) {e[1984].textContent = v};};
     if (shouldUpdate("e1985")) {let v = formatOrdinalInt(6); if (e[1985].textContent !== v) {e[1985].textContent = v};};
-    if (shouldUpdate("e1986")) {let v = pluralize(Powers.equippedLimit(), '', 's'); if (e[1986].textContent !== v) {e[1986].textContent = v};};
+    if (shouldUpdate("e1986")) {let v = pluralize(Powers.equippedLimit(), '', ''); if (e[1986].textContent !== v) {e[1986].textContent = v};};
     if (shouldUpdate("b1852")) {let v = FinalityMilestones.color(10); if (b[1852].style.background !== v) {b[1852].style.background = v};};
     if (shouldUpdate("e1987")) {let v = formatInt(FinalityMilestones.getFinalityMilestoneRequirement(10)); if (e[1987].textContent !== v) {e[1987].textContent = v};};
     if (shouldUpdate("e1988")) {let v = FinalityMilestones.milestoneStatusDescription(10); if (e[1988].textContent !== v) {e[1988].textContent = v};};
@@ -4894,7 +4894,7 @@ function updateDisplay() {
     if (shouldUpdate("b1857")) {let v = FinalityMilestones.color(15); if (b[1857].style.background !== v) {b[1857].style.background = v};};
     if (shouldUpdate("e1997")) {let v = formatInt(FinalityMilestones.getFinalityMilestoneRequirement(15)); if (e[1997].textContent !== v) {e[1997].textContent = v};};
     if (shouldUpdate("e1998")) {let v = FinalityMilestones.milestoneStatusDescription(15); if (e[1998].textContent !== v) {e[1998].textContent = v};};
-    if (shouldUpdate("e1999")) {let v = PrestigeLayerNames.layersAboveDisplay('complexity'); if (e[1999].textContent !== v) {e[1999].textContent = v};};
+    if (shouldUpdate("e1999")) {let v = PrestigeLayerNames.layersAboveDisplay('繁复'); if (e[1999].textContent !== v) {e[1999].textContent = v};};
     if (shouldUpdate("e2000")) {let v = formatTime(FinalityMilestones.rawFreeTimeInComplexity(), {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[2000].textContent !== v) {e[2000].textContent = v};};
     if (shouldUpdate("b1858")) {let v = FinalityMilestones.color(16); if (b[1858].style.background !== v) {b[1858].style.background = v};};
     if (shouldUpdate("e2001")) {let v = formatInt(FinalityMilestones.getFinalityMilestoneRequirement(16)); if (e[2001].textContent !== v) {e[2001].textContent = v};};
@@ -5011,10 +5011,10 @@ function updateDisplay() {
   if (b[1895].style.display !== "none") {
     if (shouldUpdate("e2074")) {let v = formatInt(Achievements.getTotalAchievementsUnlocked()); if (e[2074].textContent !== v) {e[2074].textContent = v};};
     if (shouldUpdate("e2075")) {let v = formatInt(Achievements.beyondHighest()); if (e[2075].textContent !== v) {e[2075].textContent = v};};
-    if (shouldUpdate("e2076")) {let v = Achievements.active() ? 'are' : 'would be'; if (e[2076].textContent !== v) {e[2076].textContent = v};};
+    if (shouldUpdate("e2076")) {let v = Achievements.active() ? '' : ''; if (e[2076].textContent !== v) {e[2076].textContent = v};};
     if (shouldUpdate("b1897")) {let v = PrestigeLayerProgress.hasReached('infinity'); if (b[1897].style.display !== v) {b[1897].style.display = v};};
     if (shouldUpdate("e2077")) {let v = format(Achievements.rawGeneratorMultiplier()); if (e[2077].textContent !== v) {e[2077].textContent = v};};
-    if (shouldUpdate("e2078")) {let v = Achievements.hasNonGeneratorEffects() ? ',' : '.'; if (e[2078].textContent !== v) {e[2078].textContent = v};};
+    if (shouldUpdate("e2078")) {let v = Achievements.hasNonGeneratorEffects() ? '，' : '。'; if (e[2078].textContent !== v) {e[2078].textContent = v};};
     if (shouldUpdate("b1898")) {let v = Achievements.hasNonGeneratorEffects() ? '' : 'none'; if (b[1898].style.display !== v) {b[1898].style.display = v};};
     if (shouldUpdate("b1899")) {let v = Achievements.hasNonGeneratorEffects() ? '' : 'none'; if (b[1899].style.display !== v) {b[1899].style.display = v};};
     if (shouldUpdate("e2079")) {let v = Achievements.nonGeneratorEffectsText(); if (e[2079].textContent !== v) {e[2079].textContent = v};};
@@ -5649,47 +5649,47 @@ function updateDisplay() {
     if (shouldUpdate("b2172")) {let v = PrestigeLayerProgress.hasReached('infinity') ? '' : 'none'; if (b[2172].style.display !== v) {b[2172].style.display = v};};
     if (shouldUpdate("b2173")) {let v = PrestigeLayerProgress.hasReached('infinity') ? '' : 'none'; if (b[2173].style.display !== v) {b[2173].style.display = v};};
     if (shouldUpdate("e2435")) {let v = formatInt(player.stats.totalIPProduced); if (e[2435].textContent !== v) {e[2435].textContent = v};};
-    if (shouldUpdate("e2436")) {let v = pluralize(player.stats.totalIPProduced, '', 's'); if (e[2436].textContent !== v) {e[2436].textContent = v};};
+    if (shouldUpdate("e2436")) {let v = pluralize(player.stats.totalIPProduced, '', ''); if (e[2436].textContent !== v) {e[2436].textContent = v};};
     if (shouldUpdate("b2174")) {let v = PrestigeLayerProgress.hasReached('eternity') ? '' : 'none'; if (b[2174].style.display !== v) {b[2174].style.display = v};};
     if (shouldUpdate("b2175")) {let v = PrestigeLayerProgress.hasReached('eternity') ? '' : 'none'; if (b[2175].style.display !== v) {b[2175].style.display = v};};
     if (shouldUpdate("e2437")) {let v = formatInt(player.stats.totalIPProducedThisEternity); if (e[2437].textContent !== v) {e[2437].textContent = v};};
-    if (shouldUpdate("e2438")) {let v = pluralize(player.stats.totalIPProducedThisEternity, '', 's'); if (e[2438].textContent !== v) {e[2438].textContent = v};};
+    if (shouldUpdate("e2438")) {let v = pluralize(player.stats.totalIPProducedThisEternity, '', ''); if (e[2438].textContent !== v) {e[2438].textContent = v};};
     if (shouldUpdate("b2176")) {let v = PrestigeLayerProgress.hasReached('eternity') ? '' : 'none'; if (b[2176].style.display !== v) {b[2176].style.display = v};};
     if (shouldUpdate("b2177")) {let v = PrestigeLayerProgress.hasReached('eternity') ? '' : 'none'; if (b[2177].style.display !== v) {b[2177].style.display = v};};
     if (shouldUpdate("e2439")) {let v = formatInt(player.stats.totalEPProduced); if (e[2439].textContent !== v) {e[2439].textContent = v};};
-    if (shouldUpdate("e2440")) {let v = pluralize(player.stats.totalEPProduced, '', 's'); if (e[2440].textContent !== v) {e[2440].textContent = v};};
+    if (shouldUpdate("e2440")) {let v = pluralize(player.stats.totalEPProduced, '', ''); if (e[2440].textContent !== v) {e[2440].textContent = v};};
     if (shouldUpdate("b2178")) {let v = PrestigeLayerProgress.hasReached('complexity') ? '' : 'none'; if (b[2178].style.display !== v) {b[2178].style.display = v};};
     if (shouldUpdate("b2179")) {let v = PrestigeLayerProgress.hasReached('complexity') ? '' : 'none'; if (b[2179].style.display !== v) {b[2179].style.display = v};};
     if (shouldUpdate("e2441")) {let v = formatInt(player.stats.totalEPProducedThisComplexity); if (e[2441].textContent !== v) {e[2441].textContent = v};};
-    if (shouldUpdate("e2442")) {let v = pluralize(player.stats.totalEPProducedThisComplexity, '', 's'); if (e[2442].textContent !== v) {e[2442].textContent = v};};
+    if (shouldUpdate("e2442")) {let v = pluralize(player.stats.totalEPProducedThisComplexity, '', ''); if (e[2442].textContent !== v) {e[2442].textContent = v};};
     if (shouldUpdate("b2180")) {let v = PrestigeLayerProgress.hasReached('complexity') ? '' : 'none'; if (b[2180].style.display !== v) {b[2180].style.display = v};};
     if (shouldUpdate("b2181")) {let v = PrestigeLayerProgress.hasReached('complexity') ? '' : 'none'; if (b[2181].style.display !== v) {b[2181].style.display = v};};
     if (shouldUpdate("e2443")) {let v = formatInt(player.stats.totalCPProduced); if (e[2443].textContent !== v) {e[2443].textContent = v};};
-    if (shouldUpdate("e2444")) {let v = pluralize(player.stats.totalCPProduced, '', 's'); if (e[2444].textContent !== v) {e[2444].textContent = v};};
+    if (shouldUpdate("e2444")) {let v = pluralize(player.stats.totalCPProduced, '', ''); if (e[2444].textContent !== v) {e[2444].textContent = v};};
     if (shouldUpdate("b2182")) {let v = PrestigeLayerProgress.hasReached('finality') ? '' : 'none'; if (b[2182].style.display !== v) {b[2182].style.display = v};};
     if (shouldUpdate("b2183")) {let v = PrestigeLayerProgress.hasReached('finality') ? '' : 'none'; if (b[2183].style.display !== v) {b[2183].style.display = v};};
     if (shouldUpdate("e2445")) {let v = formatInt(player.stats.totalCPProducedThisFinality); if (e[2445].textContent !== v) {e[2445].textContent = v};};
-    if (shouldUpdate("e2446")) {let v = pluralize(player.stats.totalCPProducedThisFinality, '', 's'); if (e[2446].textContent !== v) {e[2446].textContent = v};};
+    if (shouldUpdate("e2446")) {let v = pluralize(player.stats.totalCPProducedThisFinality, '', ''); if (e[2446].textContent !== v) {e[2446].textContent = v};};
     if (shouldUpdate("b2184")) {let v = PrestigeLayerProgress.hasReached('finality') ? '' : 'none'; if (b[2184].style.display !== v) {b[2184].style.display = v};};
     if (shouldUpdate("b2185")) {let v = PrestigeLayerProgress.hasReached('finality') ? '' : 'none'; if (b[2185].style.display !== v) {b[2185].style.display = v};};
     if (shouldUpdate("e2447")) {let v = formatInt(player.stats.totalFPProduced); if (e[2447].textContent !== v) {e[2447].textContent = v};};
-    if (shouldUpdate("e2448")) {let v = pluralize(player.stats.totalFPProduced, '', 's'); if (e[2448].textContent !== v) {e[2448].textContent = v};};
+    if (shouldUpdate("e2448")) {let v = pluralize(player.stats.totalFPProduced, '', ''); if (e[2448].textContent !== v) {e[2448].textContent = v};};
     if (shouldUpdate("b2186")) {let v = PrestigeLayerProgress.hasReached('infinity') ? '' : 'none'; if (b[2186].style.display !== v) {b[2186].style.display = v};};
     if (shouldUpdate("b2187")) {let v = PrestigeLayerProgress.hasReached('infinity') ? '' : 'none'; if (b[2187].style.display !== v) {b[2187].style.display = v};};
     if (shouldUpdate("e2449")) {let v = formatInt(player.infinities); if (e[2449].textContent !== v) {e[2449].textContent = v};};
-    if (shouldUpdate("e2450")) {let v = pluralize(player.infinities, 'y', 'ies'); if (e[2450].textContent !== v) {e[2450].textContent = v};};
+    if (shouldUpdate("e2450")) {let v = pluralize(player.infinities, '', ''); if (e[2450].textContent !== v) {e[2450].textContent = v};};
     if (shouldUpdate("b2188")) {let v = PrestigeLayerProgress.hasReached('eternity') ? '' : 'none'; if (b[2188].style.display !== v) {b[2188].style.display = v};};
     if (shouldUpdate("b2189")) {let v = PrestigeLayerProgress.hasReached('eternity') ? '' : 'none'; if (b[2189].style.display !== v) {b[2189].style.display = v};};
     if (shouldUpdate("e2451")) {let v = formatMaybeInt(player.eternities); if (e[2451].textContent !== v) {e[2451].textContent = v};};
-    if (shouldUpdate("e2452")) {let v = pluralize(player.eternities, 'y', 'ies'); if (e[2452].textContent !== v) {e[2452].textContent = v};};
+    if (shouldUpdate("e2452")) {let v = pluralize(player.eternities, '', ''); if (e[2452].textContent !== v) {e[2452].textContent = v};};
     if (shouldUpdate("b2190")) {let v = PrestigeLayerProgress.hasReached('complexity') ? '' : 'none'; if (b[2190].style.display !== v) {b[2190].style.display = v};};
     if (shouldUpdate("b2191")) {let v = PrestigeLayerProgress.hasReached('complexity') ? '' : 'none'; if (b[2191].style.display !== v) {b[2191].style.display = v};};
     if (shouldUpdate("e2453")) {let v = formatInt(player.complexities); if (e[2453].textContent !== v) {e[2453].textContent = v};};
-    if (shouldUpdate("e2454")) {let v = pluralize(player.complexities, 'y', 'ies'); if (e[2454].textContent !== v) {e[2454].textContent = v};};
+    if (shouldUpdate("e2454")) {let v = pluralize(player.complexities, '', ''); if (e[2454].textContent !== v) {e[2454].textContent = v};};
     if (shouldUpdate("b2192")) {let v = PrestigeLayerProgress.hasReached('finality') ? '' : 'none'; if (b[2192].style.display !== v) {b[2192].style.display = v};};
     if (shouldUpdate("b2193")) {let v = PrestigeLayerProgress.hasReached('finality') ? '' : 'none'; if (b[2193].style.display !== v) {b[2193].style.display = v};};
     if (shouldUpdate("e2455")) {let v = formatInt(player.finalities); if (e[2455].textContent !== v) {e[2455].textContent = v};};
-    if (shouldUpdate("e2456")) {let v = pluralize(player.finalities, 'y', 'ies'); if (e[2456].textContent !== v) {e[2456].textContent = v};};
+    if (shouldUpdate("e2456")) {let v = pluralize(player.finalities, '', ''); if (e[2456].textContent !== v) {e[2456].textContent = v};};
     if (shouldUpdate("b2194")) {let v = PrestigeLayerProgress.hasReached('infinity') ? '' : 'none'; if (b[2194].style.display !== v) {b[2194].style.display = v};};
     if (shouldUpdate("b2195")) {let v = PrestigeLayerProgress.hasReached('infinity') ? '' : 'none'; if (b[2195].style.display !== v) {b[2195].style.display = v};};
     if (shouldUpdate("e2457")) {let v = formatTime(player.stats.fastestInfinity, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[2457].textContent !== v) {e[2457].textContent = v};};
@@ -6318,7 +6318,7 @@ function updateDisplay() {
     if (shouldUpdate("e2772")) {let v = formatTime(86400, {seconds: {f: formatTimeMaybeInt, s: true}, larger: {f: formatTimeMaybeInt, s: true}}); if (e[2772].textContent !== v) {e[2772].textContent = v};};
     if (shouldUpdate("e2773")) {let v = formatInt(1350000); if (e[2773].textContent !== v) {e[2773].textContent = v};};
     if (shouldUpdate("e2774")) {let v = formatTime(0.001, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}); if (e[2774].textContent !== v) {e[2774].textContent = v};};
-    if (shouldUpdate("e2775")) {let v = formatInt(1350); if (e[2775].textContent !== v) {e[2775].textContent = v};};
+    if (shouldUpdate("e2775")) {let v = formatTime(1350, {seconds: {f: formatTimeMaybeInt, s: true}, larger: {f: formatTimeMaybeInt, s: true}}); if (e[2775].textContent !== v) {e[2775].textContent = v};};
     if (shouldUpdate("e2776")) {let v = formatTime(3600, {seconds: {f: formatTimeMaybeInt, s: true}, larger: {f: formatTimeMaybeInt, s: true}}); if (e[2776].textContent !== v) {e[2776].textContent = v};};
     if (shouldUpdate("e2777")) {let v = formatInt(100000); if (e[2777].textContent !== v) {e[2777].textContent = v};};
     if (shouldUpdate("e2778")) {let v = formatTime(3600, {seconds: {f: formatTimeMaybeInt, s: true}, larger: {f: formatTimeMaybeInt, s: true}}); if (e[2778].textContent !== v) {e[2778].textContent = v};};
@@ -6568,7 +6568,7 @@ function updateDisplay() {
     if (shouldUpdate("b2757")) {let v = Tabs.isTabOptionVisible('statistics') ? '' : 'none'; if (b[2757].style.display !== v) {b[2757].style.display = v};};
     if (shouldUpdate("b2759")) {let v = Tabs.isTabOptionVisible('last-ten-runs') ? '' : 'none'; if (b[2759].style.display !== v) {b[2759].style.display = v};};
     if (shouldUpdate("e2855")) {let v = title(numbers[Stats.lastRunsToShow()]); if (e[2855].textContent !== v) {e[2855].textContent = v};};
-    if (shouldUpdate("e2856")) {let v = pluralize(Stats.lastRunsToShow(), '', 's'); if (e[2856].textContent !== v) {e[2856].textContent = v};};
+    if (shouldUpdate("e2856")) {let v = pluralize(Stats.lastRunsToShow(), '', ''); if (e[2856].textContent !== v) {e[2856].textContent = v};};
     if (shouldUpdate("b2761")) {let v = Tabs.isTabOptionVisible('options') ? '' : 'none'; if (b[2761].style.display !== v) {b[2761].style.display = v};};
     if (shouldUpdate("b2762")) {let v = Tabs.isTabOptionVisible('eternity') ? '' : 'none'; if (b[2762].style.display !== v) {b[2762].style.display = v};};
     if (shouldUpdate("b2763")) {let v = Tabs.isTabOptionVisible('eternity') ? '' : 'none'; if (b[2763].style.display !== v) {b[2763].style.display = v};};
@@ -6772,7 +6772,7 @@ function updateDisplay() {
     if (shouldUpdate("b2968")) {let v = (Autobuyer(12).isUnlocked || PrestigeLayerProgress.hasReached('eternity')) ? 'none' : ''; if (b[2968].style.display !== v) {b[2968].style.display = v};};
     if (shouldUpdate("b2969")) {let v = Options.optionDisplay(Autobuyer(12).isUnlocked || PrestigeLayerProgress.hasReached('eternity')) ? '' : 'none'; if (b[2969].style.display !== v) {b[2969].style.display = v};};
     if (shouldUpdate("e2904")) {let v = title(numbers[Stats.lastRunsToShow()]); if (e[2904].textContent !== v) {e[2904].textContent = v};};
-    if (shouldUpdate("e2905")) {let v = pluralize(Stats.lastRunsToShow(), '', 's'); if (e[2905].textContent !== v) {e[2905].textContent = v};};
+    if (shouldUpdate("e2905")) {let v = pluralize(Stats.lastRunsToShow(), '', ''); if (e[2905].textContent !== v) {e[2905].textContent = v};};
     if (shouldUpdate("b2972")) {let v = Options.optionDisplay(PrestigeLayerProgress.hasReached('infinity')) ? '' : 'none'; if (b[2972].style.display !== v) {b[2972].style.display = v};};
     if (shouldUpdate("b2974")) {let v = Options.optionDisplay(PrestigeLayerProgress.hasReached('infinity')) ? '' : 'none'; if (b[2974].style.display !== v) {b[2974].style.display = v};};
     if (shouldUpdate("b2975")) {let v = Options.optionDisplay(PrestigeLayerProgress.hasReached('infinity')) ? '' : 'none'; if (b[2975].style.display !== v) {b[2975].style.display = v};};

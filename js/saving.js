@@ -73,11 +73,11 @@ let Saving = {
   },
   loadGame(s, offlineProgress, minTicks, isOracle, callback) {
     if (blocked) {
-      let c = confirm('Time is currently being simulated. Loading a save while time ' +
-        'is being simulated may cause weird behavior, and it\'s recommended to finish the ' +
-        'existing simulation first, just in case. Are you sure you want to load? ' +
-        '(This message may appear if you did something that uses loading in its implementation, ' +
-        'such as resetting.)');
+      let c = confirm('您正在模拟游戏时刻。此时载入存档' +
+        '可能会导致奇怪的问题，建议您先完成' +
+        '当前的模拟再进行载入，以防万一。您确定要载入吗？' +
+        '(该消息可能会在您进行某些需要载入的操作时出现，例如' +
+        '重置。)');
       if (c) {
         blocked = false;
         document.getElementById('loading').style.display = 'none';
@@ -143,9 +143,9 @@ let Saving = {
   },
   simulateTime(totalDiff, maxTicks, showSimulation, callback) {
     if (totalDiff < 0) {
-      alert('It appears that your save is somehow from ' +
+      alert('您的存档似乎是来自于' +
         formatTime(-totalDiff, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}) +
-        ' in the future. You may want to figure out what might be causing this.');
+        '之后的未来。您做了什么？');
       player.lastUpdate = Date.now();
       callback();
       return;
@@ -1648,7 +1648,7 @@ let Saving = {
     }
   },
   loadGamePrompt() {
-    this.loadGameFunc(() => prompt('Enter your save:'), () => null);
+    this.loadGameFunc(() => prompt('输入您的存档代码：'), () => null);
   },
   loadGameTextInput() {
     this.loadGameFunc(() => document.getElementsByClassName('load-input')[0].value, () => (document.getElementsByClassName('load-input')[0].value = ''));
@@ -1671,7 +1671,7 @@ let Saving = {
         }
         let issue = this.quickLoadIssueCheck(save);
         if (issue) {
-          alert('The save you entered does not seem to be valid. ' + issue);
+          alert('您输入的存档代码似乎有误。' + issue);
         } else {
           // This needs a callback to reset time since export and notify that the save was loaded'
           // (we only want to notify after loading in case something goes wrong).
@@ -1691,10 +1691,10 @@ let Saving = {
       } else if (save !== null) {
         // Note: null only shows up if the player canceled the save input prompt,
         // in which case we don't show any message.
-        alert('The save you entered appears to be empty.');
+        alert('您输入的存档代码似乎是空的。');
       }
     } catch(ex) {
-      alert('The save you entered does not seem to be valid. The error was ' + ex);
+      alert('您输入的存档代码似乎有误。错误为' + ex);
     }
   },
   exportFileName() {
@@ -1707,10 +1707,10 @@ let Saving = {
     return ['FE000000'].concat(parts).join('_');
   },
   exportGame(buttonIndex) {
-    if (blocked && !confirm('Time is currently being simulated. Exploits are possible by ' +
-      'exporting while time is being simulated and then loading the resulting save. ' +
-      'If you want to use those exploits, it\'s your choice, but those exploits ' +
-      'are not intended in normal play. Are you sure you want to export?')) {
+    if (blocked && !confirm('您正在模拟游戏时刻。此时导出存档' +
+      '的确可以利用到漏洞。' +
+      '如果您想要利用它们，这也是您自己的选择，但正常游戏' +
+      '不建议这么做。您确定要导出吗？')) {
       return;
     }
     player.stats.timeSinceExport = 0;
@@ -1734,7 +1734,7 @@ let Saving = {
         document.execCommand('copy');
         copyWorked = true;
       } catch(ex) {
-        alert('Copying to clipboard failed.');
+        alert('未能复制到剪贴板。');
         // I guess we don't need this explicitly but it seems nice
         // for showing intent.
         copyWorked = false;
@@ -1778,7 +1778,7 @@ let Saving = {
     this.loadGame(this.encode(initialPlayer), false, null, false, () => this.reseedInitialPlayer());
   },
   resetGameWithConfirmation() {
-    if (confirm('Do you really want to reset the game? You will lose all your progress, and get no benefit.')) {
+    if (confirm('您真的想要重置游戏进度吗？您将失去所有游戏进度，并且这么做没有任何好处可言。')) {
       this.resetGame();
       Notifications.notify('Game has been reset!', 'saveLoad');
     }

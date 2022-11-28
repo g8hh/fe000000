@@ -173,7 +173,7 @@ let Tabs = {
       try {
         document.execCommand('copy');
       } catch(ex) {
-        alert('Copying to clipboard failed.');
+        alert('未能复制到剪贴板。');
       }
     }
     if (!player.options.exportShow) {
@@ -203,13 +203,13 @@ let Tabs = {
     }
   },
   import() {
-    this.importString(prompt('Enter tabs to show (as previously exported):'));
+    this.importString(prompt('输入显示的面板(即之前导出的显示的面板)：'));
   },
   hasPreset(x) {
     return player.tabPresets.length >= x;
   },
   presetName(x) {
-    if (!this.hasPreset(x)) return 'Untitled';
+    if (!this.hasPreset(x)) return '未命名';
     return player.tabPresets[x - 1].name;
   },
   presetTabs(x) {
@@ -223,7 +223,7 @@ let Tabs = {
     player.tabPresets[x - 1].tabs = shownTabs;
   },
   presetSetToCurrentTabs(x) {
-    if (Options.confirmation('presetChange') && !confirm('Are you sure you want to change this tab preset?')) {
+    if (Options.confirmation('presetChange') && !confirm('您确定要改为目前显示的面板配置吗？')) {
       return;
     }
     this.setPresetTabs(x, this.exportString());
@@ -275,7 +275,7 @@ let Tabs = {
     this.redisplayPreset(y);
   },
   presetDelete(x) {
-    if (Options.confirmation('presetDeletion') && !confirm('Are you sure you want to delete this tab preset?')) {
+    if (Options.confirmation('presetDeletion') && !confirm('您确定要删除该面板预设吗？')) {
       return;
     }
     player.tabPresets = player.tabPresets.slice(0, x - 1).concat(player.tabPresets.slice(x));
@@ -286,7 +286,7 @@ let Tabs = {
   },
   presetCreate() {
     if (!this.hasPreset(32)) {
-      player.tabPresets.push({'name': 'Untitled', 'tabs': this.exportString()});
+      player.tabPresets.push({'name': '未命名', 'tabs': this.exportString()});
       this.redisplayPreset(player.tabPresets.length);
     }
   },

@@ -16,9 +16,9 @@ let ComplexityPrestigeLayer = {
   requirementForComplexity() {
     if (this.hasEnoughEP()) {
       // Formulate the requirement in terms the player can understand without knowing about complexity challenges.
-      return format(Decimal.pow(2, Math.pow(2, 32))) + ' stars';
+      return format(Decimal.pow(2, Math.pow(2, 32))) + '星辰';
     }
-    return format(this.eternityPointRequirementForComplexity()) + ' total eternity points';
+    return format(this.eternityPointRequirementForComplexity()) + '总永恒点数';
   },
   isRequirementVisible() {
     return !this.canComplexity() && PrestigeLayerProgress.hasReached('eternity');
@@ -28,9 +28,9 @@ let ComplexityPrestigeLayer = {
   },
   resetText() {
     if (this.canComplexity()) {
-      return 'complexity';
+      return '进行繁复重置';
     } else {
-      return 'do a complexity reset (no complexity point gain or complexity gain)';
+      return '进行繁复强制重置(不获得繁复点数和繁复次数)';
     }
   },
   complexityPointGain() {
@@ -57,7 +57,7 @@ let ComplexityPrestigeLayer = {
   },
   complexityPointGainRatioText() {
     if (this.totalComplexityPoints().neq(0)) {
-      return format(this.complexityPointGainRatio()) + 'x total, ';
+      return '一共' + format(this.complexityPointGainRatio()) + '倍，';
     } else {
       return '';
     }
@@ -67,7 +67,7 @@ let ComplexityPrestigeLayer = {
   },
   complexityPointNextText() {
     if (this.complexityPointGain().lt(256)) {
-      return ', next at ' + format(this.complexityPointNext()) + ' EP';
+      return '，下次需要' + format(this.complexityPointNext()) + '永恒点数';
     } else {
       return '';
     }
@@ -125,11 +125,11 @@ let ComplexityPrestigeLayer = {
   },
   complexityConfirmationMessage() {
     let gain = this.complexityPointGain();
-    return 'Are you sure you want to complexity for ' +
-    formatInt(gain) + ' complexity point' + pluralize(gain, '', 's') + '?';
+    return '您确定要进行繁复重置，并获得' +
+    formatInt(gain) + '繁复点数' + pluralize(gain, '', '') + '吗？';
   },
   complexityResetConfirmationMessage() {
-    return 'Are you sure you want to do a complexity reset? This will not give you any complexity points.';
+    return '您确定要进行繁复强制重置吗？您不会获得任何繁复点数。';
   },
   complexity(manual) {
     if (!this.canComplexity()) return;

@@ -77,18 +77,18 @@ function formatDHMS(time, base) {
 function formatTime(time, options) {
   let timeDisplay = player.options.timeDisplay;
   if (timeDisplay === 'Seconds' || time < 60) {
-    return options.seconds.f(time) + ' second' + (options.seconds.s ? pluralize(time, '', 's') : 's');
+    return options.seconds.f(time) + '秒' + (options.seconds.s ? pluralize(time, '', '') : '');
   } else if (timeDisplay === 'D:H:M:S') {
     // usesBase can be undefined but that's fine (we treat it as false).
     let base = getTimeNotation().usesBase ? NotationOptions.displayBase() : 10;
     return formatDHMS(time, base);
   } else if (timeDisplay === 'Largest unit') {
     if (time < 3600) {
-      return options.larger.f(time / 60) + ' minute' + (options.larger.s ? pluralize(time / 60, '', 's') : 's');
+      return options.larger.f(time / 60) + '分' + (options.larger.s ? pluralize(time / 60, '', '') : '');
     } else if (time < 86400) {
-      return options.larger.f(time / 3600) + ' hour' + (options.larger.s ? pluralize(time / 3600, '', 's') : 's');
+      return options.larger.f(time / 3600) + '小时' + (options.larger.s ? pluralize(time / 3600, '', '') : '');
     } else {
-      return options.larger.f(time / 86400) + ' day' + (options.larger.s ? pluralize(time / 86400, '', 's') : 's');
+      return options.larger.f(time / 86400) + '日' + (options.larger.s ? pluralize(time / 86400, '', '') : '');
     }
   }
 }
@@ -212,7 +212,7 @@ let displayDigits = (specialFormat) => specialFormat ? NotationOptions.displayDi
 let exponentBase = (specialFormat) => specialFormat ? NotationOptions.exponentBase() : 10;
 
 // And now for something completely different.
-let numbers = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
-  'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty'];
+let numbers = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十',
+  '十一', '十二', '十三', '十四', '十五', '十六', '十七', '十八', '十九', '二十'];
 
 let title = x => x[0].toUpperCase() + x.slice(1).toLowerCase();

@@ -2,18 +2,18 @@ let TextBoxes = {
   data: {
     'boost-power': {
       'condition': () => player.boostPower > 1,
-      'text': () => ('You\'ve started to produce boost power! Boost power production is based on number of boosts above ' +
-      formatInt(Boost.boostPowerStart()) + '. Boost power resets on eternity but not on infinity. Boost power provides ' +
-      'a multiplier to boosts based on its amount, and gives theorems (kept on eternity). ' +
-      'You can view your boost power in the Main tab.')
+      'text': () => ('您开始产生推力了！推力的产量基于超过' +
+      formatInt(Boost.boostPowerStart()) + '的推进数量。推力在永恒重置时重置，但在无限重置时保留。推力可以基于数量提供' +
+      '每推力的倍率，且可以提供定理(永恒重置时保留)。' +
+      '您可以在主要面板下查看推力的情况。')
     },
     'ec-4-exit': {
       'condition': () => false,
-      'text': (completions) => ('You were about to get too many infinities to stay in Eternity Challenge ' +
-      formatOrdinalInt(4) + ', so you exited it ' + ((completions > 0) ?
+      'text': (completions) => ('您的无限次数太多，无法继续进行永恒挑战' +
+      formatOrdinalInt(4) + '，因此您退出了该挑战' + ((completions > 0) ?
       (EternityChallenge.canCompleteMultipleTiersAtOnce() ?
-      '(completing ' + completions + ' EC' + formatOrdinalInt(4) + ' tier' + pluralize(completions, '', 's') + ').' :
-      '(completing it).') : '(not completing it).'))
+      '(并完成了' + completions + '阶层的永恒挑战' + formatOrdinalInt(4) + '' + pluralize(completions, '', '') + ')。' :
+      '(并完成了它)。') : '(但并没有完成它)。'))
     }
   },
   create(rawText, data) {

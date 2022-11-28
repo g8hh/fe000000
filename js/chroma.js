@@ -187,7 +187,7 @@ let Chroma = {
     } else if (this.isProducing()) {
       return 'are currently producing ' + this.currentColorName();
     } else {
-      return 'will start to produce ' + this.currentColorName() + ' in ' + formatTime(Chroma.timeUntilProduction(), {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}});
+      return '将在' + formatTime(Chroma.timeUntilProduction(), {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}) + '后开始产生' + this.currentColorName();
     }
   },
   currentProductionTextPrefix() {
@@ -284,6 +284,6 @@ let Chroma = {
     if (t <= 0) {
       return '';
     }
-    return ' in ' + formatTime(t, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}) + ' at the current chroma buildup speed';
+    return '，以目前的色度增长速度进行计算，需要花费' + formatTime(t, {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}) + '';
   }
 }

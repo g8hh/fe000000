@@ -14,9 +14,9 @@ let Permanence = {
   conversionText() {
     let eternitiesPer = this.getEternitiesPerPermanence();
     if (eternitiesPer.gt(1)) {
-      return formatInt(1) + ' permanence per ' + format(eternitiesPer) + ' eternities';
+      return '每' + format(eternitiesPer) + '次永恒获得' + formatInt(1) + '持久';
     } else {
-      return format(Decimal.div(1, eternitiesPer)) + ' permanence per eternity';
+      return '每次永恒获得' + format(Decimal.div(1, eternitiesPer)) + '持久';
     }
   },
   hasPassiveProduction() {
@@ -26,21 +26,20 @@ let Permanence = {
     let template;
     let perSecond;
     if (this.hasPassiveProduction()) {
-      template = 'You get * from Finality Milestone ' + formatInt(5) + '.';
+      template = '由于终焉里程碑' + formatInt(5) + '的效果，您*。';
       perSecond = this.permanenceGain();
     } else {
-      template = 'Your eternity generation rate translates to *.';
+      template = '您的永恒次数产量转换为*。';
       perSecond = EternityProducer.productionPerSecond().div(this.getEternitiesPerPermanence());
     }
     let perSecondText;
     if (perSecond.gte(1) || perSecond.eq(0)) {
-      perSecondText = format(perSecond) + ' permanence per second';
+      perSecondText = '每秒获得' + format(perSecond) + '持久';
     } else {
       // Note that perSecond can't ever be small enough for this to convert a Decimal
       // to Infinity without being actually 0 (it's not even close;
       // perSecond's minimum is something like 1e-7).
-      perSecondText = formatInt(1) + ' permanence per ' + formatTime(Decimal.div(1, perSecond).toNumber(),
-        {seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}});
+      perSecondText = '每' + formatTime(Decimal.div(1, perSecond).toNumber(),{seconds: {f: formatTimeNum, s: false}, larger: {f: formatTimeNum, s: false}}) + '获得' + formatInt(1) + '持久';
     }
     return template.replace('*', perSecondText);
   },
@@ -59,9 +58,9 @@ let Permanence = {
     return player.hasGainedPermanence;
   },
   gainPermanenceConfirmationMessage() {
-    return 'Are you sure you want to gain ' + format(Permanence.permanenceGain()) +
-    ' permanence? You will lose all but ' + formatInt(Permanence.getLeftoverEternities()) +
-    ' eternities, but you will not lose anything else.';
+    return '您确定要获得' + format(Permanence.permanenceGain()) +
+    '持久吗？您将只保留' + formatInt(Permanence.getLeftoverEternities()) +
+    '次永恒，但不会失去其他任何东西。';
   },
   gainPermanence(manual) {
     if (!this.canGainPermanence()) return;
