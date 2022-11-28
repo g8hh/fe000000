@@ -1293,7 +1293,7 @@ var cnItems = {
     'Create a color preset': '创建颜色预设',
     ' color presets. Delete existing presets to create more.': '个颜色预设。删除已有的预设后才可以创建新的预设。',
     'Use tab groups ': '使用分组面板',
-    'This option, rather than showing all the tabs at once, will divide the tabs intro groups and let you switch between viewing various groups, similarly to Antimatter Dimension\'s tab handling. A tab group will be shown if and only if its tab with generators is shown (Miscellaneous is always shown).': '该选项将把面板分组，而不是一次性显示所有面板，效果与反物质维度类似。一组面板只在相应发生器面板显示的时候才会显示(杂项将常时显示)。',
+    'This option, rather than showing all the tabs at once, will divide the tabs into groups and let you switch between viewing various groups, similarly to Antimatter Dimension\'s tab handling. A tab group will be shown if and only if its tab with generators is shown (Miscellaneous is always shown).': '该选项将把面板分组，而不是一次性显示所有面板，效果与反物质维度类似。一组面板只在相应发生器面板显示的时候才会显示(杂项将常时显示)。',
     'Tabs to show': '显示的面板',
     'Options: cannot be hidden': '选项：必须显示',
     'Export tabs to show': '导出显示的面板',
