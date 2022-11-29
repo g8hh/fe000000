@@ -150,7 +150,6 @@ var cnItems = {
     ' even if they would be otherwise invisible': '',
     'Generator ': '发生器',
     '/s': '/秒',
-    'x': '倍',
     'You have a ': '您拥有',
     ' sacrifice multiplier multiplying Generator ': '献祭倍率，它使发生器',
     ' by its amount.': '变为相应倍数。',
